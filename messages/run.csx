@@ -1,16 +1,29 @@
+//#r "AssemblyName"
+//#load "MainDialog.csx"
+//#r "v8-tracing.h"
 #r "Newtonsoft.Json"
-#load "MainDialog.csx"
+#r "MainDialog.csx"
+#load "BasicForm.csx"
+
 
 using System;
 using System.Net;
+using System.Windows;
+using System.Windows.Forms;
+using Microsoft.Win32;
 using System.Threading;
 using Newtonsoft.Json;
-
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Bot.Builder.FormFlow;
+//using System.Linq.Expressions;
+//using MainDialog;
+using System.Linq;
+using System.Net.Http;
 
-public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
+public static async Task<object> Run(System.Net.Http.HttpRequestMessage req, TraceWriter log)
 {
     log.Info($"Webhook was triggered!");
 
