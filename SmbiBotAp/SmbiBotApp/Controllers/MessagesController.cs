@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using System.Web.UI.WebControls;
 using Facebook;
+using System.Threading;
 
 namespace SmbiBotApp
 {
@@ -53,7 +54,22 @@ namespace SmbiBotApp
         public static List<string> data = new List<string>();
         static int count = 0;
         static int flag = 0;
-        static int counter = 0;
+        static int counter = 1;
+        static int callback = 0;
+
+        public enum decision
+        {
+            firstName = 1,
+            lastName = 2,
+            myAge = 3,
+            Gender = 4,
+            currentAddress = 5,
+            emailAddress = 6,
+            university = 7,
+            graduate = 8,
+            degree = 9
+        };
+
         private void asked()
         {
             col.Add("That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup."); //0
@@ -91,7 +107,7 @@ namespace SmbiBotApp
             col.Add("Are you done");//18//32
             col.Add("What sort of position are you looking for ?");//33
             col.Add("Your profile has been successfully created");//34
-            
+            col.Add("Welcome! I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get started ? ");//35
 
         }
 
@@ -129,21 +145,13 @@ namespace SmbiBotApp
         }
         
         private async Task<Activity> HandleSystemMessage(Activity activity , ConnectorClient connector)
-        {
-           
+        {        
             var replymesge = string.Empty;
             Activity reply = new Activity();
             reply = activity.CreateReply();
             if (activity.Type == ActivityTypes.Message)
-            {
-               // JobOptions(reply);
+            {           
                 var phrase = activity.Text;
-                //var luisres = await HookService.GetInputFromWebhook("EAABdYDHKoG8BAEMdM5rnrPKp4h30syXOjZBe3hO4Ix28CiUFZCRYjM5iovmIHOI871WaoLTatdhL9jDVZBNCSRIJFC3m6PtERT3zjzYowRcOM2o1ARMEOOZB2ECLUORQZA9SifRoiCP3lEX43qcyqLuRr3W6mIibRx5mUT1CDNwZDZD");
-                //var check = luisres.data[0].get_started.payload.ToLower();
-                //if (check == "get started")
-                //{
-                //    replymesge = "Congratulations";
-                //}
                 var luisresp = await LuisService.ParseUserInput(phrase);
             back:       
                 if (luisresp.intents.Count() > 0)
@@ -155,170 +163,147 @@ namespace SmbiBotApp
                         switch (str.intent)
                         {
                             case "None":
-                                if (count == 1)
+                                callback = 1;
+                                switch (count)
                                 {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(23) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 2)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(24) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 3)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(25) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 4)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(26) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 5)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(27) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 6)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(28) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 7)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(29) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 8)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(30) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
-                                }
-                                else if (count == 9)
-                                {
-                                    luisresp = await LuisService.ParseUserInput(col.ElementAt(31) + " " + luisresp.query);
-                                    replymesge = luisresp.query;
-                                    goto back;
+                                    case 1:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(23) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 2:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(24) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 3:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(25) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 4:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(26) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 5:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(27) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 6:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(28) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 7:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(29) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 8:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(30) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
+                                    case 9:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(31) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
                                 }
 
-                                replymesge = luisresp.query;
                                 break;
                             case "questions":
+                                callback = 0;
                                 replymesge = luisresp.query;
-                             
-                                luisresp.entities[0].entity.ToLower();
-                                if (luisresp.entities[0].entity == "started")
+                                var entity = luisresp.entities[0].entity.ToLower();
+                                switch (entity)
                                 {
-                                    replymesge = col.ElementAt(33);
-                                    JobOptions(reply);
-                                }
-                               else if (luisresp.entities[0].entity == "position")
-                                {
-                                    JobOptions(reply);
-                                }
-                                else if (luisresp.entities[0].entity == "profile")
-                                {
-                                    reply.Text = col.ElementAt(0);
-                                    await connector.Conversations.ReplyToActivityAsync(reply);
-                                    replymesge = col.ElementAt(1);
-                                    infoConfirm(reply);
-                                   // facebook fb = new facebook();
-                                   // fb.GetDataFromFB();
-
-                                }
-                                else if (luisresp.entities[0].entity == "details")
-                                {
-                                    replymesge = col.ElementAt(2);
-                                }
-                                else if (luisresp.entities[0].entity == "company")
-                                {
-                                    selectCompany(reply);
-                                    //replymesge = col.ElementAt(2);
+                                    case "started":
+                                        reply.Text = col.ElementAt(35);
+                                        await connector.Conversations.ReplyToActivityAsync(reply);
+                                        Thread.Sleep(1000);
+                                        replymesge = col.ElementAt(33);
+                                        JobOptions(reply);
+                                        break;
+                                    case "position":
+                                        JobOptions(reply);
+                                        break;
+                                    case "profile":
+                                        reply.Text = col.ElementAt(0);
+                                        await connector.Conversations.ReplyToActivityAsync(reply);
+                                        Thread.Sleep(1000);
+                                        replymesge = col.ElementAt(1);
+                                        infoConfirm(reply);
+                                        break;
+                                    case "details":
+                                        replymesge = col.ElementAt(2);
+                                        break;
+                                    case "company":
+                                        selectCompany(reply);
+                                        break;
                                 }
                                 count = 1;
                                 break;
-                            case "firstName":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                replymesge = col.ElementAt(3);
-                                counter++;
-                                count = 2;
-                                break;
-                            case "lastName":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                replymesge = col.ElementAt(4);
-                                counter++;
-                                count = 3;
-                                break;
-                            case "myAge":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                replymesge = col.ElementAt(5);
-                                counter++;
-                                count = 4;
-                                break;
-                            case "Gender":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                replymesge = col.ElementAt(6);
-                                counter++;
-                                count = 5;
-                                break;
 
-                            case "currentAddress":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                replymesge = col.ElementAt(7);
-                                counter++;
-                                count = 6;
-                                break;
-
-                            case "emailAddress":
-                                symb = luisresp.entities[0].entity;
-                                check_entity(symb);
-                                if (counter == 5)
+                            default:
+                                callback = 0;
+                                switch (counter)
                                 {
-                                    check_status();
+                                    case 1:
+                                        replymesge = correctSequence(str.intent, replymesge, 3);
+                                        break;
+
+                                    case 2:
+                                        replymesge = correctSequence(str.intent, replymesge, 4);
+                                        break;
+
+                                    case 3:
+                                        replymesge = correctSequence(str.intent, replymesge, 5);
+                                        break;
+                                    case 4:
+                                        replymesge = correctSequence(str.intent, replymesge, 6);
+                                        break;
+
+                                    case 5:
+                                        replymesge = correctSequence(str.intent, replymesge, 7);
+                                        break;
+
+                                    case 6:
+                                        symb = luisresp.entities[0].entity;
+                                        //check_entity(symb);
+                                        //if (counter == 5)
+                                        //{
+                                        //    check_status();
+                                        //}
+                                        flag = 1;
+                                        reply.Text = correctSequence(str.intent, replymesge, 8);
+                                        await connector.Conversations.ReplyToActivityAsync(reply);
+                                        Thread.Sleep(2000);
+                                        replymesge = col.ElementAt(9);
+                                        break;
+
+                                    case 7:
+                                        replymesge = correctSequence(str.intent, replymesge, 10);
+                                        break;
+
+                                    case 8:
+                                        replymesge = correctSequence(str.intent, replymesge, 11);
+                                        break;
+
+                                    case 9:
+                                        replymesge = correctSequence(str.intent, replymesge, 12);
+                                        yesorno(reply);
+                                        break;                      
                                 }
-                                reply.Text = col.ElementAt(8);
-                                await connector.Conversations.ReplyToActivityAsync(reply);
-                                replymesge = col.ElementAt(9);
-                                flag = 1;
-                                counter++;
-                                count = 7;
                                 break;
-
-                            case "university":
-                                symb = luisresp.entities[0].entity;
-                                replymesge = col.ElementAt(10);
-                                count = 8;
-                                break;
-
-                            case "graduate":
-                                symb = luisresp.entities[0].entity;
-                                replymesge = col.ElementAt(11);
-                                count = 9;
-                                break;
-
-                            case "degree":
-                                symb = luisresp.entities[0].entity;
-                                replymesge = col.ElementAt(12);
-                                yesorno(reply);
-                                count = 10;
-                                break;
-
+                                                   
                         }
-
+                        if (callback == 1)
+                        {
+                            callback = 0;
+                            goto back;
+                        }
                         //if (symb != string.Empty)
                         //{
                         //    data.Add(symb);
@@ -365,46 +350,47 @@ namespace SmbiBotApp
        
             else if (activity.Type == ActivityTypes.ConversationUpdate)
             {
-                IConversationUpdateActivity update = activity;
-                using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, activity))
-                {
-                    data.Clear();
-                    var client = scope.Resolve<IConnectorClient>();
-                    if (update.MembersAdded.Any())
-                    {
-                        var repli = activity.CreateReply();
-                        repli.Attachments = new List<Attachment>();
-                        var newMembers = update.MembersAdded?.Where(t => t.Id != activity.Recipient.Id);
+                counter = 1;
+                //IConversationUpdateActivity update = activity;
+                //using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, activity))
+                //{
+                //    data.Clear();
+                //    var client = scope.Resolve<IConnectorClient>();
+                //    if (update.MembersAdded.Any())
+                //    {
+                //        var repli = activity.CreateReply();
+                //        repli.Attachments = new List<Attachment>();
+                //        var newMembers = update.MembersAdded?.Where(t => t.Id != activity.Recipient.Id);
 
-                        List<CardAction> cardButtons = new List<CardAction>();
-                        CardAction plButton = new CardAction()
-                        {
-                            Value = "what sort of position are you looking for ?",
-                            Type = "postBack",
-                            Title = "Get Started"
-                        };
-                        cardButtons.Add(plButton);
-                        // JobOptions(repli);
-                        HeroCard plCard = new HeroCard()
-                        {
-                            Buttons = cardButtons
-                        };
-                        Attachment plAttachment = plCard.ToAttachment();
-                        repli.Attachments.Add(plAttachment);
+                //        List<CardAction> cardButtons = new List<CardAction>();
+                //        CardAction plButton = new CardAction()
+                //        {
+                //            Value = "what sort of position are you looking for ?",
+                //            Type = "postBack",
+                //            Title = "Get Started"
+                //        };
+                //        cardButtons.Add(plButton);
+                //        // JobOptions(repli);
+                //        HeroCard plCard = new HeroCard()
+                //        {
+                //            Buttons = cardButtons
+                //        };
+                //        Attachment plAttachment = plCard.ToAttachment();
+                //        repli.Attachments.Add(plAttachment);
 
-                        foreach (var newMember in newMembers)
-                        {
-                            repli.Text = "Welcome";
-                            if (!string.IsNullOrEmpty(newMember.Name))
-                            {
-                                repli.Text += $" {newMember.Name}";
-                            }
-                            repli.Text += "! I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get-started ?";
-                            repli.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-                            await connector.Conversations.ReplyToActivityAsync(repli);
-                        }
-                    }
-                }
+                //        foreach (var newMember in newMembers)
+                //        {
+                //            repli.Text = "Welcome";
+                //            if (!string.IsNullOrEmpty(newMember.Name))
+                //            {
+                //                repli.Text += $" {newMember.Name}";
+                //            }
+                //            repli.Text += "! I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get-started ?";
+                //            repli.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                //            await connector.Conversations.ReplyToActivityAsync(repli);
+                //        }
+                  //  }
+              //  }
 
 
                 // Handle conversation state changes, like members being added and removed
@@ -656,6 +642,21 @@ namespace SmbiBotApp
             Attachment jobAttachment = jobCard.ToAttachment();
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private string correctSequence(string intent, string reply, int x)
+        {
+            if (Enum.GetName(typeof(decision), counter) == intent)
+            {
+                reply = col.ElementAt(x);
+                count++;
+                counter++;
+            }
+            else
+            {
+                reply = "Sorry wrong input";
+            }
+            return reply;
         }
 
     }

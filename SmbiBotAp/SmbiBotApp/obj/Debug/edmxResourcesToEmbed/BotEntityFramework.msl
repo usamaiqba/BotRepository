@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BotDatabaseModelStoreContainer" CdmEntityContainer="BotContext">
+    <EntitySetMapping Name="UsersInfoes">
+      <EntityTypeMapping TypeName="BotDatabaseModel.UsersInfo">
+        <MappingFragment StoreEntitySet="UsersInfo">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="User_age" ColumnName="User_age" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

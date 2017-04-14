@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BotContext-Web.config Connection String" description="BotContext Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/BotEntityFramework.csdl|res://*/BotEntityFramework.ssdl|res://*/BotEntityFramework.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-4N8LUDR;initial catalog=BotDatabase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\git\\BotRepository\\SmbiBotAp\\SmbiBotApp\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BotContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -118,7 +118,6 @@ namespace Bot_Application3
               university = 7,
               graduate = 8,
               degree = 9
-
         };    
         private void asked()
         {
@@ -189,13 +188,11 @@ namespace Bot_Application3
         private async Task<Activity> HandleSystemMessage(Activity activity, ConnectorClient connector)
         {
             var replymesge = string.Empty;
-            BotData botdata = new BotData();  
-                
+            BotData botdata = new BotData();                 
             Activity reply = new Activity();
             reply = activity.CreateReply();
             if (activity.Type == ActivityTypes.Message)
-            {
-                //    // JobOptions(reply);
+            {        
                 var phrase = activity.Text;
                 var luisresp = await LuisService.ParseUserInput(phrase);
             back:
@@ -203,11 +200,8 @@ namespace Bot_Application3
                 {
                     var str = luisresp.topScoringIntent;
                     try
-                    {
-                    
-                       // var sto = decision.GetName(typeof(decision),str.intent);
-                        var symb = string.Empty;
-                       
+                    {                                
+                        var symb = string.Empty;                     
                         switch (str.intent)
                         {
                             case "None":
