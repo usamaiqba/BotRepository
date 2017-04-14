@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using SmbiBotApp.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Facebook;
+using System.Web.Configuration;
+using System.Configuration;
+
+
+namespace SmbiBotApp.Services
+{
+    public class FacebookServices
+    {
+        public async Task<dynamic> GetUser(string token)
+        {
+            var client = new FacebookClient();
+            dynamic user = await client.GetTaskAsync("/me",
+                new
+                {
+                    fields = "first_name,last_name,gender,locale,id,name,email,picture,location",
+                    access_token = token
+                });
+
+            return user;
+        }
+
+        public async Task<FacebookProfile> GetFacebookProfileAsync(string accessToken)
+        {
+            string escapedString = Uri.EscapeDataString(accessToken);
+            //string app_id = "102667733606511";
+            //string app_secret = "1d81ecb0410c847acc39583d3d542643";
+            //string client_Id = "1323033824440894";
+            //  string uri =$"https://graph.facebook.com/endpoint?key=value&amp;access_token=102667733606511|1d81ecb0410c847acc39583d3d542643";
+            //  string uri = string.Format("https://graph.facebook.com/{0}/{1}/{2}/{3}/name,gender",client_Id,app_id,app_secret,accessToken);
+
+            //   string uri = string.Format("https://graph.facebook.com/v2.8/me/?fields=name,gender,&client_id={0}&client_secret={1}",app_id , app_secret);
+
+            //  string uri =$"https://graph.facebook.com/oauth/access_token?&client_id={app_id}&client_secret={app_secret}&fb_exchange_token={accessToken}";
+            //    string uri = $"https://graph.facebook.com/v2.8/me/?fields=id,name&access_token={accessToken}";
+            //            string uri = "https://graph.facebook.com/endpoint?key=value&amp;access_token={0}" + accessToken;
+
+            using (var client = new HttpClient())
+            {
+
+                string uri = "https://graph.facebook.com/v2.8/me/?fields=id,name,&access_token={accessToken}";
+
+                var msg = await client.GetAsync(uri);
+                if (msg.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await msg.Content.ReadAsStringAsync();
+                    var profileData = JsonConvert.DeserializeObject<FacebookProfile>(jsonResponse);
+                    return profileData;
+                }
+                return null;
+            }
+
+        }
+    }
+}
