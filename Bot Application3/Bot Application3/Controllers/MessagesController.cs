@@ -101,10 +101,12 @@ namespace Bot_Application3
  
         public List<string> col = new List<string>();
         public static List<string> data = new List<string>();
+        static string[] profile = new string[7];
         static int count = 0;
         static int flag = 0;
         static int counter = 1;
         static int callback = 0;
+        static string id = null;
       
 
         public enum decision
@@ -201,7 +203,8 @@ namespace Bot_Application3
                     var str = luisresp.topScoringIntent;
                     try
                     {                                
-                        var symb = string.Empty;                     
+                        var symb = string.Empty;
+                    next:
                         switch (str.intent)
                         {
                             case "None":
@@ -263,11 +266,50 @@ namespace Bot_Application3
                                 switch (entity)
                                 {
                                     case "started":
-                                        reply.Text = col.ElementAt(35);
-                                        await connector.Conversations.ReplyToActivityAsync(reply);
-                                        Thread.Sleep(1000);
-                                        replymesge = col.ElementAt(33);
-                                        JobOptions(reply);
+                                        FacebookServices fbc = new FacebookServices();
+                                        profile = await fbc.GetUser("EAACEdEose0cBACIqyswzNxlQxFyylY5jOtrSQ5Yel6nZAun524jRurw5y67wp6cwfBMRzZBG2VvQSeZAzOTRLjbAQVsFFzOttO1pz2FZAD1KqeX3TAIYlQ1hiZBm0OEYQSZCZCuHoTwuZBeYPGmqYG082dgdKBNGsgTDDoxgF9d3ZCLIZAwIPbax298zc7XlWzRKIZD");
+                                        if (profile != null)
+                                        {
+                                            id = profile[0];                                    
+                                            var result = user.Exist_User(profile[0]);
+                                            string location = profile[5];
+                                            string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
+                                            profile[5] = loc[0];
+                                            if (result != null)
+                                            {
+                                                
+                                                if (result.status == 1)
+                                                {
+                                                    count = 6;
+                                                    counter = 6;
+                                                    str.intent = "emailAddress";
+                                                    goto next;
+                                                }
+                                                else if (result.status == 2)
+                                                {
+
+                                                }
+                                                else if (result.status == 3)
+                                                {
+
+                                                }                                                                                                                                            
+                                            }
+                                            else
+                                            {
+                                                reply.Text = col.ElementAt(35);
+                                                await connector.Conversations.ReplyToActivityAsync(reply);
+                                                Thread.Sleep(1000);
+                                                replymesge = col.ElementAt(33);
+                                                JobOptions(reply);
+                                            }                                   
+                                        }
+
+
+                                        //reply.Text = col.ElementAt(35);
+                                        //await connector.Conversations.ReplyToActivityAsync(reply);
+                                        //Thread.Sleep(1000);
+                                        //replymesge = col.ElementAt(33);
+                                        //JobOptions(reply);
                                         break;
                                     case "position":
                                         JobOptions(reply);
@@ -276,9 +318,33 @@ namespace Bot_Application3
                                         reply.Text = col.ElementAt(0);
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(1000);
+                                        reply.Text = "First Name:"+ profile[1] +"\n\n"+"Last Name:"+ profile[2] +
+                                                     "\n\n" + "Gender:" + profile[4] + "\n\n" + "Location:"+ profile[5] + "\n\n" + "Email:"+ profile[6];
+                                        await connector.Conversations.ReplyToActivityAsync(reply);
+                                        Thread.Sleep(1100);   
                                         replymesge = col.ElementAt(1);
                                         infoConfirm(reply);
                                         break;
+                                    case "basic":
+                                        count = 6;
+                                        counter = 6;
+                                        data.Clear();
+                                        for (int i = 0; i <=6; i++)
+                                        {
+                                            data.Add(profile[i]);
+                                        }
+                                        check_status(1);
+                                        reply.Text = col.ElementAt(8);
+                                        await connector.Conversations.ReplyToActivityAsync(reply);
+                                        Thread.Sleep(2000);
+                                        replymesge = col.ElementAt(9);
+                                        if ()
+                                        {
+                                            goto next;
+
+                                        }
+                                        
+                                        break;  
                                     case "details":
                                         replymesge = col.ElementAt(2);
                                         break;
@@ -287,49 +353,45 @@ namespace Bot_Application3
                                         break;
                                 }
                                 count = 1;
-                                break;     
-                          
-                            //    else if (luisresp.entities[0].entity == "profile")
-                            //    {
-                            //        reply.Text = col.ElementAt(0);
-                            //        await connector.Conversations.ReplyToActivityAsync(reply);
-                            //        replymesge = col.ElementAt(1);
-                            //        infoConfirm(reply);
-                            //        //facebook fb = new facebook();
-                            //        //fb.getInfo();
-                            //        //fb.GetDataFromFB();
-                            //        //fb.getdatafromfb(); 
-                                    
-                            //    //  FacebookServices fbc = new FacebookServices();
-                            ////      await fbc.GetUser("EAABdYDHKoG8BAB6QYjTIGrmqkjWxtkopv7ZAueiEgSFLGB5msm9EPBr9UJGDEw5KEe0xVX0BWPLPngL9JTRfFe9xRIzC4BX8DAYJxrq6ShuzX67TmaglBqFNA6douMSH67R8QyZAxfSWDda34yj1nzDkfX50xoY7c4aMBs11Q5ZCc4MA3M52ux3M1Q7ppUZD");
-                            //        //await fbc.GetUser("EAACEdEose0cBADKExOaZCH277UMyc9oVdSBzwBiKZCWDUFujJ1OtpN6j2hnXcZB9ZABhRmWcA2crbn79znpwzpE1djPGJhGQIQM9fxGGhlsd8Srq4epjDI0AF5P94lZAIY09byVZCTuLQ1RZBJrnqBldATOSXiAs7vwHA125JmtnzSc0ZAZAfD54eZBbMrSQPHWZAIZD");    
-                            //     //   await fbc.GetFacebookProfileAsync("EAABdYDHKoG8BAB6QYjTIGrmqkjWxtkopv7ZAueiEgSFLGB5msm9EPBr9UJGDEw5KEe0xVX0BWPLPngL9JTRfFe9xRIzC4BX8DAYJxrq6ShuzX67TmaglBqFNA6douMSH67R8QyZAxfSWDda34yj1nzDkfX50xoY7c4aMBs11Q5ZCc4MA3M52ux3M1Q7ppUZD");
-                            //    }
-                         
+                                break;                         
                             default:
                                 callback = 0;
                                 switch (counter)
                                 {
                                     case 1:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent,replymesge,3);
                                         break;
 
                                     case 2:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 4);
                                         break;
 
                                     case 3:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 5);
                                         break;
                                     case 4:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 6);
                                         break;
 
                                     case 5:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 7);
                                         break;
 
-                                    case 6:
+                                    case 6://count&counter is 6
+
+                                     if (counter == 6 && data.Count == 5)     
+                                        {
+                                            check_entity(symb, luisresp);
+                                            if (data.Count == 6)
+                                            {
+                                                check_status(0);
+                                            }
+                                        }
                                         reply.Text = correctSequence(str.intent, replymesge, 8);
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(2000);
@@ -475,6 +537,43 @@ namespace Bot_Application3
             return tuple;
         }
 
+        private void check_entity(string symb, LuisResponse luisresp)
+        {
+            symb = luisresp.entities[0].entity;
+            if (symb != string.Empty)
+            {
+                data.Add(symb);
+            }
+        }
+
+        public bool check_status(int call)
+        {
+            if (id != null)
+            {
+                UsersInfo ui = new UsersInfo()
+                {
+                    User_ID = id,
+                    First_Name = data.ElementAt(0),
+                    Last_Name = data.ElementAt(1),
+                    User_age = Convert.ToInt32(data.ElementAt(2)),
+                    Gender = data.ElementAt(3),
+                    location = data.ElementAt(4),
+                    Email = data.ElementAt(5),
+                    status = 1
+                };
+             
+                user.Add_UserInfo(ui);
+                flag = 0;
+                data.Clear();
+
+                if (true)
+                {
+                    return true;                  
+                }
+                         
+            }
+                  return false;
+        }
 
         private string correctSequence(string intent , string reply,int x)
         {
@@ -491,13 +590,22 @@ namespace Bot_Application3
             return reply;
         }
 
+        private async void niceTomeet(string intent, Activity reply, int x)
+        {
+            string rep = null;
+            reply.Text = correctSequence(intent, rep, 8);
+            await connector.Conversations.ReplyToActivityAsync(reply);
+            Thread.Sleep(2000);
+            replymesge = col.ElementAt(9);
+        }
+
         protected void infoConfirm(Activity reply)
         {
             reply.Attachments = new List<Attachment>();
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "This is the information we were able to pull from facebook could you confirm if you would like me to use this information ?",
+                Value = "Than save the user's basic information ?",
                 Type = "postBack",
                 Title = "Correct"
             };

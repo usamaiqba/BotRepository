@@ -59,3 +59,4 @@ C:\git\BotRepository\SmbiBotAp\SmbiBotApp\bin\zh-hans\Microsoft.Bot.Builder.reso
 C:\git\BotRepository\SmbiBotAp\SmbiBotApp\obj\Debug\SmbiBotApp.csproj.App.config
 C:\git\BotRepository\SmbiBotAp\SmbiBotApp\obj\Debug\Bot Application1.dll
 C:\git\BotRepository\SmbiBotAp\SmbiBotApp\obj\Debug\Bot Application1.pdb
+C:\git\BotRepository\SmbiBotAp\SmbiBotApp\obj\Debug\SmbiBotApp.csprojResolveAssemblyReference.cache

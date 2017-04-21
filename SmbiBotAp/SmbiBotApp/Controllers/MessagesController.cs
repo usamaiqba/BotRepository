@@ -220,6 +220,31 @@ namespace SmbiBotApp
                                 switch (entity)
                                 {
                                     case "started":
+                                        FacebookServices fbc = new FacebookServices();
+                                        string[] res = await fbc.GetUser("EAACEdEose0cBADKExOaZCH277UMyc9oVdSBzwBiKZCWDUFujJ1OtpN6j2hnXcZB9ZABhRmWcA2crbn79znpwzpE1djPGJhGQIQM9fxGGhlsd8Srq4epjDI0AF5P94lZAIY09byVZCTuLQ1RZBJrnqBldATOSXiAs7vwHA125JmtnzSc0ZAZAfD54eZBbMrSQPHWZAIZD");
+                                        if (res != null)
+                                        {
+                                           
+                                          var result =  user.Exist_User(res[0]);
+                                            if (result != null)
+                                            {
+                                                if (result.status == 1)
+                                                {
+
+                                                }
+                                                else if (result.status == 2)
+                                                {
+
+                                                }
+                                                else if (result.status == 3)
+                                                {
+
+                                                }
+                                            }
+                                            
+
+                                        }
+
                                         reply.Text = col.ElementAt(35);
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(1000);
@@ -271,7 +296,7 @@ namespace SmbiBotApp
 
                                     case 6:
                                         symb = luisresp.entities[0].entity;
-                                        //check_entity(symb);
+                                        //check_entity(symb,luisresp);
                                         //if (counter == 5)
                                         //{
                                         //    check_status();
@@ -420,8 +445,9 @@ namespace SmbiBotApp
             return null;    
         }
 
-        private void check_entity(string symb)
+        private void check_entity(string symb,LuisResponse luisresp)
         {
+            symb = luisresp.entities[0].entity;
             if (symb != string.Empty)
             {
                 data.Add(symb);

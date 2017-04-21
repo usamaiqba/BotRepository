@@ -14,12 +14,13 @@ namespace SmbiBotApp
     
     public partial class UsersInfo
     {
-        public int User_ID { get; set; }
+        public string User_ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public Nullable<int> User_age { get; set; }
         public string Gender { get; set; }
         public string location { get; set; }
         public string Email { get; set; }
+        public Nullable<int> status { get; set; }
     }
 }

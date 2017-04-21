@@ -9,9 +9,9 @@ namespace SmbiBotApp.Model
 {
     public class user
     {
-        
-        BotContext ec = new BotContext();
-        BotContext ac = null;    
+      
+       private static BotContext ec = new BotContext();
+       private static BotContext ac = null;    
         public bool Add_UserInfo(UsersInfo ui)
         {
             ac = new BotContext();        
@@ -25,7 +25,16 @@ namespace SmbiBotApp.Model
             {
                 return false;            
             }
+        }
 
+        public static UsersInfo Exist_User(string id)
+        {
+            ac = new BotContext();
+           // var res = ac.UsersInfoes.Any(x => x.User_ID == id);
+            var query = (from exs in ac.UsersInfoes
+                        where exs.User_ID == id
+                        select exs).SingleOrDefault();
+            return query;
         }
     }  
 }

@@ -14,7 +14,7 @@ using System.Web.UI.WebControls;
 using Facebook;
 using System.Web.Configuration;
 using System.Configuration;
-
+using System.Collections;
 
 namespace SmbiBotApp.Services
 {
@@ -26,11 +26,13 @@ namespace SmbiBotApp.Services
             dynamic user = await client.GetTaskAsync("/me",
                 new
                 {
-                    fields = "first_name,last_name,gender,locale,id,name,email,picture,location",
+                    fields = "id,first_name,last_name,gender,locale,email,picture,location",
                     access_token = token
                 });
 
-            return user;
+            object val = user.GetType().GetProperty("Values").GetValue(user, null);
+            string[] arr = ((IEnumerable)val).Cast<object>().Select(x => x.ToString()).ToArray();
+            return arr;
         }
 
         public async Task<FacebookProfile> GetFacebookProfileAsync(string accessToken)

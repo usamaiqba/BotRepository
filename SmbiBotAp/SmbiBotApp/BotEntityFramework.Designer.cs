@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Usama Iqbal\Documents\Visual Studio 2015\Projects\SmbiBotAp\SmbiBotApp\BotEntityFramework.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\git\BotRepository\SmbiBotAp\SmbiBotApp\BotEntityFramework.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d4f703b9789d412792c1a55dd4227099" Name="Diagram1">
-        <EntityTypeShape EntityType="BotDatabaseModel.UsersInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="9adf6faab92e472b88e864cb9e8057c2" Name="Diagram1">
+        <EntityTypeShape EntityType="BotDatabaseModel.UsersInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
