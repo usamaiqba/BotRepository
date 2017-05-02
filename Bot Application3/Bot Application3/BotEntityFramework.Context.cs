@@ -25,6 +25,11 @@ namespace Bot_Application3
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UsersInfo> UsersInfoes { get; set; }
+        public virtual DbSet<basic_infos> basic_infos { get; set; }
+        public virtual DbSet<educational_infos> educational_infos { get; set; }
+        public virtual DbSet<professional_Infos> professional_Infos { get; set; }
+        public virtual DbSet<project_details> project_details { get; set; }
+        public virtual DbSet<project> projects { get; set; }
+        public virtual DbSet<skill> skills { get; set; }
     }
 }

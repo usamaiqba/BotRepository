@@ -4,8 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c8560b1c1b0944a7908c558d9a4a76bb" Name="Diagram1">
-        <EntityTypeShape EntityType="BotDatabaseModel.UsersInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="c8560b1c1b0944a7908c558d9a4a76bb" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="BotDatabaseModel.basic_infos" Width="1.5" PointX="1.25" PointY="3.375" />
+        <EntityTypeShape EntityType="BotDatabaseModel.educational_infos" Width="1.5" PointX="3.5" PointY="0.5" />
+        <EntityTypeShape EntityType="BotDatabaseModel.professional_Infos" Width="1.5" PointX="3.5" PointY="7.375" />
+        <EntityTypeShape EntityType="BotDatabaseModel.project_details" Width="1.5" PointX="5.75" PointY="4" />
+        <EntityTypeShape EntityType="BotDatabaseModel.project" Width="1.5" PointX="3.5" PointY="3.875" />
+        <EntityTypeShape EntityType="BotDatabaseModel.skill" Width="1.5" PointX="5.75" PointY="1.25" />
+        <AssociationConnector Association="BotDatabaseModel.FK_educational_infos_basic_infos" />
+        <AssociationConnector Association="BotDatabaseModel.FK_professional_Infos_basic_infos" />
+        <AssociationConnector Association="BotDatabaseModel.FK_projects_basic_infos" />
+        <AssociationConnector Association="BotDatabaseModel.FK_project_details_projects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

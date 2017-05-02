@@ -16,15 +16,155 @@ using Bot_Application3.Model;
 using Facebook;
 using System.Threading;
 using System.Reflection;
+using Humanizer;
 
 namespace Bot_Application3
 {
 
+    public class clickk : IActionActivity
+    {
+
+        public string title = null;
+        
+
+        public dynamic ChannelData
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                title = value;
+            }
+
+        }
+
+        public string ChannelId
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public ConversationAccount Conversation
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public ChannelAccount From
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Id
+        {
+            get
+            {
+                return Id;
+            }
+
+            set
+            {
+                Id = Title;
+            }
+        }
+
+        public ChannelAccount Recipient
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string ServiceUrl
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public DateTime? Timestamp
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Type
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    
+    };
+ 
     [Serializable]
     public class DisplayDialog : IDialog<object> 
     {
         private ResumeAfter<bool> play;
-        
+
+
         public async Task StartAsync(IDialogContext context)
         {
             await context.PostAsync("That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.");
@@ -107,7 +247,11 @@ namespace Bot_Application3
         static int counter = 1;
         static int callback = 0;
         static string id = null;
-      
+        static string occupation = null;
+        static int pro_count = 1;
+
+        
+         
 
         public enum decision
         {
@@ -119,7 +263,9 @@ namespace Bot_Application3
               emailAddress = 6,
               university = 7,
               graduate = 8,
-              degree = 9
+              degree = 9,
+              projects = 10,
+              title = 11,
         };    
         private void asked()
         {
@@ -138,11 +284,11 @@ namespace Bot_Application3
             col.Add("Is this the highest level of education you attainted ?");//12
             col.Add("What sort of company are you interested in working for:");//13
             col.Add("What sort of designer are you ?");//14
-            col.Add("What web development languages are you familiar with : (select all those that apply)");
-            col.Add("Rank your experience with the following: (All selected)");//16
-            col.Add("What industry leading graphic design tools are you comfortable using ? adobe photoshop, adobe illustrator, adobe indesign, sketch");
+            col.Add("How many projects or products you have worked on ?");//15
+            col.Add("what is the title of your");//16
+            col.Add("Briefly describe your"); //17
             col.Add("Rank your experience / level of using design softwares:Sketch:Photoshop:Illustrator:indesign:");
-            col.Add("How many projects or products you have worked on ? ");//19
+            col.Add("What web development languages are you familiar with : (select all those that apply)");//19
             col.Add("Describe the project or role you were most proud of ? What sort did you do in your capcity and what were the outcomes / achievements ? ");
             col.Add("Is there any other project, product , or work experience. You would like to share with us ?");
             col.Add("what sort of developer are you ?");//22
@@ -158,30 +304,39 @@ namespace Bot_Application3
             col.Add("Are you done");//32
             col.Add("What sort of position are you looking for ?");//33
             col.Add("Your profile has been successfully created");//34
-            col.Add("Welcome! I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get started ? ");//35
-
+            col.Add("I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get started ? ");//35
+            col.Add("Project that i have been done so far are");//36
 
 
         }
 
-        //public async Task<HttpRequestMessage> Get([FromBody]Activity activity)
-        //{
-        //    ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-        //    activity.CreateReply("hello");
-        //    await connector.Conversations.SendToConversationAsync((Activity)activity);
-        //    //  var response = Request.GetRequestContext();
-        //    return null;          
-        //}
-
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             asked();
+            //var ide = activity.From.Id;
+            //var sum = activity.Summary;
+            //var act = activity.Action;
+            //var con = ActionContext;
+          
+            // IActionActivity act = activity;              
             ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+            //var ds = con.ControllerContext.Request.Content;
+            //var jsonresponse = await ds.ReadAsFormDataAsync();
+      
+            // var data = JsonConvert.DeserializeObject<LuisResponse>(jsonresponse);
+          //  return data;
+         //   var sto = await ds.ReadAsStringAsync();
             await HandleSystemMessage(activity, connector);
             StateClient stateClient = activity.GetStateClient();
             BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
-            var conv = activity.Conversation;
-            userData.SetProperty<bool>("SentGreeting", true);
+            BotData userDat = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+
+            //var conv = activity.Conversation;
+            userData.Data = activity.Properties.Root;
+        //    userDat.Data = activity.Attachments[0].Content;
+
+            //var use = userData.GetProperty<string>("Title");
+            
             await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
@@ -199,7 +354,7 @@ namespace Bot_Application3
                 var luisresp = await LuisService.ParseUserInput(phrase);
             back:
                 if (luisresp.intents.Count() > 0)
-                {
+                {                           
                     var str = luisresp.topScoringIntent;
                     try
                     {                                
@@ -218,7 +373,7 @@ namespace Bot_Application3
 
                                     case 2:
                                         luisresp = await LuisService.ParseUserInput(col.ElementAt(24) + " " + luisresp.query);
-                                        replymesge = luisresp.query;                                     
+                                        replymesge = luisresp.query;                                                                      
                                         break;
 
                                     case 3:
@@ -255,8 +410,14 @@ namespace Bot_Application3
                                         luisresp = await LuisService.ParseUserInput(col.ElementAt(31) + " " + luisresp.query);
                                         replymesge = luisresp.query;                                     
                                         break;
+
+                                    case 10:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(36) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
+
                                 }
-                                
+
                                 break;
                         
                             case "questions":
@@ -267,11 +428,12 @@ namespace Bot_Application3
                                 {
                                     case "started":
                                         FacebookServices fbc = new FacebookServices();
-                                        profile = await fbc.GetUser("EAACEdEose0cBACIqyswzNxlQxFyylY5jOtrSQ5Yel6nZAun524jRurw5y67wp6cwfBMRzZBG2VvQSeZAzOTRLjbAQVsFFzOttO1pz2FZAD1KqeX3TAIYlQ1hiZBm0OEYQSZCZCuHoTwuZBeYPGmqYG082dgdKBNGsgTDDoxgF9d3ZCLIZAwIPbax298zc7XlWzRKIZD");
+                                        profile = await fbc.GetUser("EAACEdEose0cBADf5XVJZBDeZBNZCj5Cgwe8r6V5wO5LcAai9ZAnRiZBSeRq6ePaZAhfQwvogEP3yVs5dvGeWGXXkQTZBJRBaZBtDo1FMA2E7ongZBsRuSgfXtN9Q6xZCn74tcvucMPawi8wKk64gw5DpYee1QZBCQtGPTSzHRBvSVxl4qh7AZCp763rmEoQw12fV1ScZD");
                                         if (profile != null)
                                         {
-                                            id = profile[0];                                    
-                                            var result = user.Exist_User(profile[0]);
+                                            id = profile[0];
+                                            data.Add(id);
+                                            var result = user.exist_user(profile[0]);
                                             string location = profile[5];
                                             string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
                                             profile[5] = loc[0];
@@ -296,11 +458,15 @@ namespace Bot_Application3
                                             }
                                             else
                                             {
-                                                reply.Text = col.ElementAt(35);
+                                                reply.Text = "Welcome"+" "+ profile[1] +" !"+ col.ElementAt(35);
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
                                                 Thread.Sleep(1000);
                                                 replymesge = col.ElementAt(33);
                                                 JobOptions(reply);
+                                            
+                                                //   reply.Attachments.ElementAt(0).Content;
+                                              //  var her =(HeroCard)reply.Attachments[0].Content;
+                                               // her.Buttons.
                                             }                                   
                                         }
 
@@ -315,6 +481,9 @@ namespace Bot_Application3
                                         JobOptions(reply);
                                         break;
                                     case "profile":
+                                      //  var ata = activity.Attachments.ElementAt(2);
+                                        string[] occup = luisresp.query.Split();
+                                        occupation = occup[0];
                                         reply.Text = col.ElementAt(0);
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(1000);
@@ -326,33 +495,55 @@ namespace Bot_Application3
                                         infoConfirm(reply);
                                         break;
                                     case "basic":
-                                        count = 6;
-                                        counter = 6;
+                                        count = 7;
+                                        counter = 7;
                                         data.Clear();
                                         for (int i = 0; i <=6; i++)
                                         {
                                             data.Add(profile[i]);
                                         }
                                         check_status(1);
+
                                         reply.Text = col.ElementAt(8);
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(2000);
                                         replymesge = col.ElementAt(9);
-                                        if ()
-                                        {
-                                            goto next;
+                                        //if ()
+                                        //{
+                                        //    goto next;
 
-                                        }
+                                        //}
                                         
                                         break;  
                                     case "details":
                                         replymesge = col.ElementAt(2);
+                                        count = 1;
                                         break;
                                     case "company":
-                                        selectCompany(reply);
+                                        replymesge = col.ElementAt(13);
+                                         selectCompany(reply);
+                                        break;
+
+                                    case "interested":                                     
+                                        replymesge = refferedtochoice(id,reply);
+                                        data.Add(luisresp.query.Substring(25));                                                                       
+                                        break;
+
+                                    case "designer":
+                                        //replymesge = refferedtochoice(id, reply);
+                                        string skill = luisresp.query.Substring(23);
+                                        data.Add(luisresp.query.Substring(23));
+                                        data.Add((user.get_skill_id(skill)).ToString());
+                                        replymesge = col.ElementAt(15);
+                                        break;
+
+                                    case "attend":
+                                        count = 7;
+                                        counter = 7;
+                                        replymesge = col.ElementAt(9);
                                         break;
                                 }
-                                count = 1;
+                               // count = 1;
                                 break;                         
                             default:
                                 callback = 0;
@@ -384,10 +575,10 @@ namespace Bot_Application3
 
                                     case 6://count&counter is 6
 
-                                     if (counter == 6 && data.Count == 5)     
+                                     if (counter == 6 && data.Count == 6)     
                                         {
                                             check_entity(symb, luisresp);
-                                            if (data.Count == 6)
+                                            if (data.Count == 7)
                                             {
                                                 check_status(0);
                                             }
@@ -399,16 +590,47 @@ namespace Bot_Application3
                                         break;
 
                                     case 7:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 10);
                                         break;
 
                                     case 8:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 11);
                                         break;
 
                                     case 9:
+                                        check_entity(symb, luisresp);
                                         replymesge = correctSequence(str.intent, replymesge, 12);
                                         yesorno(reply);
+                                        break;
+                                        
+                                    case 10:
+                                        check_entity(symb, luisresp);
+                                        if (pro_count > 0 && pro_count <= int.Parse(data.ElementAt(7)))
+                                        {
+                                        //   replymesge = correctSequence(str.intent, replymesge, 16)+" "+ pro_count.ToOrdinalWords() + " project ?"; 
+                                        }
+                                        else
+                                        {
+
+                                        }  
+                                        break;
+
+                                    case 11:
+
+                                        if (pro_count > 0 && pro_count <= int.Parse(data.ElementAt(7)))
+                                        {
+                                            check_entity(symb, luisresp);
+                                         //   replymesge = correctSequence(str.intent, replymesge, 17) +" "+ pro_count.ToOrdinalWords() + " project";
+                                            pro_count++;
+                                            count--;
+                                            counter--;
+                                        }
+                                        else
+                                        {
+
+                                        }                                       
                                         break;
                                 }
                                 break;
@@ -468,6 +690,7 @@ namespace Bot_Application3
             else if (activity.Type == ActivityTypes.ConversationUpdate)
             {
                 counter = 1;
+                data.Clear();
                 //IConversationUpdateActivity update = activity;
                 //using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, activity))
                 //{
@@ -545,28 +768,59 @@ namespace Bot_Application3
                 data.Add(symb);
             }
         }
+        public void educational_record()
+        {
+
+            //.st<educational_infos> edu = new List<educational_infos>();
+             int cou = data.Count;//10 // 7
+             cou = cou - 3; // 10 -3 = 7 // 7-3 = 4 
+             cou = (cou - 1)/3;
+            educational_infos[] edu = new educational_infos[cou];
+            int j = 1;
+            for (int i = 1; i <= cou; i++)
+            {
+                edu[i].user_id = data.ElementAt(0);
+                edu[i].uni_name = data.ElementAt(j++);
+                edu[i].pass_year = data.ElementAt(j++);
+                edu[i].degree_name = data.ElementAt(j++);
+            }
+            professional_Infos pi = user.find_user_occu(id);
+            {
+                pi.company_type = data.ElementAt(j++);
+                pi.position_type = data.ElementAt(j++);
+                pi.no_of_projects = int.Parse(data.ElementAt(j++));                
+            };
+            user.add_edu_info(edu);
+            user.upd_pro_info();            
+        }
 
         public bool check_status(int call)
         {
-            if (id != null)
+            if (id != null || occupation != null)
             {
-                UsersInfo ui = new UsersInfo()
+                basic_infos ui = new basic_infos()
                 {
-                    User_ID = id,
-                    First_Name = data.ElementAt(0),
-                    Last_Name = data.ElementAt(1),
-                    User_age = Convert.ToInt32(data.ElementAt(2)),
-                    Gender = data.ElementAt(3),
-                    location = data.ElementAt(4),
-                    Email = data.ElementAt(5),
+                    user_id = data.ElementAt(0),
+                    first_name = data.ElementAt(1),
+                    last_name = data.ElementAt(2),
+                    age = 25,//Convert.ToInt32(data.ElementAt(3)),
+                    gender = data.ElementAt(4),
+                    location = data.ElementAt(5),
+                    email = data.ElementAt(6),
                     status = 1
                 };
-             
-                user.Add_UserInfo(ui);
+                professional_Infos pi = new professional_Infos()
+                {
+                    user_id = data.ElementAt(0),
+                    occupation_type = occupation
+
+                };
+                var chek = user.add_basic_info(ui);
+                user.add_prof_info(pi);
+                occupation = null;
                 flag = 0;
                 data.Clear();
-
-                if (true)
+                if (chek)
                 {
                     return true;                  
                 }
@@ -590,14 +844,14 @@ namespace Bot_Application3
             return reply;
         }
 
-        private async void niceTomeet(string intent, Activity reply, int x)
-        {
-            string rep = null;
-            reply.Text = correctSequence(intent, rep, 8);
-            await connector.Conversations.ReplyToActivityAsync(reply);
-            Thread.Sleep(2000);
-            replymesge = col.ElementAt(9);
-        }
+        //private async void niceTomeet(string intent, Activity reply, int x)
+        //{
+        //    string rep = null;
+        //    reply.Text = correctSequence(intent, rep, 8);
+        //    await connector.Conversations.ReplyToActivityAsync(reply);
+        //    Thread.Sleep(2000);
+        //    replymesge = col.ElementAt(9);
+        //}
 
         protected void infoConfirm(Activity reply)
         {
@@ -613,12 +867,13 @@ namespace Bot_Application3
             {
                 Value = "Let's get to fixing your details. What's your first name ?",
                 Type = "postBack",
-                Title = "Incorrect"
+                Title = "Incorrect",
+             
             };
            
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
-         
+            
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons
@@ -635,26 +890,91 @@ namespace Bot_Application3
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "What sort of company are you interested in working for:",
+                Value = "Yes,What sort of company are you interested in working for:",
                 Type = "postBack",
                 Title = "Yes"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "What university did you attend ?",
                 Type = "postBack",
-                Title = "No"
+                Title = "No",
             };
+         
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
             HeroCard jobCard = new HeroCard()
             {
-                Buttons = cardButtons
+                Buttons = cardButtons,
+            };
+           
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void selectdesign(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you are designer of UX / UI",
+                Type = "postBack",
+                Title = "UX / UI"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you are designer of Graphic / Web",
+                Type = "postBack",
+                Title = "Graphic / Web",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you are designer of Full Stack",
+                Type = "postBack",
+                Title = "Full Stack",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
             };
 
             Attachment jobAttachment = jobCard.ToAttachment();
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private string refferedtochoice(string id,Activity reply)
+        {
+            var occupy = user.find_user_occu(id);
+            string rep = null;
+            switch (occupy.occupation_type)
+            {
+                case "Product":
+                   // col.ElementAt();
+                    break;
+
+                case "Design":
+                    rep = col.ElementAt(14);
+                    selectdesign(reply);
+                    break;
+
+                case "Development":
+                    break;
+                case "Marketing":
+                    break;
+                case "Sales":
+                    break;
+                case "Administration":
+                    break;
+
+            }
+
+            return rep;
         }
 
         private void selectCompany(Activity reply)
@@ -663,37 +983,37 @@ namespace Bot_Application3
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "ok you are interested in Design/Development Studio",
                 Type = "postBack",
                 Title = "Design/Development Studio"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
-                Type = "postBack",
+                Value = "ok you are interested in Financial Technology",
+                Type =  "postBack",
                 Title = "Financial Technology"
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "ok you are interested in Financial Technology",
                 Type = "postBack",
                 Title = "Game Studio"
             };
             CardAction Button4 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "ok you are interested in ECommerce",
                 Type = "postBack",
                 Title = "ECommerce"
             };
             CardAction Button5 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "ok you are interested in Sales",
                 Type = "postBack",
                 Title = "Sales"
             };
             CardAction Button6 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "ok you are interested in Female Focused Technology",
                 Type = "postBack",
                 Title = "Female Focused Technology"
             };
@@ -720,37 +1040,43 @@ namespace Bot_Application3
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Product is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Product"
+               
             };
+            
             CardAction Button2 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Design is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Design"
+               
             };
+            
             CardAction Button3 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Development is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Development"
             };
+            
             CardAction Button4 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Marketing is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Marketing"
             };
+            
             CardAction Button5 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Sales is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Sales"
             };
             CardAction Button6 = new CardAction()
             {
-                Value = "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Administration is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Administration"
             };

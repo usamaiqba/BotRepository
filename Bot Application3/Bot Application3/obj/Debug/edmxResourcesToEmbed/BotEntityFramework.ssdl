@@ -1,19 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BotDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="UsersInfo">
+  <EntityType Name="basic_infos">
     <Key>
-      <PropertyRef Name="User_ID" />
+      <PropertyRef Name="user_id" />
     </Key>
-    <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="First_Name" Type="varchar" MaxLength="500" />
-    <Property Name="Last_Name" Type="varchar" MaxLength="500" />
-    <Property Name="User_age" Type="int" />
-    <Property Name="Gender" Type="varchar" MaxLength="500" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="500" />
+    <Property Name="last_name" Type="varchar" MaxLength="500" />
+    <Property Name="age" Type="int" />
+    <Property Name="gender" Type="varchar" MaxLength="500" />
     <Property Name="location" Type="varchar" MaxLength="500" />
-    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="email" Type="varchar" MaxLength="500" />
     <Property Name="status" Type="int" />
   </EntityType>
+  <EntityType Name="educational_infos">
+    <Key>
+      <PropertyRef Name="edu_id" />
+    </Key>
+    <Property Name="edu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uni_name" Type="varchar" MaxLength="50" />
+    <Property Name="pass_year" Type="varchar" MaxLength="50" />
+    <Property Name="degree_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="professional_Infos">
+    <Key>
+      <PropertyRef Name="skill_id" />
+    </Key>
+    <Property Name="skill_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="occupation_type" Type="varchar" MaxLength="50" />
+    <Property Name="company_type" Type="varchar" MaxLength="50" />
+    <Property Name="position_type" Type="varchar" MaxLength="50" />
+    <Property Name="no_of_projects" Type="int" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="project_details">
+    <Key>
+      <PropertyRef Name="pd_id" />
+    </Key>
+    <Property Name="pd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tools" Type="varchar" MaxLength="100" />
+    <Property Name="technologies" Type="varchar" MaxLength="100" />
+    <Property Name="project_id" Type="int" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="skills">
+    <Key>
+      <PropertyRef Name="skill_id" />
+    </Key>
+    <Property Name="skill_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="skill_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_educational_infos_basic_infos">
+    <End Role="basic_infos" Type="Self.basic_infos" Multiplicity="0..1" />
+    <End Role="educational_infos" Type="Self.educational_infos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="educational_infos">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_professional_Infos_basic_infos">
+    <End Role="basic_infos" Type="Self.basic_infos" Multiplicity="0..1" />
+    <End Role="professional_Infos" Type="Self.professional_Infos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="professional_Infos">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_details_projects">
+    <End Role="projects" Type="Self.projects" Multiplicity="0..1" />
+    <End Role="project_details" Type="Self.project_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="project_id" />
+      </Principal>
+      <Dependent Role="project_details">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_projects_basic_infos">
+    <End Role="basic_infos" Type="Self.basic_infos" Multiplicity="0..1" />
+    <End Role="projects" Type="Self.projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="projects">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="BotDatabaseModelStoreContainer">
-    <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="basic_infos" EntityType="Self.basic_infos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="educational_infos" EntityType="Self.educational_infos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="professional_Infos" EntityType="Self.professional_Infos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_details" EntityType="Self.project_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="projects" EntityType="Self.projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="skills" EntityType="Self.skills" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_educational_infos_basic_infos" Association="Self.FK_educational_infos_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="educational_infos" EntitySet="educational_infos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_professional_Infos_basic_infos" Association="Self.FK_professional_Infos_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="professional_Infos" EntitySet="professional_Infos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_details_projects" Association="Self.FK_project_details_projects">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="project_details" EntitySet="project_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_projects_basic_infos" Association="Self.FK_projects_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="projects" EntitySet="projects" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
