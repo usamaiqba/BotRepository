@@ -90,3 +90,10 @@ C:\git\BotRepository\Bot Application3\Bot Application3\obj\Debug\Bot Application
 C:\git\BotRepository\Bot Application3\Bot Application3\obj\Debug\Bot Application3.csprojResolveAssemblyReference.cache
 C:\git\BotRepository\Bot Application3\Bot Application3\obj\Debug\Bot Application1.dll
 C:\git\BotRepository\Bot Application3\Bot Application3\obj\Debug\Bot Application1.pdb
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Bson.dll
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.Core.dll
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.dll
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Bson.xml
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.xml
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.Core.xml

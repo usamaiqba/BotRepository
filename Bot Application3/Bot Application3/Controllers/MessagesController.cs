@@ -17,161 +17,29 @@ using Facebook;
 using System.Threading;
 using System.Reflection;
 using Humanizer;
+using System.Xml.Serialization;
+using System.Web.Script.Serialization;
+using MongoDB.Driver;
+using MongoDB.Bson;
+using System.Xml;
 
 namespace Bot_Application3
 {
 
-    public class clickk : IActionActivity
-    {
 
-        public string title = null;
-        
-
-        public dynamic ChannelData
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-            set
-            {
-                title = value;
-            }
-
-        }
-
-        public string ChannelId
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public ConversationAccount Conversation
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public ChannelAccount From
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string Id
-        {
-            get
-            {
-                return Id;
-            }
-
-            set
-            {
-                Id = Title;
-            }
-        }
-
-        public ChannelAccount Recipient
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string ServiceUrl
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public DateTime? Timestamp
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string Type
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-    
-    };
- 
     [Serializable]
     public class DisplayDialog : IDialog<object> 
     {
-        private ResumeAfter<bool> play;
+       // private ResumeAfter<bool> play;
 
 
         public async Task StartAsync(IDialogContext context)
         {
             await context.PostAsync("That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.");
-            //PromptDialog.Confirm(context, play, "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.");
-         //   context.Wait(MessageReceivedAsync);
+            //  PromptDialog.Confirm(context, play, "That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.");
+           //   context.Wait(MessageReceivedAsync);
 
-            // throw new NotImplementedException();
+ 
         }
 
         //public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
@@ -249,6 +117,7 @@ namespace Bot_Application3
         static string id = null;
         static string occupation = null;
         static int pro_count = 1;
+        static bool wait = true;
 
         
          
@@ -266,6 +135,7 @@ namespace Bot_Application3
               degree = 9,
               projects = 10,
               title = 11,
+              //description = 12,
         };    
         private void asked()
         {
@@ -306,52 +176,56 @@ namespace Bot_Application3
             col.Add("Your profile has been successfully created");//34
             col.Add("I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get started ? ");//35
             col.Add("Project that i have been done so far are");//36
+            col.Add("Which information would you like to update ?");//37
 
 
         }
 
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
-            asked();
-            //var ide = activity.From.Id;
-            //var sum = activity.Summary;
-            //var act = activity.Action;
-            //var con = ActionContext;
+            if (wait == true)
+            {
+                wait = false;
+                asked();
+                ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                await HandleSystemMessage(activity, connector);
+                StateClient stateClient = activity.GetStateClient();
+                BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
+                await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
+                var response = Request.CreateResponse(HttpStatusCode.OK);
+                wait = true;
+                return response;
+            }
+            else
+            {
+                var response = Request.CreateResponse(HttpStatusCode.OK);
+                return response;
+            }
           
-            // IActionActivity act = activity;              
-            ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-            //var ds = con.ControllerContext.Request.Content;
-            //var jsonresponse = await ds.ReadAsFormDataAsync();
-      
-            // var data = JsonConvert.DeserializeObject<LuisResponse>(jsonresponse);
-          //  return data;
-         //   var sto = await ds.ReadAsStringAsync();
-            await HandleSystemMessage(activity, connector);
-            StateClient stateClient = activity.GetStateClient();
-            BotData userData = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
-            BotData userDat = await stateClient.BotState.GetUserDataAsync(activity.ChannelId, activity.From.Id);
-
-            //var conv = activity.Conversation;
-            userData.Data = activity.Properties.Root;
-        //    userDat.Data = activity.Attachments[0].Content;
-
-            //var use = userData.GetProperty<string>("Title");
-            
-            await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
-            var response = Request.CreateResponse(HttpStatusCode.OK);
-            return response;
         }
         
         private async Task<Activity> HandleSystemMessage(Activity activity, ConnectorClient connector)
         {
-            var replymesge = string.Empty;
-            BotData botdata = new BotData();                 
+            var replymesge = string.Empty;              
             Activity reply = new Activity();
             reply = activity.CreateReply();
             if (activity.Type == ActivityTypes.Message)
             {        
                 var phrase = activity.Text;
+                var usr = new BsonDocument();
+                usr["firstname"] = "usama";
+                usr["lastname"] = "iqbal";
+                usr["age"] = "25";
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load("c:\\temp.xml");
+
+                // Insert new user object to collection
+                //users.Insert(user);
+                LuisService.DoSomethingAsync(usr);
+                //LuisService.DoSomethingAsync();
                 var luisresp = await LuisService.ParseUserInput(phrase);
+
             back:
                 if (luisresp.intents.Count() > 0)
                 {                           
@@ -416,6 +290,10 @@ namespace Bot_Application3
                                         replymesge = luisresp.query;
                                         break;
 
+                                    case 11:
+                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(36) + " " + luisresp.query);
+                                        replymesge = luisresp.query;
+                                        break;
                                 }
 
                                 break;
@@ -428,12 +306,23 @@ namespace Bot_Application3
                                 {
                                     case "started":
                                         FacebookServices fbc = new FacebookServices();
-                                        profile = await fbc.GetUser("EAACEdEose0cBADf5XVJZBDeZBNZCj5Cgwe8r6V5wO5LcAai9ZAnRiZBSeRq6ePaZAhfQwvogEP3yVs5dvGeWGXXkQTZBJRBaZBtDo1FMA2E7ongZBsRuSgfXtN9Q6xZCn74tcvucMPawi8wKk64gw5DpYee1QZBCQtGPTSzHRBvSVxl4qh7AZCp763rmEoQw12fV1ScZD");
+                                        profile = await fbc.GetUser("EAACEdEose0cBAGFsn08stFTeDGfiZBipR4wcdrG7ZACBIpAtSVU1sxDH08HxZBdvtlYXm4cTQlNZBIeJXYFxSuUhzIRhIIZBMZBEts0frBJo00nWYe77wn3TTDD5s2krYZBykMpBmjhnfsEQlXGZAyec0Gx2H7aEeikQpGlmahVl2hi31EkoylxjBY0W3ZBdtdvAZD");
                                         if (profile != null)
                                         {
                                             id = profile[0];
                                             data.Add(id);
                                             var result = user.exist_user(profile[0]);
+
+                                            var res = user.find_user_occu(profile[0]);
+                                            //string creditApplicationJson = JsonConvert.SerializeObject(
+                                            //    new
+                                            //    {
+                                            //        jsonCreditApplication = res
+
+                                            //    });
+
+                                            //     var json = new JavaScriptSerializer().Serialize(result);
+                                            var daa = JsonConvert.SerializeObject(res);
                                             string location = profile[5];
                                             string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
                                             profile[5] = loc[0];
@@ -449,7 +338,10 @@ namespace Bot_Application3
                                                 }
                                                 else if (result.status == 2)
                                                 {
-
+                                                    count = 10;
+                                                    counter = 10;
+                                                    str.intent = "projects";
+                                                    goto next;
                                                 }
                                                 else if (result.status == 3)
                                                 {
@@ -463,25 +355,13 @@ namespace Bot_Application3
                                                 Thread.Sleep(1000);
                                                 replymesge = col.ElementAt(33);
                                                 JobOptions(reply);
-                                            
-                                                //   reply.Attachments.ElementAt(0).Content;
-                                              //  var her =(HeroCard)reply.Attachments[0].Content;
-                                               // her.Buttons.
                                             }                                   
                                         }
-
-
-                                        //reply.Text = col.ElementAt(35);
-                                        //await connector.Conversations.ReplyToActivityAsync(reply);
-                                        //Thread.Sleep(1000);
-                                        //replymesge = col.ElementAt(33);
-                                        //JobOptions(reply);
                                         break;
                                     case "position":
                                         JobOptions(reply);
                                         break;
                                     case "profile":
-                                      //  var ata = activity.Attachments.ElementAt(2);
                                         string[] occup = luisresp.query.Split();
                                         occupation = occup[0];
                                         reply.Text = col.ElementAt(0);
@@ -508,12 +388,7 @@ namespace Bot_Application3
                                         await connector.Conversations.ReplyToActivityAsync(reply);
                                         Thread.Sleep(2000);
                                         replymesge = col.ElementAt(9);
-                                        //if ()
-                                        //{
-                                        //    goto next;
-
-                                        //}
-                                        
+                                                                               
                                         break;  
                                     case "details":
                                         replymesge = col.ElementAt(2);
@@ -530,9 +405,8 @@ namespace Bot_Application3
                                         break;
 
                                     case "designer":
-                                        //replymesge = refferedtochoice(id, reply);
                                         string skill = luisresp.query.Substring(23);
-                                        data.Add(luisresp.query.Substring(23));
+                                       // data.Add(luisresp.query.Substring(23));
                                         data.Add((user.get_skill_id(skill)).ToString());
                                         replymesge = col.ElementAt(15);
                                         break;
@@ -542,6 +416,12 @@ namespace Bot_Application3
                                         counter = 7;
                                         replymesge = col.ElementAt(9);
                                         break;
+
+                                    case "update":
+                                        replymesge = col.ElementAt(37);
+                                        update_profile(reply);
+                                        break;     
+
                                 }
                                // count = 1;
                                 break;                         
@@ -575,7 +455,7 @@ namespace Bot_Application3
 
                                     case 6://count&counter is 6
 
-                                     if (counter == 6 && data.Count == 6)     
+                                        if (counter == 6 && data.Count == 6)     
                                         {
                                             check_entity(symb, luisresp);
                                             if (data.Count == 7)
@@ -605,11 +485,17 @@ namespace Bot_Application3
                                         yesorno(reply);
                                         break;
                                         
-                                    case 10:
-                                        check_entity(symb, luisresp);
-                                        if (pro_count > 0 && pro_count <= int.Parse(data.ElementAt(7)))
+                                    case 10: //status 2 
+                                        if (counter == 10 && data.Count >= 6)
                                         {
-                                        //   replymesge = correctSequence(str.intent, replymesge, 16)+" "+ pro_count.ToOrdinalWords() + " project ?"; 
+                                            check_entity(symb, luisresp);
+                                            edu_pro_record();
+                                        }
+                                        var number = user.find_user_occu(id);
+                                        if (pro_count > 0 && pro_count <= number.no_of_projects)
+                                        {
+                                            data.Add(luisresp.query);
+                                            replymesge = correctSequence("projects", replymesge, 16)+" "+ pro_count.ToOrdinalWords() + " project ?"; 
                                         }
                                         else
                                         {
@@ -618,32 +504,39 @@ namespace Bot_Application3
                                         break;
 
                                     case 11:
-
-                                        if (pro_count > 0 && pro_count <= int.Parse(data.ElementAt(7)))
+                                        var num = user.find_user_occu(id);
+                                        if (pro_count > 0 && pro_count <= num.no_of_projects)
                                         {
-                                            check_entity(symb, luisresp);
-                                         //   replymesge = correctSequence(str.intent, replymesge, 17) +" "+ pro_count.ToOrdinalWords() + " project";
+                                            data.Add(luisresp.query);
+                                         //   check_entity(symb, luisresp);
+                                            replymesge = correctSequence("title", replymesge, 17) +" "+ pro_count.ToOrdinalWords() + " project";
                                             pro_count++;
-                                            count--;
-                                            counter--;
+                                            count = count - 2;
+                                            counter = counter - 2;
                                         }
                                         else
                                         {
 
                                         }                                       
                                         break;
+
+                                    case 12:
+                                       // var num = user.find_user_occu(id);
+                                       // if (pro_count > 0 && pro_count <= num.no_of_projects)
+                                        //{
+                                            data.Add(luisresp.query);
+                                            replymesge = correctSequence(str.intent, replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
+                                            pro_count++;
+                                            count--;
+                                            counter--;
+                                        //}
+                                        //else
+                                        //{
+
+                                        //}
+                                        break;
                                 }
                                 break;
-
-                            //case "emailAddress"://6
-                            //    symb = luisresp.entities[0].entity;
-                            //    reply.Text = col.ElementAt(8);
-                            //    await connector.Conversations.ReplyToActivityAsync(reply);
-                            //    replymesge = col.ElementAt(9);
-                            //    flag = 1;
-                            //    counter++;
-                            //    count = 7;
-                            //    break;
 
                         }
                         if (callback == 1)
@@ -666,11 +559,7 @@ namespace Bot_Application3
                     }
                     catch(FacebookApiException ex)
                     {
-                        // replymesge = luisresp.query;
-                      replymesge =   ex.Message.ToString();
-
-                        //   JobOptions(reply);
-                        // replymesge = $"sorry";
+                         replymesge =   ex.Message.ToString();
                     }
                 }
                 else
@@ -768,36 +657,65 @@ namespace Bot_Application3
                 data.Add(symb);
             }
         }
-        public void educational_record()
+        private void edu_pro_record()
         {
-
-            //.st<educational_infos> edu = new List<educational_infos>();
+    
              int cou = data.Count;//10 // 7
              cou = cou - 3; // 10 -3 = 7 // 7-3 = 4 
              cou = (cou - 1)/3;
-            educational_infos[] edu = new educational_infos[cou];
+            
+          
             int j = 1;
-            for (int i = 1; i <= cou; i++)
+            if (cou == 1)
             {
-                edu[i].user_id = data.ElementAt(0);
-                edu[i].uni_name = data.ElementAt(j++);
-                edu[i].pass_year = data.ElementAt(j++);
-                edu[i].degree_name = data.ElementAt(j++);
+                educational_infos ed = new educational_infos();
+                ed.user_id = data.ElementAt(0);
+                ed.uni_name = data.ElementAt(j++);
+                ed.pass_year = data.ElementAt(j++);
+                ed.degree_name = data.ElementAt(j++);
+                user.add_edu_info(ed);
             }
+            else
+            {
+                educational_infos[] edu = new educational_infos[cou];
+                for (int i = 0; i < cou; i++)
+                {
+                    edu[i].user_id = data.ElementAt(0);
+                    edu[i].uni_name = data.ElementAt(j++);
+                    edu[i].pass_year = data.ElementAt(j++);
+                    edu[i].degree_name = data.ElementAt(j++);
+                }
+                user.add_edu_infos(edu);
+            }                                  
             professional_Infos pi = user.find_user_occu(id);
             {
                 pi.company_type = data.ElementAt(j++);
                 pi.position_type = data.ElementAt(j++);
                 pi.no_of_projects = int.Parse(data.ElementAt(j++));                
             };
-            user.add_edu_info(edu);
-            user.upd_pro_info();            
+            user.upd_pro_info();
+
+            basic_infos bi = user.exist_user(data.ElementAt(0));
+            {
+                bi.status = 2;
+            }
+            user.upd_pro_info();
+            data.Clear();
         }
 
         public bool check_status(int call)
         {
+           // XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Post>));
+           
             if (id != null || occupation != null)
             {
+                // Get user collection reference
+                //var users = database.GetCollection("users");
+
+                // Create BsonDocument object for new user
+                
+
+
                 basic_infos ui = new basic_infos()
                 {
                     user_id = data.ElementAt(0),
@@ -809,6 +727,8 @@ namespace Bot_Application3
                     email = data.ElementAt(6),
                     status = 1
                 };
+     
+
                 professional_Infos pi = new professional_Infos()
                 {
                     user_id = data.ElementAt(0),
@@ -912,6 +832,42 @@ namespace Bot_Application3
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
+
+        private void update_profile(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to update your basic details",
+                Type = "postBack",
+                Title = "Basic Info"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to update your educational information",
+                Type = "postBack",
+                Title = "Educational Info",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to update your professional information",
+                Type = "postBack",
+                Title = "Professional Info",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
 
         private void selectdesign(Activity reply)
         {

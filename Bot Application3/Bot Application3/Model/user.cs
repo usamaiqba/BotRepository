@@ -25,7 +25,7 @@ namespace Bot_Application3.Model
             }
         }
 
-        public static void add_edu_info(educational_infos[] edu)
+        public static void add_edu_infos(educational_infos[] edu)
         {           
             foreach (var record in edu)
             {
@@ -43,6 +43,20 @@ namespace Bot_Application3.Model
             }
         }
 
+        public static void add_edu_info(educational_infos ed)
+        {    
+                ac = new BotContext();
+                ac.educational_infos.Add(ed);
+                try
+                {
+                    ac.SaveChanges();
+                    // return true;
+                }
+                catch
+                {
+                    //return false;
+                }            
+        }
 
 
 
@@ -63,9 +77,8 @@ namespace Bot_Application3.Model
 
         public static basic_infos exist_user(string id)
         {
-            ac = new BotContext();
-            // var res = ac.UsersInfoes.Any(x => x.User_ID == id);
-            var query = (from exs in ac.basic_infos
+           // ac = new BotContext();
+            var query = (from exs in ec.basic_infos
                          where exs.user_id == id
                          select exs).SingleOrDefault();
             return query;
