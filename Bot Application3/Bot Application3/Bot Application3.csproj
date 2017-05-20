@@ -198,6 +198,7 @@
     </Compile>
     <Compile Include="Model\FacebookProfile.cs" />
     <Compile Include="Model\LuisResponse.cs" />
+    <Compile Include="Model\MongoUser.cs" />
     <Compile Include="Model\user.cs" />
     <Compile Include="Model\xml.cs" />
     <Compile Include="professional_Infos.cs">

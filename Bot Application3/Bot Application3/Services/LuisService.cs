@@ -8,7 +8,8 @@ using Bot_Application3.Model;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-
+using Newtonsoft.Json.Linq;
+using MongoDB.Bson.Serialization;
 
 namespace Bot_Application3.Services
 {
@@ -49,11 +50,46 @@ namespace Bot_Application3.Services
 
         }
 
-        public static void DoSomethingAsync(BsonDocument user)
+        public static void DoSomethingAsync(string user)
         {
+
+
+            // var collection = db.GetCollection<BsonDocument>("locations");
             var Client = new MongoClient();
-            var MongoDB = Client.GetDatabase("sho");
-            var Collec = MongoDB.GetCollection<BsonDocument>("computers");
+            var MongoDB = Client.GetDatabase("bot");
+            var Collec = MongoDB.GetCollection<BsonDocument>("tests");
+
+            var locations = new List<BsonDocument>();
+            var json = JObject.Parse(user);
+            BsonDocument document = BsonDocument.Parse(user);
+            var bs = BsonSerializer.Deserialize<BsonDocument>(user); //Deserialize JSON String to BSon Document
+            Collec.InsertOneAsync(bs);
+//            var mcollection = Program._database.GetCollection<BsonDocument>("test_collection_05");
+ //           await mcollection.InsertOneAsync(bsdocument); //Insert into mongoDB
+
+            foreach (var j in bs)
+            {
+              //  locations.Add(j);     
+               
+            }
+            
+            
+            //foreach (var d in json["locations"])
+            //{
+
+            //    //  var context = BsonDeserializationContext.CreateRoot(jsonReader);
+            //    //  var document = Collec.DocumentSerializer.Deserialize<BsonDocument>(d);
+            //  //  var document = BsonSerializer.Deserialize<BsonDocument>(user);
+
+            //    //  locations.Add(document);
+
+            //}
+            //  Collec.InsertManyAsync(locations).wait();
+
+
+            //var Client = new MongoClient();
+            //var MongoDB = Client.GetDatabase("bot");
+            //var Collec = MongoDB.GetCollection<BsonDocument>("tests");
             var documnt = new BsonDocument
 {
     {"Brand","Dll"},
@@ -62,8 +98,8 @@ namespace Bot_Application3.Services
     {"HardDisk","78TB"},
     {"Screen","16inch"}
 };
-            Collec.InsertOneAsync(user);
-            Console.ReadLine();
+         //   Collec.InsertOneAsync(bs);
+            //Console.ReadLine();
         }
     }
 }

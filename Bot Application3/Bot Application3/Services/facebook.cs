@@ -26,8 +26,18 @@ namespace Bot_Application3.Services
             var settings = ConfigurationManager.GetSection("facebookSettings");
             if (settings != null)
             {
-              //  var current = settings as MySettings;
-              //  apiKey = current.ApiKey;
+                FacebookClient fc = new FacebookClient();
+                //fc.Get();
+              
+                //.getLoginStatus(function(response) {
+                //    if (response.status === 'connected')
+                //    {
+                //        var accessToken = response.authResponse.accessToken;
+                //    }
+                //} );
+
+                //  var current = settings as MySettings;
+                //  apiKey = current.ApiKey;
             }
 
             // ViewData["ApiKey"] = ConfigurationManager.AppSettings["FBAppSecret"];
@@ -43,10 +53,21 @@ namespace Bot_Application3.Services
             }
             else
             {
+                FacebookClient fb = new FacebookClient();
+              
+              //  code = Request.QueryString["code"].ToString();
+                dynamic result = fb.Get("oauth/access_token", new
+                {
+                    client_id = fb.AppId,
+                    client_secret = fb.AppSecret,
+                    grant_type = "fb_exchange_token",
+                //    fb_exchange_token = accessToken
+                });
+
                 //fb = new MyFB();
                 //fb.ApplicationSecret = appSecret;
                 //fb.ApplicationID = appId;
-                //string accessToken = fb.GetAccessToken(code);
+                //  string accessToken = fb.GetAccessToken(code);
                 //fb.AccessToken = accessToken;
 
                 //ViewData["MyName"] = fb.GetMyName();

@@ -10,6 +10,7 @@ namespace Bot_Application3.Model
 
         private static BotContext ec = new BotContext();
         private static BotContext ac = null;
+
         public static bool add_basic_info(basic_infos ui)
         {
             ac = new BotContext();
@@ -58,8 +59,6 @@ namespace Bot_Application3.Model
                 }            
         }
 
-
-
         public static bool add_prof_info(professional_Infos pi)
         {
             ac = new BotContext();
@@ -84,7 +83,6 @@ namespace Bot_Application3.Model
             return query;
         }
 
-
         public static void upd_pro_info()
         {
                 try
@@ -98,7 +96,6 @@ namespace Bot_Application3.Model
                 }
             
         }
-
 
         public static  professional_Infos find_user_occu(string id)
         {
