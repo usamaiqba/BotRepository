@@ -1,0 +1,192 @@
+
+ <dataset>
+
+        <record>
+			<Serial>1</Serial>
+			<Statements>HTML is what type of language ?</Statements>
+			<Options>A. Scripting Language @ B. Markup Language @ C. Programming Language @ D.Network Protocol</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>2</Serial>
+			<Statements>HTML uses </Statements>
+			<Options>A. User defined tags @ B. Pre-specified tags @ C. Fixed tags defined by the language @ D.Tags only for linking</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>3</Serial>
+			<Statements>The year in which HTML was first proposed _______. </Statements>
+			<Options>A. 1990 @ B.1980 @ C. 2000 @ D. 1990</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>4</Serial>
+			<Statements>Fundamental HTML Block is known as ___________. </Statements>
+			<Options>A. HTML Body @ B. HTML Tag @ C. HTML Attribute @ D.HTML Element</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>5</Serial>
+			<Statements>Apart from &lt;b&gt; tag, what other tag makes text bold ?</Statements>
+			<Options>A. &lt;fat&gt; @ B. &lt;strong&gt; @ C. &lt;black&gt; @ D. &lt;emp&gt;</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		
+		<record>
+			<Serial>6</Serial>
+			<Statements> What is the full form of HTML? </Statements>
+			<Options>A. HyperText Markup Language @ B. Hyper Teach Markup Language @ C. Hyper Tech Markup Language @ D. None of these</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>7</Serial>
+			<Statements>Who is Known as the father of World Wide Web (WWW)?</Statements>
+			<Options>A. Robert Cailliau @ B. Tim Thompson @ C. Charles Darwin @ D. Tim Berners-Lee</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>8</Serial>
+			<Statements>What should be the first tag in any HTML document? </Statements>
+			<Options>A. &lt;head&gt; @ B. &lt;title&gt; @ C. &lt;html&gt; @ D. &lt;document&gt;</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>9</Serial>
+			<Statements>How can you make a bulleted list with numbers? </Statements>
+			<Options>A. &lt;dl&gt; @ B. &lt;ol&gt; @ C. &lt;list&gt; @ D. &lt;ul&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>10</Serial>
+			<Statements>What tag is used to display a picture in a HTML page?</Statements>
+			<Options>A. picture @ B. image @ C. img @ D. src</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+			
+			<record>
+			<Serial>11</Serial>
+			<Statements>HTML web pages can be read and rendered by _________. </Statements>
+			<Options>A. Compiler , B. Server , C. Web Browser , D. Interpreter</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>12</Serial>
+			<Statements>Which of the following is not a browser ? </Statements>
+			<Options>A. Microsofts Bing , B. Netscape Navigator , C. Mozilla Firefox , D. Opera</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>14</Serial>
+			<Statements>HTML tags are surrounded by which type of brackets. </Statements>
+			<Options>A. Curly , B. Round , C. Squart , D. Angle</Options>
+			<Answers>D</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>16</Serial>
+			<Statements>Awebpage displays a picture. What﻿﻿﻿ ﻿﻿tag ﻿﻿﻿﻿﻿was used to display that picture?</Statements>
+			<Options>A. picture , B. image , C.img , D. src</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>19</Serial>
+			<Statements>Which tag inserts a line horizontally on your web page?</Statements>
+			<Options>A. &lt;hr&gt; @ B. &lt;line&gt; @ C. &lt;line direction="horizontal"&gt; @ D. &lt;tr&gt;</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		
+		
+			<record>
+			<Serial>20</Serial>
+			<Statements>What should be the first tag in any HTML document?</Statements>
+			<Options>A. &lt;head&gt; @ B. &lt;title&gt; @ C. &lt;html&gt; @ D. &lt;document&gt;</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>21</Serial>
+			<Statements>Which tag allows you to add a row in a table?</Statements>
+			<Options>A. &lt;td&gt; and &lt;/td&gt; @ B. &lt;cr&gt; and &lt;/cr&gt; @ C. &lt;th&gt; and &lt;/th&gt; @ D. &lt;tr&gt; and &lt;/tr&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>22</Serial>
+			<Statements>How can you make a bulleted list?</Statements>
+			<Options>A. &lt;list&gt; @ B. &lt;nl&gt; @ C. &lt;ul&gt; @ D. &lt;ol&gt;</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>23</Serial>
+			<Statements>How can you make a numbered list?</Statements>
+			<Options>A. &lt;dl&gt; @ B. &lt;ol&gt; @ C. &lt;list&gt; @ D. &lt;ul&gt;</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>24</Serial>
+			<Statements>How can you make an e-mail link?</Statements>
+			<Options>A. &lt;a href="xxx,yyy"&gt; @ B. &lt;mail href="xxx,yyy"&gt; @ C. &lt;mail&gt;xxx,yyy&lt;/mail&gt; @ D. &lt;a href="mailto:xxx,yyy"&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+			<record>
+			<Serial>25</Serial>
+			<Statements>What is the correct HTML for making a hyperlink?</Statements>
+			<Options>A. &lt;a href="http:// mcqsets.com"&gt;ICT Trends Quiz&lt;/a&gt; @ B. &lt;a name="http://mcqsets.com"&gt;ICT Trends Quiz&lt;/a&gt;
+C. &lt;http://mcqsets.com&lt;/a&gt; @ D. url="http://mcqsets.com"&gt;ICT Trends Quiz</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>26</Serial>
+			<Statements>Choose the correct HTML tag to make a text italic</Statements>
+			<Options>A. &lt;ii&gt; @ B. &lt;italics&gt; @ C. &lt;italic&gt; @ D. &lt;i&gt;</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>27</Serial>
+			<Statements>Choose the correct HTML tag to make a text bold?</Statements>
+			<Options>A. &lt;b&gt; @ B. &lt;bold&gt; @ C. &lt;bb&gt; @ D. &lt;bld&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>28</Serial>
+			<Statements>What is the correct HTML for adding a background color?</Statements>
+			<Options>A. &lt;body color="yellow"&gt; @  B. &lt;body bgcolor="yellow"&gt; @ C. &lt;background&gt;yellow&lt;/background&gt; @ D. &lt;body background="yellow"&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>29</Serial>
+			<Statements>Choose the correct HTML tag for the smallest size heading?</Statements>
+			<Options>A. &lt;heading&gt; @ B. &lt;h6&gt; @ C. &lt;h1&gt; @ D. &lt;head&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>30</Serial>
+			<Statements>What is the correct HTML tag for inserting a line break?</Statements>
+			<Options>A. &lt;br&gt; @ B. &lt;lb&gt; @ C. &lt;break&gt; @ D. &lt;newline&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+
+</dataset>

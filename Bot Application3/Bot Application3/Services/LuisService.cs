@@ -28,7 +28,7 @@ namespace Bot_Application3.Services
                 {
                     var jsonresponse = await msg.Content.ReadAsStringAsync();
                     var jsonresp = msg.Content.ToBsonDocument();
-
+                
                     var data = JsonConvert.DeserializeObject<LuisResponse>(jsonresponse);
                     var daa = JsonConvert.SerializeObject(data);
                     BsonDocument bs = new BsonDocument();

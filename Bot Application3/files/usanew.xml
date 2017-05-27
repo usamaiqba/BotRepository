@@ -1,0 +1,967 @@
+
+    <dataset>
+
+		<record>
+			<Serial>1</Serial>
+			<Statements>HTML is what type of language ?</Statements>
+			<Options>Scripting Language,Markup Language,Programming Language,Network Protocol</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>2</Serial>
+			<Statements>HTML uses </Statements>
+			<Options>User defined tags,Pre-specified tags,Fixed tags defined by the language,Tags only for linking</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>3</Serial>
+			<Statements>The year in which HTML was first proposed _______. </Statements>
+			<Options>1990198020001990</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>4</Serial>
+			<Statements>Fundamental HTML Block is known as ___________. </Statements>
+			<Options>HTML Body,HTML Tag,HTML Attribute,HTML Element</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>5</Serial>
+			<Statements>Apart from &lt;b&gt; tag, what other tag makes text bold ?</Statements>
+			<Options>A. &lt;fat&gt; @ B. &lt;strong&gt; @ C. &lt;black&gt; @ D. &lt;emp&gt;</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>6</Serial>
+			<Statements> What is the full form of HTML? </Statements>
+			<Options>A. HyperText Markup Language B. Hyper Teach Markup Language
+C. Hyper Tech Markup Language D. None of these</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>7</Serial>
+			<Statements>Who is Known as the father of World Wide Web (WWW)?</Statements>
+			<Options>A. Robert Cailliau B. Tim Thompson
+C. Charles Darwin D. Tim Berners-Lee</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>8</Serial>
+			<Statements>What should be the first tag in any HTML document? </Statements>
+			<Options>A. &lt;head&gt; B. &lt;title&gt;
+C. &lt;html&gt; D. &lt;document&gt;</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>9</Serial>
+			<Statements>How can you make a bulleted list with numbers? </Statements>
+			<Options>A. &lt;dl&gt; B. &lt;ol&gt;
+C. &lt;list&gt; D. &lt;ul&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>10</Serial>
+			<Statements>What tag is used to display a picture in a HTML page?</Statements>
+			<Options>A. picture B. image
+C. img D. src</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>11</Serial>
+			<Statements>HTML web pages can be read and rendered by _________. </Statements>
+			<Options>A. Compiler B. Server
+C. Web Browser D. Interpreter</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>12</Serial>
+			<Statements>Which of the following is not a browser ? </Statements>
+			<Options>A. Microsofts Bing B. Netscape Navigator
+C. Mozilla Firefox D. Opera</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>13</Serial>
+			<Statements>Which HTML tag produces the biggest heading? </Statements>
+			<Options>A. &lt;h7&gt; B. &lt;h9&gt;
+C. &lt;h4&gt; D. &lt;h1&gt;</Options>
+			<Answers>D</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>14</Serial>
+			<Statements>HTML tags are surrounded by which type of brackets. </Statements>
+			<Options>A. Curly B. Round
+C. Squart D. Angle</Options>
+			<Answers>D</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>15</Serial>
+			<Statements>Tags and test that are not directly displayed on the page are written in _____ section. </Statements>
+			<Options>A. &lt;head&gt; B. &lt;title&gt;
+C. &lt;body&gt; D. &lt;html&gt;</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>16</Serial>
+			<Statements>Awebpage displays a picture. What﻿﻿﻿ ﻿﻿tag ﻿﻿﻿﻿﻿was used to display that picture?</Statements>
+			<Options>a. picture
+b. image
+c.img
+d. src</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>17</Serial>
+			<Statements>&lt;b&gt; tag makes the enclosed text bold. What is other tag to make text bold?</Statements>
+			<Options>a. &lt;strong&gt;
+b. &lt;dar&gt;
+c. &lt;black&gt;
+d. &lt;emp&gt;</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>18</Serial>
+			<Statements>Tags and text that are not directly displayed on the page are written in _____ section.</Statements>
+			<Options>a. &lt;html&gt;
+b. &lt;head&gt;
+c. &lt;title&gt;
+d. &lt;body&gt;</Options>
+			<Answers>B</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>19</Serial>
+			<Statements>Which tag inserts a line horizontally on your web page?</Statements>
+			<Options>a. &lt;hr&gt; b. &lt;line&gt; c. &lt;line direction="horizontal"&gt; d. &lt;tr&gt;</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		
+		
+			<record>
+			<Serial>20</Serial>
+			<Statements>What should be the first tag in any HTML document?</Statements>
+			<Options>a. &lt;head&gt;
+b. &lt;title&gt;
+c. &lt;html&gt;
+d. &lt;document&gt;</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>21</Serial>
+			<Statements>Which tag allows you to add a row in a table?</Statements>
+			<Options>a. &lt;td&gt; and &lt;/td&gt;
+b. &lt;cr&gt; and &lt;/cr&gt;
+c. &lt;th&gt; and &lt;/th&gt;
+d. &lt;tr&gt; and &lt;/tr&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>22</Serial>
+			<Statements>How can you make a bulleted list?</Statements>
+			<Options>a. &lt;list&gt;
+b. &lt;nl&gt;
+c. &lt;ul&gt;
+d. &lt;ol&gt;</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>23</Serial>
+			<Statements>How can you make a numbered list?</Statements>
+			<Options>a. &lt;dl&gt;
+b. &lt;ol&gt;
+c. &lt;list&gt;
+d. &lt;ul&gt;</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>24</Serial>
+			<Statements>How can you make an e-mail link?</Statements>
+			<Options>a. &lt;a href="xxx@yyy"&gt;
+b. &lt;mail href="xxx@yyy"&gt;
+c. &lt;mail&gt;xxx@yyy&lt;/mail&gt;
+d. &lt;a href="mailto:xxx@yyy"&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>25</Serial>
+			<Statements>What is the correct HTML for making a hyperlink?</Statements>
+			<Options>a. &lt;a href="http:// mcqsets.com"&gt;ICT Trends Quiz&lt;/a&gt;
+b. &lt;a name="http://mcqsets.com"&gt;ICT Trends Quiz&lt;/a&gt;
+c. &lt;http://mcqsets.com&lt;/a&gt;
+d. url="http://mcqsets.com"&gt;ICT Trends Quiz</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>26</Serial>
+			<Statements>Choose the correct HTML tag to make a text italic</Statements>
+			<Options>a. &lt;ii&gt;
+b. &lt;italics&gt;
+c. &lt;italic&gt;
+d. &lt;i&gt;</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>27</Serial>
+			<Statements>Choose the correct HTML tag to make a text bold?</Statements>
+			<Options>a. &lt;b&gt;
+b. &lt;bold&gt;
+c. &lt;bb&gt;
+d. &lt;bld&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>28</Serial>
+			<Statements>What is the correct HTML for adding a background color?</Statements>
+			<Options>a. &lt;body color="yellow"&gt;
+b. &lt;body bgcolor="yellow"&gt;
+c. &lt;background&gt;yellow&lt;/background&gt;
+d. &lt;body background="yellow"&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>29</Serial>
+			<Statements>Choose the correct HTML tag for the smallest size heading?</Statements>
+			<Options>a. &lt;heading&gt;
+b. &lt;h6&gt;
+c. &lt;h1&gt;
+d. &lt;head&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>30</Serial>
+			<Statements>What is the correct HTML tag for inserting a line break?</Statements>
+			<Options>a. &lt;br&gt;
+b. &lt;lb&gt;
+c. &lt;break&gt;
+d. &lt;newline&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>31</Serial>
+			<Statements>What doesvlink attribute mean?</Statements>
+			<Options>a. visited link
+b. virtual link
+c. very good link
+d. active link</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>32</Serial>
+			<Statements>Which attribute is used to name an element uniquely?</Statements>
+			<Options>a. class
+b. id
+c. dot
+d. all of above</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>33</Serial>
+			<Statements>Which tag creates a check box for a form in HTML?</Statements>
+			<Options>a. &lt;checkbox&gt;
+b. &lt;input type="checkbox"&gt;
+c. &lt;input=checkbox&gt;
+d. &lt;input checkbox&gt;</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>34</Serial>
+			<Statements>To create a combo box (drop down box) which tag will you use?</Statements>
+			<Options>a. &lt;select&gt;
+b. &lt;list&gt;
+c. &lt;input type="dropdown"&gt;
+d. all of above</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>35</Serial>
+			<Statements>Which of the following is not a pair tag?</Statements>
+			<Options>a. &lt;p&gt;
+b. &lt; u &gt;
+c. &lt;i&gt;
+d. &lt;img&gt;</Options>
+			<Answers>D</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>36</Serial>
+			<Statements>To create HTML document you requirea</Statements>
+			<Options>a. web page editing software
+b. High powered computer
+c. Just a notepad can be used
+d. None of above</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>37</Serial>
+			<Statements>The special formatting codes in HTML document used to present contentare</Statements>
+			<Options>a. tags
+b. attributes
+c. values
+d. None of above</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>38</Serial>
+			<Statements>HTML documents are saved in</Statements>
+			<Options>a. Special binary format
+b. Machine language codes
+c. ASCII text
+d. None of above</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>39</Serial>
+			<Statements>Some tags enclose the text. Those tags are known as</Statements>
+			<Options>a. Couple tags
+b. Single tags
+c. Double tags
+d. Pair tags</Options>
+			<Answers>D</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>40</Serial>
+			<Statements>The _____ character tells browsers to stop tagging the text</Statements>
+			<Options>a. ?
+b. /
+c. &gt;
+d. %</Options>
+			<Answers>B</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>41</Serial>
+			<Statements>In HTML document the tags</Statements>
+			<Options>a. Should be written in upper case
+b. should be written in lower case
+c. should be written in propercase
+d. can be written in both uppercase or lowercase</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>42</Serial>
+			<Statements>Marquee is a tag in HTML to</Statements>
+			<Options>a. mark the list of items to maintaininqueue
+b. Mark the text so that it is hidden in browser
+c. Display text with scrolling effect
+d. None of above</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>43</Serial>
+			<Statements>There are ____ different of heading tags in HTML</Statements>
+			<Options>a. 4
+b. 5
+c. 6
+d. 7</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>44</Serial>
+			<Statements>To create a blank line in your web page</Statements>
+			<Options>a. press Enter two times
+b. press Shift + Enter
+c. insert &lt;BR&gt; tag
+d. insert &lt;BLINE&gt;</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>45</Serial>
+			<Statements>Which of the following is not a style tag?</Statements>
+			<Options>a. &lt;b&gt;
+b. &lt;tt&gt;
+c. &lt;i&gt;
+d. All of above are style tags</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>46</Serial>
+			<Statements>The way the browser displays the object can be modified by _____</Statements>
+			<Options>a. attributes
+b. parameters
+c. modifiers
+d. None of above</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>47</Serial>
+			<Statements>Which of the following HTML code is valid?</Statements>
+			<Options>a. &lt;font colour="red"&gt;
+b. &lt;font color="red"&gt;
+c. &lt;red&gt;&lt;font&gt;
+d. All of above are style tags</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>48</Serial>
+			<Statements>Which of the following is an attribute related to font tag?</Statements>
+			<Options>a. size
+b. face
+c. color
+d. All of above are style tags</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>49</Serial>
+			<Statements>HTML supports</Statements>
+			<Options>a. ordered lists
+b. unordered lists
+c. both type of lists
+d. does not support those types</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>50</Serial>
+			<Statements>What tag is used to list individual items of an ordered list?</Statements>
+			<Options>a. LI
+b. OL
+c. UL
+d. None of above</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>51</Serial>
+			<Statements>When should you use path along with file name of picture in IMG tag?</Statements>
+			<Options>a. path is optional and not necessary
+b. when the location of image file andhtml file are different
+c. when image file and html file both are on same location
+d. path is always necessary when inserting image</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>52</Serial>
+			<Statements>Which of the following is not a valid alignment attribute?</Statements>
+			<Options>a. Left
+b. Right
+c. Top
+d. All of above</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>53</Serial>
+			<Statements>Which attribute is used withimg tag to display the text if image could not load in browser?</Statements>
+			<Options>a. description
+b. name
+c. alt
+d. id
+</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>54</Serial>
+			<Statements>Which attribute can be used with BODY tag to set background color green?</Statements>
+			<Options>a. background="green"
+b. bgcolor="green"
+c. vlink="green"
+d. None of above</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>55</Serial>
+			<Statements>Which attribute you’ll use with TD tag to merge two cells horizontally?</Statements>
+			<Options>a. merge=colspan2
+b. rowspan=2
+c. colspan=2
+d. merge=row2</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>56</Serial>
+			<Statements>Awebpage displays a picture. What tag was used to display that picture?</Statements>
+			<Options>a. picture
+b.mage
+c.img
+d. src</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>57</Serial>
+			<Statements>&lt;b&gt; tag makes the enclosed text bold. What is other tag to make text bold?</Statements>
+			<Options>a. &lt;strong&gt;
+b. &lt;dar&gt;
+c. &lt;black&gt;
+d. &lt;emp&gt;</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>58</Serial>
+			<Statements>Tags and test that are not directly displayed on the page are written in _____ section.</Statements>
+			<Options>a. &lt;html&gt;
+b. &lt;head&gt;
+c. &lt;title&gt;
+d. &lt;body&gt;</Options>
+			<Answers>B</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>59</Serial>
+			<Statements>Which tag inserts a line horizontally on your web page?</Statements>
+			<Options>a. &lt;hr&gt;
+b. &lt;line&gt;
+c. &lt;line direction="horizontal"&gt;
+d. &lt;tr&gt;</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>60</Serial>
+			<Statements>What should be the first tag in any HTML document?</Statements>
+			<Options>a. &lt;head&gt;
+b. &lt;title&gt;
+c. &lt;html&gt;
+d. &lt;document&gt;</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>61</Serial>
+			<Statements>Which tag allows you to add a row in a table?</Statements>
+			<Options>a. &lt;td&gt; and &lt;/td&gt;
+b. &lt;cr&gt; and &lt;/cr&gt;
+c. &lt;th&gt; and &lt;/th&gt;
+d. &lt;tr&gt; and &lt;/tr&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>62</Serial>
+			<Statements>How can you make a bulleted list?</Statements>
+			<Options>a. &lt;list&gt;
+b. &lt;nl&gt;
+c. &lt;ul&gt;
+d. &lt;ol&gt;</Options>
+			<Answers>C</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>63</Serial>
+			<Statements>How can you make a numbered list?</Statements>
+			<Options>a. &lt;dl&gt;
+b. &lt;ol&gt;
+c. &lt;list&gt;
+d. &lt;ul&gt;</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>64</Serial>
+			<Statements>How can you make an e-mail link?</Statements>
+			<Options>a. &lt;a href="xxx@yyy"&gt;
+b. &lt;mail href="xxx@yyy"&gt;
+c. &lt;mail&gt;xxx@yyy&lt;/mail&gt;
+d. &lt;a href="mailto:xxx@yyy"&gt;</Options>
+			<Answers>D</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>65</Serial>
+			<Statements>What is the correct HTML for making a hyperlink?</Statements>
+			<Options>a. &lt;a href="http://mcqsets.com"&gt;MCQ Sets Quiz&lt;/a&gt;
+b. &lt;a name="http://mcqsets.com"&gt;MCQ Sets Quiz&lt;/a&gt;
+c. &lt;http://mcqsets.com&lt;/a&gt;
+d. url="http://mcqsets.com"&gt;MCQ Sets Quiz</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>66</Serial>
+			<Statements>Choose the correct HTML tag to make a text italic</Statements>
+			<Options>a. &lt;ii&gt;
+b. &lt;italics&gt;
+c. &lt;italic&gt;
+d. &lt;i&gt;</Options>
+			<Answers>D</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>67</Serial>
+			<Statements>Choose the correct HTML tag to make a text bold?</Statements>
+			<Options>a. &lt;b&gt;
+b. &lt;bold&gt;
+c. &lt;bb&gt;
+d. &lt;bld&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>68</Serial>
+			<Statements>What is the correct HTML for adding a background color?</Statements>
+			<Options>a. &lt;body color="yellow"&gt;
+b. &lt;body bgcolor="yellow"&gt;
+c. &lt;background&gt;yellow&lt;/background&gt;
+d. &lt;body background="yellow"&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>69</Serial>
+			<Statements>Choose the correct HTML tag for the smallest size heading?</Statements>
+			<Options>a. &lt;heading&gt;
+b. &lt;h6&gt;
+c. &lt;h1&gt;
+d. &lt;head&gt;</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>70</Serial>
+			<Statements>What is the correct HTML tag for inserting a line break?</Statements>
+			<Options>a. &lt;br&gt;
+b. &lt;lb&gt;
+c. &lt;break&gt;
+d. &lt;newline&gt;</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>71</Serial>
+			<Statements>What doesvlink attribute mean?</Statements>
+			<Options>a. visited link
+b. virtual link
+c. very good link
+d. active link</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>72</Serial>
+			<Statements>Which attribute is used to name an element uniquely?</Statements>
+			<Options>a. class
+b. d
+c. dot
+d. all of above</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>73</Serial>
+			<Statements>Which tag creates a check box for a form in HTML?</Statements>
+			<Options>a. &lt;checkbox&gt;
+b. &lt;input type="checkbox"&gt;
+c. &lt;input=checkbox&gt;
+d. &lt;input checkbox&gt;</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>74</Serial>
+			<Statements>To create a combo box (drop down box) which tag will you use?</Statements>
+			<Options>a. &lt;select&gt;
+b. &lt;list&gt;
+c. &lt;input type="dropdown"&gt;
+d. all of above</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>75</Serial>
+			<Statements>Which of the following is not a pair tag?</Statements>
+			<Options>a. &lt;p&gt;
+b. &lt; u &gt;
+c. &lt;i&gt;
+d. &lt;img&gt;</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>76</Serial>
+			<Statements>What is the full form of HTML?</Statements>
+			<Options>a.Hyper text markup language
+b. Hyphenation text markup language
+c. Hyphenation test markinglanguage
+d.Hyper text marking language</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>77</Serial>
+			<Statements>What is the full form of HTTP?</Statements>
+			<Options>a.Hyper text transfer protocol
+b.Hyper text transfer package
+c. Hyphenation text test program
+d. none of the above</Options>
+			<Answers>B</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>78</Serial>
+			<Statements>What is a search engine?</Statements>
+			<Options>a. a program that searches engines
+b. aweb site that searches anything
+c. a hardware component
+d. a machinery engine that search data</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>79</Serial>
+			<Statements>What is the full form of TCP/IP?</Statements>
+			<Options>a. transmission control protocol / internet protocol
+b. telephone call protocol / international protocol
+c. transport control protocol / internet protocol
+d. none of the above</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>80</Serial>
+			<Statements>HTML document start and end with which tag pairs?</Statements>
+			<Options>a. &lt;HEAD&gt;….&lt;/HEAD&gt;
+b. &lt;BODY&gt;….&lt;/BODY&gt;
+c. &lt;HTML&gt;….&lt;/HTML&gt;
+d. &lt;WEB&gt;….&lt;/WEB&gt;</Options>
+			<Answers>D</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>81</Serial>
+			<Statements>Which tag is used to create body text in HTML?</Statements>
+			<Options>a. &lt;HEAD&gt;
+b. &lt;TEXT&gt;
+c. &lt;TITLE&gt;
+d. &lt;BODY&gt;</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>82</Serial>
+			<Statements>"Yahoo", "Infoseek" and "Lycos" are _________?</Statements>
+			<Options>a. Search Engines
+b. Browsers
+c.News groups
+d. None of the above</Options>
+			<Answers>B</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>83</Serial>
+			<Statements>What does the .com domain represents?</Statements>
+			<Options>a. Education domain
+b. Commercial domain
+c. Network
+d. None of the above</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>84</Serial>
+			<Statements>In Satellite based communication, VSAT stands for?</Statements>
+			<Options>a. Very Small Aperture Terminal
+b. Varying Size Aperture Terminal
+c. Very Small Analog Terminal
+d. None of the above</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>85</Serial>
+			<Statements>Outlook Express is a _________</Statements>
+			<Options>a. E-Mail Client
+b. Browser
+c. SearchEngine
+d. None of the above
+</Options>
+			<Answers>A</Answers>
+			<type>HTML</type>
+		</record>
+		<record>
+			<Serial>86</Serial>
+			<Statements>&lt;TITLE&gt; … &lt;/TITLE&gt; tag must be within ________</Statements>
+			<Options>a. Title
+b. Form
+c. Header
+d. Body</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>87</Serial>
+			<Statements>Text within &lt;EM&gt; … &lt;/EM&gt; tag is displayed as ________</Statements>
+			<Options>a. bold
+b. italic
+c. list
+d. indented</Options>
+			<Answers>B</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>88</Serial>
+			<Statements>Text within &lt;STRONG&gt; … &lt;/STRONG&gt; tag is displayed as ________</Statements>
+			<Options>a. bold
+b. italic
+c. list
+d. indented</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>89</Serial>
+			<Statements>&lt;UL&gt; … &lt;/UL&gt; tag is used to ________</Statements>
+			<Options>a. display the numbered list
+b. underline the text
+c. display the bulleted list
+d. bold the text</Options>
+			<Answers>C</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>90</Serial>
+			<Statements>Which tag is used to display the numbered list?</Statements>
+			<Options>a. &lt;OL&gt;&lt;/OL&gt;
+b. &lt;DL&gt;&lt;/DL&gt;
+c. &lt;UL&gt;&lt;/UL&gt;
+d. &lt;LI&gt;&lt;/LI&gt;
+</Options>
+			<Answers>A</Answers>
+			<type>Android</type>
+		</record>
+		<record>
+			<Serial>91</Serial>
+			<Statements>Which tag is used to display the large font size?</Statements>
+			<Options>a. &lt;LARGE&gt;&lt;/LARGE&gt;
+b. &lt;BIG&gt;&lt;/BIG&gt;
+c. &lt; SIZE &gt;&lt;/SIZE&gt;
+d. &lt;FONT&gt;&lt;/FONT&gt;</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>92</Serial>
+			<Statements>&lt;SCRIPT&gt; … &lt;/SCRIPT&gt; tag can be placed within ________</Statements>
+			<Options>a. Header
+b. Body
+c. both A and B
+d. none of the above</Options>
+			<Answers>C</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>93</Serial>
+			<Statements>using &lt;P&gt; tag will</Statements>
+			<Options>a. start a new paragraph
+b. break the line
+c. end the current paragraph
+d. none of the above</Options>
+			<Answers>A</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>94</Serial>
+			<Statements>&lt;TD&gt; … &lt;/TD&gt; tag is used for ________</Statements>
+			<Options>a. Table heading
+b. Table Records
+c. Table row
+d. none of the above</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>95</Serial>
+			<Statements>Which is true to change the text color to red?</Statements>
+			<Options>a. &lt;BODY BGCOLOR=RED&gt;
+b. &lt;BODY TEXT=RED&gt;
+c. &lt;BODY COLOR=RED&gt;
+d. none of the above</Options>
+			<Answers>B</Answers>
+			<type>IOS</type>
+		</record>
+		<record>
+			<Serial>96</Serial>
+			<Statements>With regards to e-mail addresses:</Statements>
+			<Options>a. hey must always contain an @ symbol
+b. hey can never contain spaces
+c. they are case-insensitive
+d. all of the above</Options>
+			<Answers>D</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>97</Serial>
+			<Statements>A homepage is __________</Statements>
+			<Options>a. an index of encyclopedia articles
+b. where all Internet data is stored
+c. required for access to the Internet
+d. the first page of a website</Options>
+			<Answers>D</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>98</Serial>
+			<Statements>Which of the following is used to explore the Internet?</Statements>
+			<Options>a. Browser
+b. Spreadsheet
+c. Clipboard
+d. Draw</Options>
+			<Answers>A</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>99</Serial>
+			<Statements>What is Internet Explorer?</Statements>
+			<Options>a. An Icon,b. A File Manager,c. A Browser,
+d. The Internet</Options>
+			<Answers>C</Answers>
+			<type>PHP</type>
+		</record>
+		<record>
+			<Serial>100</Serial>
+			<Statements>What do I need to get onto the Internet?</Statements>
+			<Options>A. Computer,. Modem,c. Browser,d. All of the above</Options>
+			<Answers>D</Answers>
+			<type>PHP</type>
+		</record>
+	
+</dataset>
