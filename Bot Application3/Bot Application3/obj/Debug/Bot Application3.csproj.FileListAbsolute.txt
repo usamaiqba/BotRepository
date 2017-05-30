@@ -97,3 +97,5 @@ C:\git\BotRepository\Bot Application3\Bot Application3\bin\System.Runtime.Intero
 C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Bson.xml
 C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.xml
 C:\git\BotRepository\Bot Application3\Bot Application3\bin\MongoDB.Driver.Core.xml
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\RestSharp.dll
+C:\git\BotRepository\Bot Application3\Bot Application3\bin\RestSharp.xml

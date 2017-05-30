@@ -4,13 +4,14 @@
     <Key>
       <PropertyRef Name="User_ID" />
     </Key>
-    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="First_Name" Type="varchar" MaxLength="500" />
     <Property Name="Last_Name" Type="varchar" MaxLength="500" />
     <Property Name="User_age" Type="int" />
     <Property Name="Gender" Type="varchar" MaxLength="500" />
     <Property Name="location" Type="varchar" MaxLength="500" />
     <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="status" Type="int" />
   </EntityType>
   <EntityContainer Name="BotDatabaseModelStoreContainer">
     <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />

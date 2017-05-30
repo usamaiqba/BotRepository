@@ -31,12 +31,12 @@ namespace Bot_Application3.Model
             }
         }
 
-        public static void add_edu_infos(List<BsonDocument> multiple)
+        public static void add_edu_infos(List<BsonDocument> multiple,string id)
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "882135325197415");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("educational", new BsonArray(multiple));
             try
             {
@@ -108,12 +108,12 @@ namespace Bot_Application3.Model
         //}
 
 
-        public static void upd_basic_info(int sta)
+        public static void upd_basic_info(int sta , string id)
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "882135325197415");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("basic.status", sta);
 
             try
@@ -127,12 +127,35 @@ namespace Bot_Application3.Model
 
         }
 
-        public static void upd_pro_info(string com,string pos,BsonDocument proj,int sta)
+        public static void upd_test_info(BsonDocument record,int sta ,string id)
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "882135325197415");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
+            if (sta == 1)
+            {
+               
+                var update = Builders<BsonDocument>.Update.Set("test",new BsonArray().Add(record));
+                Collec.UpdateOneAsync(filter, update);
+             
+            }
+            else
+            {
+                var update = Builders<BsonDocument>.Update.Push("test",record);
+                Collec.UpdateOneAsync(filter,update);
+
+            }
+      
+        }
+
+
+        public static void upd_pro_info(string com,string pos,BsonDocument proj,int sta ,string id)
+        {
+            var Client = new MongoClient();
+            var MongoDB = Client.GetDatabase("Botdatabase");
+            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.
                 Set("professional.company_type", com).
                 Set("professional.position_type",pos);
@@ -151,12 +174,12 @@ namespace Bot_Application3.Model
 
         }
 
-        public static void upd_project_info(List<BsonDocument> multiple , int sta)
+        public static void upd_project_info(List<BsonDocument> multiple , int sta ,string id)
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "882135325197415");     
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);     
             var update1 = Builders<BsonDocument>.Update.Set("project.details", multiple);
             var update2 = Builders<BsonDocument>.Update.Set("basic.status", sta);
             try
@@ -171,17 +194,7 @@ namespace Bot_Application3.Model
 
         }
 
-
-
-        public static professional_Infos find_user_occu(string id)
-        {
-            // ac = new BotContext();
-            var query = (from fin in ec.professional_Infos
-                         where fin.user_id == id
-                         select fin).SingleOrDefault();
-            return query;
-        }
-
+            
         public static BsonDocument get_skill_id(string ski)
         {            
             var Client = new MongoClient();
@@ -214,77 +227,17 @@ namespace Bot_Application3.Model
         }
 
 
-        public static BsonValue ret_sel_test()
+        public static BsonValue ret_sel_test(string tech)
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("test");
             var Collec = MongoDB.GetCollection<BsonDocument>("questions");
-            var filter = Builders<BsonDocument>.Filter.Eq("dataset.record.type", "HTML");
+            var filter = Builders<BsonDocument>.Filter.Eq("dataset.record.type", tech);
             var result = Collec.Find(filter).SingleOrDefault().ElementAt(1).Value;
 
             return result;
-
-            //var pos = JsonConvert.DeserializeObject<Testing>(result.ToJson());
-            //var sto = (pos.record.Where(x => x.type == "HTML")).ToArray();
-            ////  var rec = pos.record.ToArray();
-            //var sav = sto[0].Answers;
-            //sav = sto[0].Statements;
-            //var rec = pos.record.ToArray();
-
-            //sav = sto[0].Options;
+          
         }
 
-        public static void DoSomethingAsync(string user)
-        {
-
-
-            // var collection = db.GetCollection<BsonDocument>("locations");
-            var Client = new MongoClient();
-            var MongoDB = Client.GetDatabase("bot");
-            var Collec = MongoDB.GetCollection<BsonDocument>("tests");
-
-            //var locations = new List<BsonDocument>();
-            //var json = JObject.Parse(user);
-            //BsonDocument document = BsonDocument.Parse(user);
-            //var bs = BsonSerializer.Deserialize<BsonDocument>(user); //Deserialize JSON String to BSon Document
-            //Collec.InsertOneAsync(bs);
-            //var mcollection = Program._database.GetCollection<BsonDocument>("test_collection_05");
-            //await mcollection.InsertOneAsync(bsdocument); //Insert into mongoDB
-
-            //foreach (var j in bs)
-            //{
-            //    locations.Add(j);
-
-            //}
-
-
-            //foreach (var d in json["locations"])
-            //{
-
-            //    //  var context = BsonDeserializationContext.CreateRoot(jsonReader);
-            //    //  var document = Collec.DocumentSerializer.Deserialize<BsonDocument>(d);
-            //  //  var document = BsonSerializer.Deserialize<BsonDocument>(user);
-
-            //    //  locations.Add(document);
-
-            //}
-            //  Collec.InsertManyAsync(locations).wait();
-
-
-            //var Client = new MongoClient();
-            //var MongoDB = Client.GetDatabase("bot");
-            //var Collec = MongoDB.GetCollection<BsonDocument>("tests");
-            var documnt = new BsonDocument
-{
-    {"Brand","Dll"},
-    {"Price","40"},
-    {"Ram","89GB"},
-    {"HardDisk","78TB"},
-    {"Screen","16inch"}
-};
-            // Collec.InsertOneAsync(bs);
-            // Console.ReadLine();
-
-        }
     }
 }

@@ -4,13 +4,14 @@
     <EntitySetMapping Name="UsersInfoes">
       <EntityTypeMapping TypeName="BotDatabaseModel.UsersInfo">
         <MappingFragment StoreEntitySet="UsersInfo">
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="location" ColumnName="location" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="User_age" ColumnName="User_age" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="User_age" ColumnName="User_age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -34,4 +34,5 @@ namespace SmbiBotApp.Model
         public int endIndex { get; set; }
         public float score { get; set; }
     }
+
 }

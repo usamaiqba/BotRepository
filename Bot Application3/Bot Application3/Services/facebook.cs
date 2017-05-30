@@ -12,6 +12,9 @@ using System.Configuration;
 using System.Net.Http;
 using System.Dynamic;
 using System.Threading.Tasks;
+using System.IdentityModel.Tokens;
+using RestSharp;
+using Bot_Application3.Model;
 
 namespace Bot_Application3.Services
 {
@@ -143,6 +146,26 @@ namespace Bot_Application3.Services
             return builder.Uri;
         }
 
+        public void getToken()
+        {
+
+            RestSharp.Deserializers.JsonDeserializer deserial = new RestSharp.Deserializers.JsonDeserializer();
+            var client = new RestClient("https://api.us.onelogin.com/auth/oauth2/token");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("content-type", "application/json");
+            request.RequestFormat = DataFormat.Json;
+            request.AddHeader("authorization", "client_id:4ec5566bc4876861d7344ea1a5b5cf8a, client_secret:1d81ecb0410c847acc39583d3d542643");
+            request.AddParameter("application/json", "{\n\"grant_type\":\"client_credentials\"\n}", ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+
+            var returnData = deserial.Deserialize<RootObject>(response);
+            if (returnData.data[0].access_token != null)
+            {
+              var access = returnData.data[0].access_token; //This correctly gets the Access Token. You should return this to a class variable so that all the  other functions can access it easily and you're not constantly passing along the variable through them.
+            }
+        }
+
         public void GetDataFromFB()
         {
 
@@ -153,8 +176,12 @@ namespace Bot_Application3.Services
             fb.AppSecret = app_secret;
             fb.AccessToken = access_token;
 
-               WebClient wc = new WebClient();
-               var res =  wc.DownloadStringTaskAsync("https://graph.facebook.com/v2.8/me/?fields=name,&client_id={client_Id},&app_id={app_Id},&app_secret={app_Secret},&access_token={accessToken}");
+            WebClient wc = new WebClient();
+            wc.Proxy.Credentials = CredentialCache.DefaultNetworkCredentials;
+            var resu = wc.DownloadStringTaskAsync("https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=102667733606511&client_secret=1d81ecb0410c847acc39583d3d542643&fb_exchange_token=EAABdYDHKoG8BAL7PihH15UCgnMlNXyxPyZAFbl7MBS6kbZAgPeFuyhm14qMZAOgHCfB0s4zU1LlKsG43fkeZBkSWtRxds0Odlug01Ak73doGnMrZBaeaDQksZAo2qqZBNRb9WqhZAtMAqlcJXKwpaV2Ul4LJuWlaK3e3TtyOq1xYzD8FIAJRiouK3q9owNDAk8sZD");
+            var resul = wc.DownloadString("https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=102667733606511&client_secret=1d81ecb0410c847acc39583d3d542643&fb_exchange_token=EAABdYDHKoG8BAL7PihH15UCgnMlNXyxPyZAFbl7MBS6kbZAgPeFuyhm14qMZAOgHCfB0s4zU1LlKsG43fkeZBkSWtRxds0Odlug01Ak73doGnMrZBaeaDQksZAo2qqZBNRb9WqhZAtMAqlcJXKwpaV2Ul4LJuWlaK3e3TtyOq1xYzD8FIAJRiouK3q9owNDAk8sZD");
+            
+            var res =  wc.DownloadStringTaskAsync("https://graph.facebook.com/v2.8/me/?fields=name,&client_id={client_Id},&app_id={app_Id},&app_secret={app_Secret},&access_token={accessToken}");
 
             dynamic parameters = new ExpandoObject();
          

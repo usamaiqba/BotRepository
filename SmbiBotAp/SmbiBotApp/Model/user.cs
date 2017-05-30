@@ -30,7 +30,6 @@ namespace SmbiBotApp.Model
         public static UsersInfo Exist_User(string id)
         {
             ac = new BotContext();
-           // var res = ac.UsersInfoes.Any(x => x.User_ID == id);
             var query = (from exs in ac.UsersInfoes
                         where exs.User_ID == id
                         select exs).SingleOrDefault();

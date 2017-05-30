@@ -123,6 +123,7 @@ namespace Bot_Application3
         static bool wait = true;
         static int ques_count = 0;
         static int score = 0;
+        static int flagi = 0;
         public static int repeat = 1;
         List<string> ques = new List<string>();
         List<string> options = new List<string>();
@@ -142,21 +143,21 @@ namespace Bot_Application3
             graduate = 8,
             degree = 9,
             projects = 10,
-            technology = 11,
+            title = 11,
             description = 12,
    
         };
         private void asked()
         {
-            col.Add("That's an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.");
+            col.Add("Before I get matching you to the perfect job. I'll have to first setup your profile.");
             col.Add("This is the information we were able to pull from facebook could you confirm if you would like me to use this information ?");
-            col.Add("Let's get to fixing your details. What's your first name ?");
-            col.Add("And your last name");
-            col.Add("May I ask how old you are ?");
-            col.Add("Are you a guy or a girl ? It's an odd question right");
-            col.Add("Where do you currently live ?");
+            col.Add("What is your firstname ?");
+            col.Add("What is your last name ?");
+            col.Add("How old are you ?");
+            col.Add("Are you a guy or a girl ?");
+            col.Add("Where are you currently living ?");
             col.Add("what is your email address ?");
-            col.Add("Nice to meet you. Now i'm gonna ask you some questions to develop your professional profile.");
+            col.Add("Now that we're acquainted I would like to learn a little about your education and skills.");
             col.Add("What university did you attend ?");//9
             col.Add("When did you graduate ?");//10
             col.Add("What did you study ?");//11
@@ -181,9 +182,9 @@ namespace Bot_Application3
             col.Add("I graduated in");//30
             col.Add("I study");//31
             col.Add("Are you done");//32
-            col.Add("What sort of position are you looking for ?");//33
+            col.Add("What sort of role are you looking for ?");//33
             col.Add("Your profile has been successfully created");//34
-            col.Add("I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get started ? ");//35
+            col.Add(" I'm maaz a chabot developed by folks at PeopleHome to help you find the job right for you !");//35
             col.Add("Project that i have been done so far are");//36
             col.Add("The title of my project is");//37
             col.Add("The description of my project is");//38
@@ -192,7 +193,9 @@ namespace Bot_Application3
             col.Add("Which technology you are intertested ?");//41
             col.Add("Which type of test you would like to give ?"); //42
             col.Add("Now let start the test here is your first question");//43
-            col.Add("Do you want to give any other test ?");
+            col.Add("Do you want to give any other test ?");//44
+            col.Add("Ok thanks for visiting our bot and share your experience");//45
+            col.Add("You have been already given that test");//46
             col.Add("Which information would you like to update ?");//39
 
 
@@ -378,15 +381,25 @@ namespace Bot_Application3
                                     {
                                         entity = entity.Substring(0, 4);
                                     }
+                                    else if (avoid.Contains("thanks"))
+                                    {
+                                        avoid.Add("another");
+                                    }
+                                    else if (avoid.Contains("test"))
+                                    {
+                                        avoid.Remove("test");
+                                    }
                                     switch (entity)
                                     {
                                         case "started":
 
-                                            //facebook fb = new facebook();
-                              
+                                           // facebook fb = new facebook();
+                                           // fb.GetDataFromFB();
                                             //fb.getdatafromfb();
-                                            FacebookServices fbc = new FacebookServices();
-                                            profile = await fbc.GetUser("EAACEdEose0cBAEbrRfEFveWQYtmF4vmY6jGdCpKUbBXN6ONzzkfEomEwvhpm4amRGzlbSoJFwAgOXLenCivlrpKhvKx4Ym6nQQVAESAI5KztJUvdZBiVD2hafjS0ZADc5rJ7OkmVd3i4gTdq3LZBzxvy73kpatEvsvVYd4v2YkVVcHy3vlg0OzdSZC2ThIcZD");
+                                           FacebookServices fbc = new FacebookServices();
+                                           // await fbc.GetFacebookProfileAsync();
+                                           // await fbc.GetToken();
+                                            profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
                                             if (profile != null)
                                             {
                                                 id = profile[0];
@@ -522,16 +535,55 @@ namespace Bot_Application3
                                         //    break;
 
                                         case "test":
-                                            reply.Text = col.ElementAt(43);
-                                            await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(2000);
+                                            // var result = MongoUser.exist_user(id);
+                                            var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
+                                    
+                                            if (usertest.test != null)
+                                            {
+                                                 
+                                                var check = usertest.test.Where(x => x.technology.ToLower() == activity.Text.Substring(22).ToLower()).ToArray();
+                                                if (check.Count() != 0)
+                                                {
+                                                    replymesge = col.ElementAt(46);
+                                                    flagi = 0;
+                                                }
+                                                else
+                                                {
+                                                    data.Add(activity.Text.Substring(22).ToLower());
+                                                    flagi = 2;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                data.Add(activity.Text.Substring(22).ToLower());
+                                                flagi = 1;
+                                            }
+                                            if (flagi != 0)
+                                            {
 
-                                            testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test().ToJson());
-                                            display = (testsretrieved.record.Where(x => x.type == "HTML")).ToArray();
-                                            replymesge = display[0].Statements;
-                                            test(reply, display[0].Options,0);
+                                                reply.Text = col.ElementAt(43);
+                                                await connector.Conversations.ReplyToActivityAsync(reply);
+                                                Thread.Sleep(2000);
+
+                                                testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test(activity.Text.Substring(22).ToLower()).ToJson());
+                                                display = (testsretrieved.record.Where(x => x.type.ToLower() == activity.Text.Substring(22).ToLower())).ToArray();
+                                                replymesge = display[0].Statements;
+                                                test(reply, display[0].Options, 0);
+
+                                            }
+
+
                                             break;
 
+                                        case "another":
+                                            replymesge = col.ElementAt(41);
+                                            choose_tech(reply);
+                                            break;
+
+                                        case "thanks":
+                                            replymesge = col.ElementAt(45);
+                                            break;
+                                        
                                         case "mode":
 
                                             if (ques_count <= display.Count())
@@ -541,15 +593,25 @@ namespace Bot_Application3
                                                 {
                                                     score++;
                                                 }
-                                                replymesge = display[++ques_count].Statements;
-                                                test(reply, display[ques_count].Options,ques_count);
-                                               // await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(1100);
+                                                ++ques_count;
+                                                if (ques_count < display.Count())
+                                                {
+                                                    replymesge = display[ques_count].Statements;
+                                                    test(reply, display[ques_count].Options, ques_count);
+                                                    // await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(1100);
+                                                }
+                                                else
+                                                {
+                                                    //asked for anothet test other wise  test finish
+                                                    data.Add(score.ToString());
+                                                    save_user_test(flagi);
+                                                    replymesge = col.ElementAt(44);
+                                                    test_again(reply);
+
+                                                }
                                             }
-                                            else
-                                            {
-                                                //asked for anothet test other wise  test finish
-                                            }
+                                            
 
                                             break;
 
@@ -694,14 +756,42 @@ namespace Bot_Application3
 
                                             case 12:
 
-                                               reply.Text = col.ElementAt(43);
-                                               await connector.Conversations.ReplyToActivityAsync(reply);
-                                               Thread.Sleep(2000);
-                                               testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test().ToJson());
-                                               display = (testsretrieved.record.Where(x => x.type == "HTML")).ToArray();
-                                               replymesge = display[0].Statements;
-                                               test(reply, display[0].Options , 0);
-                                               break;
+
+                                        replymesge = col.ElementAt(41);
+                                        choose_tech(reply);
+                                        //var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
+                                        //int flagi = 0;
+                                        //if (usertest.test != null)
+                                        //{
+                                        //    var check = usertest.test.Where(x => x.technology.ToLower() == activity.Text.Substring(21).ToLower()).DefaultIfEmpty().ToArray();
+                                        //    if (check != null)
+                                        //    {
+                                        //        replymesge = col.ElementAt(46);
+                                        //        flagi = 0;
+                                        //    }
+                                        //    else
+                                        //    {
+                                        //        flagi = 1;
+                                        //    }
+                                        //}
+                                        //else
+                                        //{
+                                        //    flagi = 1;
+                                        //}
+                                        //if (flagi == 1)
+                                        //{
+
+                                        //    reply.Text = col.ElementAt(43);
+                                        //    await connector.Conversations.ReplyToActivityAsync(reply);
+                                        //    Thread.Sleep(2000);
+
+                                        //    testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test().ToJson());
+                                        //    display = (testsretrieved.record.Where(x => x.type == activity.Text.Substring(21).ToLower())).ToArray();
+                                        //    replymesge = display[0].Statements;
+                                        //    test(reply, display[0].Options, 0);
+
+                                        //}
+                                         break;
                                         }
                                         break;
 
@@ -834,6 +924,23 @@ namespace Bot_Application3
             }
         }
 
+        private void save_user_test(int flagi)
+        {
+            int j = 1;
+            var record = new BsonDocument
+            {
+                { "technology" , data.ElementAt(j++) },
+                { "score"      , data.ElementAt(j++) },
+            };
+
+             MongoUser.upd_test_info(record,flagi,id);
+            //   MongoUser.upd_basic_info(2);
+            data.Clear();
+            data.Add(id);
+        }
+
+
+
         private void pro_details()
         {
 
@@ -853,12 +960,12 @@ namespace Bot_Application3
                 multiple.Add(record);
             }
 
-            MongoUser.upd_project_info(multiple,3);
+            MongoUser.upd_project_info(multiple,3,id);
             //   MongoUser.upd_basic_info(2);
             data.Clear();
             data.Add(id);
         }
-
+        
 
 
         private void edu_pro_record()
@@ -888,8 +995,8 @@ namespace Bot_Application3
                 {"no_of_projects",int.Parse(data.ElementAt(j++)) }
 
             };
-            MongoUser.add_edu_infos(multiple);      
-            MongoUser.upd_pro_info(com , pos , proj , 2);
+            MongoUser.add_edu_infos(multiple , id);      
+            MongoUser.upd_pro_info(com , pos , proj , 2 , id);
          //   MongoUser.upd_basic_info(2);
             data.Clear();
             data.Add(id);
@@ -994,6 +1101,36 @@ namespace Bot_Application3
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
+
+        private void test_again(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "You want to give another language test",
+                Type = "postBack",
+                Title = "Yes"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "OK Thanks for visiting our bot",
+                Type = "postBack",
+                Title = "No",
+            };
+
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
 
         private void yesorno(Activity reply)
         {
@@ -1223,37 +1360,37 @@ namespace Bot_Application3
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "you selected Android test",  //technology
+                Value = "you selected the test Android",  //technology
                 Type = "postBack",
                 Title = "Android"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "you selected IOS test",
+                Value = "you selected the test IOS",
                 Type = "postBack",
                 Title = "IOS"
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "you selected Cross Platform test",
+                Value = "you selected the test Cross Platform",
                 Type = "postBack",
                 Title = "Cross Platform"
             };
             CardAction Button4 = new CardAction()
             {
-                Value = "you selected Python test",
+                Value = "you selected the test Python",
                 Type = "postBack",
                 Title = "Python"
             };
             CardAction Button5 = new CardAction()
             {
-                Value = "you selected PHP test",
+                Value = "you selected the test PHP",
                 Type = "postBack",
                 Title = "PHP"
             };
             CardAction Button6 = new CardAction()
             {
-                Value = "you selected C# test",
+                Value = "you selected the test C#",
                 Type = "postBack",
                 Title = "C#"
             };

@@ -52,5 +52,4 @@ namespace SmbiBotApp.Model
     {
         public string Os { get; set; }
     }
-
 }
