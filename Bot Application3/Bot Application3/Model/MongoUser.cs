@@ -15,9 +15,11 @@ namespace Bot_Application3.Model
         private static BotContext ac = null;
 
         public static bool add_basic_info(BsonDocument info)
-        {        
+        {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+         //   var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+         //   var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
            
             try
@@ -35,6 +37,9 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+//            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+ //           var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("educational", new BsonArray(multiple));
@@ -52,6 +57,10 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+
+//            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+ //           var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             try
             {
@@ -67,6 +76,10 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+
+            //  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            //  var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             try
             {
@@ -80,9 +93,12 @@ namespace Bot_Application3.Model
         }
 
         public static BsonDocument exist_user(string id)
-        {                                                                                                                 
+        {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+            //  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            //  var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
          
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
@@ -112,6 +128,9 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+            //    var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            //    var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("basic.status", sta);
@@ -127,13 +146,18 @@ namespace Bot_Application3.Model
 
         }
 
-        public static void upd_test_info(BsonDocument record,int sta ,string id)
+        public static void upd_test_info(BsonDocument record,int fla ,string id,int sta)
         {
+         
+            
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+            //   var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            //  var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
-            if (sta == 1)
+            if (fla == 1)
             {
                
                 var update = Builders<BsonDocument>.Update.Set("test",new BsonArray().Add(record));
@@ -144,9 +168,10 @@ namespace Bot_Application3.Model
             {
                 var update = Builders<BsonDocument>.Update.Push("test",record);
                 Collec.UpdateOneAsync(filter,update);
-
             }
-      
+
+            var update1 = Builders<BsonDocument>.Update.Set("basic.status", sta);
+            Collec.UpdateOneAsync(filter, update1);
         }
 
 
@@ -154,6 +179,9 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+            //    var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            //    var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.
@@ -178,6 +206,9 @@ namespace Bot_Application3.Model
         {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
+
+//            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+  //          var MongoDB = Client.GetDatabase("peoplehome");
             var Collec = MongoDB.GetCollection<BsonDocument>("users");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);     
             var update1 = Builders<BsonDocument>.Update.Set("project.details", multiple);
@@ -196,11 +227,14 @@ namespace Bot_Application3.Model
 
             
         public static BsonDocument get_skill_id(string ski)
-        {            
+        {
             var Client = new MongoClient();
             var MongoDB = Client.GetDatabase("Botdatabase");
-            var Collec = MongoDB.GetCollection<BsonDocument>("skills");
 
+//            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+  //          var MongoDB = Client.GetDatabase("peoplehome");
+            var Collec = MongoDB.GetCollection<BsonDocument>("skills");
+            
             var filter = Builders<BsonDocument>.Filter.Eq("skill.UXUI","1");
             var result = Collec.Find(filter).SingleOrDefault();
             if (result == null)
@@ -230,6 +264,10 @@ namespace Bot_Application3.Model
         public static BsonValue ret_sel_test(string tech)
         {
             var Client = new MongoClient();
+//            var MongoDB = Client.GetDatabase("Botdatabase");
+
+
+            //        var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("test");
             var Collec = MongoDB.GetCollection<BsonDocument>("questions");
             var filter = Builders<BsonDocument>.Filter.Eq("dataset.record.type", tech);

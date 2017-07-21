@@ -194,7 +194,7 @@ namespace Bot_Application3
             col.Add("Which type of test you would like to give ?"); //42
             col.Add("Now let start the test here is your first question");//43
             col.Add("Do you want to give any other test ?");//44
-            col.Add("Ok thanks for visiting our bot and share your experience");//45
+            col.Add("Ok thanks if you need anything you can always call upon me for the following");//45
             col.Add("You have been already given that test");//46
             col.Add("Which information would you like to update ?");//39
 
@@ -281,8 +281,8 @@ namespace Bot_Application3
 
 
                 var luisresp = await LuisService.ParseUserInput(phrase);
-
-            //  activity.Text.Replace(activity.Text,"text replaced successfully");
+            
+                //  activity.Text.Replace(activity.Text,"text replaced successfully");
             //  activity.RemoveMentionText(activity.Id);
 
             back:
@@ -376,6 +376,7 @@ namespace Bot_Application3
                                 if (!avoid.Contains(entity))
                                 {
                                     repeat = 1;
+                                
                                     avoid.Add(entity);
                                     if (entity.Substring(0, 4) == "mode")
                                     {
@@ -388,6 +389,16 @@ namespace Bot_Application3
                                     else if (avoid.Contains("test"))
                                     {
                                         avoid.Remove("test");
+                                    }
+                                    else if (avoid.Contains("another"))
+                                    {
+                                        int i = 0;
+                                        while (avoid.Contains("mode" + i))
+                                        {
+                                            avoid.Remove("mode" + i);
+                                            i++;
+                                        }
+                                       
                                     }
                                     switch (entity)
                                     {
@@ -425,6 +436,7 @@ namespace Bot_Application3
                                                 if (result != null)
                                                 {
                                                     var res = JsonConvert.DeserializeObject<MongoData>(result.ToJson());
+                                                  
                                                     if (res.basic.status == 1)
                                                     {
                                                         count = 6;
@@ -576,14 +588,22 @@ namespace Bot_Application3
                                             break;
 
                                         case "another":
+                                           
                                             replymesge = col.ElementAt(41);
                                             choose_tech(reply);
                                             break;
 
                                         case "thanks":
                                             replymesge = col.ElementAt(45);
+                                            commands(reply);
                                             break;
-                                        
+
+                                        case "data":
+                                            break;
+
+                                        case "scores":
+                                            break;    
+                                              
                                         case "mode":
 
                                             if (ques_count <= display.Count())
@@ -605,6 +625,11 @@ namespace Bot_Application3
                                                 {
                                                     //asked for anothet test other wise  test finish
                                                     data.Add(score.ToString());
+                                                    reply.Text = "You have completed the" + data[1] + "track.Your results are as follows";
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    reply.Text = "Technology:"+" " + data[1] + "\n\n" + "Score:"+" " + score;
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(1000);
                                                     save_user_test(flagi);
                                                     replymesge = col.ElementAt(44);
                                                     test_again(reply);
@@ -844,6 +869,8 @@ namespace Bot_Application3
             }
             else if (activity.Type == ActivityTypes.ConversationUpdate)
             {
+                wait = true;
+                count = 1;
                 counter = 1;
                 data.Clear();
                 //IConversationUpdateActivity update = activity;
@@ -933,7 +960,7 @@ namespace Bot_Application3
                 { "score"      , data.ElementAt(j++) },
             };
 
-             MongoUser.upd_test_info(record,flagi,id);
+             MongoUser.upd_test_info(record,flagi,id,4);
             //   MongoUser.upd_basic_info(2);
             data.Clear();
             data.Add(id);
@@ -1138,7 +1165,7 @@ namespace Bot_Application3
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "Yes,What sort of company are you interested in working for:",
+                Value = "What sort of company are you interested in working for ?",
                 Type = "postBack",
                 Title = "Yes"
             };
@@ -1151,6 +1178,42 @@ namespace Bot_Application3
 
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void commands(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "your stored data has been displayed",
+                Type = "postBack",
+                Title = "View Profile"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "your stored scores has been displayed",
+                Type = "postBack",
+                Title = "View Test Scores",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "What university did you attend ?",
+                Type = "postBack",
+                Title = "Help",
+            };
+
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons,

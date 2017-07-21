@@ -34,26 +34,26 @@ namespace SmbiBotApp
 {
 
     [Serializable]
-    public class DisplayDialog : IDialog<object>
-    {
-        private ResumeAfter<bool> play;
+    //public class DisplayDialog : IDialog<object>
+    //{
+    //    private ResumeAfter<bool> play;
 
-        public  async Task StartAsync(IDialogContext context)
-        {
-           await context.PostAsync("Are you sure you want to save");
-           // PromptDialog.Confirm(context,play,"create the profile");
-          //  await context.Wait(SendAsync);
-              context.Wait(MessageReceivedAsync);       
-        }
+    //    public  async Task StartAsync(IDialogContext context)
+    //    {
+    //       await context.PostAsync("Are you sure you want to save");
+    //       // PromptDialog.Confirm(context,play,"create the profile");
+    //      //  await context.Wait(SendAsync);
+    //          context.Wait(MessageReceivedAsync);       
+    //    }
 
-        public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
-        {
-            await context.PostAsync("Not correct. Guess again.");
-            PromptDialog.Confirm(context,play,"Yes I did it");
+    //    public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
+    //    {
+    //        await context.PostAsync("Not correct. Guess again.");
+    //        PromptDialog.Confirm(context,play,"Yes I did it");
             
-            // context.Wait(MessageReceivedAsync);          
-        }
-    }
+    //        // context.Wait(MessageReceivedAsync);          
+    //    }
+    //}
 
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -200,10 +200,10 @@ namespace SmbiBotApp
                 ////MongoUser.exist_test();
                 ////  JsonConvert.DeserializeObject<Testing>(MongoUser.exist_test().ToJson());
                 ////   var sr = nb.totalquest.Where(x =>x.type =="HTML");
-                //XmlDocument doc = new XmlDocument();
-                //doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usanew.xml");
-                //string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
-                //                                                     // string json = JsonConvert.SerializeObject(jsonText);
+                XmlDocument doc = new XmlDocument();
+                doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usanew.xml");
+                string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
+                //          // string json = JsonConvert.SerializeObject(jsonText);
 
                 ////write string to file
                 ////  System.IO.File.WriteAllText("C:\\test\\path.json", jsonText);
@@ -493,6 +493,13 @@ namespace SmbiBotApp
 
                                         case "thanks":
                                             replymesge = col.ElementAt(45);
+                                            commands(reply);
+                                            break;
+
+                                        case "data":
+                                            break;
+
+                                        case "scores":
                                             break;
 
                                         case "mode":
@@ -514,6 +521,11 @@ namespace SmbiBotApp
                                                 else
                                                 {
                                                     data.Add(score.ToString());
+                                                    reply.Text = "You have completed the" + data[1] + "track.Your results are as follows";
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    reply.Text = "Technology:" + " " + data[1] + "\n\n" + "Score:" + " " + score;
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(1000);
                                                     save_user_test(flagi);
                                                     replymesge = col.ElementAt(44);
                                                     test_again(reply);
@@ -701,9 +713,51 @@ namespace SmbiBotApp
             }
             else if (activity.Type == ActivityTypes.ConversationUpdate)
             {
+                count = 1;
                 counter = 1;
                 data.Clear();
-               
+
+                //IConversationUpdateActivity update = activity;
+                //using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, activity))
+                //{
+                //    //data.Clear();
+                //    var client = scope.Resolve<IConnectorClient>();
+                //    if (update.MembersAdded.Any())
+                //    {
+                //        var repli = activity.CreateReply();
+                //        //repli.Attachments = new List<Attachment>();
+                //        var newMembers = update.MembersAdded?.Where(t => t.Id != activity.Recipient.Id);
+
+                //        //List<CardAction> cardButtons = new List<CardAction>();
+                //        //CardAction plButton = new CardAction()
+                //        //{
+                //        //    Value = "what sort of position are you looking for ?",
+                //        //    Type = "postBack",
+                //        //    Title = "Get Started"
+                //        //};
+                //        //cardButtons.Add(plButton);
+                //        ////  JobOptions(repli);
+                //        //HeroCard plCard = new HeroCard()
+                //        //{
+                //        //    Buttons = cardButtons
+                //        //};
+                //        //Attachment plAttachment = plCard.ToAttachment();
+                //        //repli.Attachments.Add(plAttachment);
+
+                //        foreach (var newMember in newMembers)
+                //        {
+                //            repli.Text = "Welcome";
+                //            if (!string.IsNullOrEmpty(newMember.Name))
+                //            {
+                //                repli.Text += $" {newMember.Name}";
+                //            }
+                //            repli.Text += "! I'm Maz created by the people at PeopleHome to help you find the job right for you. So let's get-started ?";
+                //            repli.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                //            await connector.Conversations.ReplyToActivityAsync(repli);
+                //        }
+                //    }
+                //}
+
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
@@ -724,7 +778,7 @@ namespace SmbiBotApp
             return null;
         }
 
-        public async Task<Tuple<LuisResponse, string>> CallLuisAgain(LuisResponse luisresp, string reply, int y)
+       private async Task<Tuple<LuisResponse, string>> CallLuisAgain(LuisResponse luisresp, string reply, int y)
         {
             luisresp = await LuisService.ParseUserInput(col.ElementAt(y) + " " + luisresp.query);
             reply = luisresp.query;
@@ -816,7 +870,7 @@ namespace SmbiBotApp
             data.Add(id);
         }
 
-        public bool check_status(int call)
+        private bool check_status(int call)
         {
             if (id != null || occupation != null)
             {
@@ -951,6 +1005,42 @@ namespace SmbiBotApp
 
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void commands(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "your stored data has been displayed",
+                Type = "postBack",
+                Title = "View Profile"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "your stored scores has been displayed",
+                Type = "postBack",
+                Title = "View Test Scores",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "What university did you attend ?",
+                Type = "postBack",
+                Title = "Help",
+            };
+
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons,

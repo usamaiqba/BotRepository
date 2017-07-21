@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="SmbiBotApp20170320112332" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\git\\BotRepository\\SmbiBotAp\\SmbiBotApp\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\git\\BotRepository\\SmbiBotAp\\SmbiBotApp\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="SmbiBotApp20170320112332/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\git\\BotRepository\\SmbiBotAp\\SmbiBotApp\\obj\\Debug\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+</parameters>
