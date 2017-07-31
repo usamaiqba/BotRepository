@@ -65,11 +65,11 @@ namespace SmbiBotApp.Services
             //  string uri =$"https://graph.facebook.com/endpoint?key=value&amp;access_token=102667733606511|1d81ecb0410c847acc39583d3d542643";
             //  string uri = string.Format("https://graph.facebook.com/{0}/{1}/{2}/{3}/name,gender",client_Id,app_id,app_secret,accessToken);
 
-            //   string uri = string.Format("https://graph.facebook.com/v2.8/me/?fields=name,gender,&client_id={0}&client_secret={1}",app_id , app_secret);
+            //  string uri = string.Format("https://graph.facebook.com/v2.8/me/?fields=name,gender,&client_id={0}&client_secret={1}",app_id , app_secret);
 
             //  string uri =$"https://graph.facebook.com/oauth/access_token?&client_id={app_id}&client_secret={app_secret}&fb_exchange_token={accessToken}";
-            //    string uri = $"https://graph.facebook.com/v2.8/197349787419043/?fields=access_token";
-            //            string uri = "https://graph.facebook.com/endpoint?key=value&amp;access_token={0}" + accessToken;
+            //  string uri = $"https://graph.facebook.com/v2.8/197349787419043/?fields=access_token";
+            //  string uri = "https://graph.facebook.com/endpoint?key=value&amp;access_token={0}" + accessToken;
 
             using (var client = new HttpClient())
             {

@@ -22,7 +22,20 @@ namespace Bot_Application3.Services
     {
         public async Task<dynamic> GetUser(string token)
         {
+
+            var fb = new FacebookClient();
+            dynamic result = fb.Get("oauth/access_token", new
+            {
+                client_id = "102667733606511",
+                client_secret = "1d81ecb0410c847acc39583d3d542643",
+                grant_type = "client_credentials"
+            });
+            fb.AccessToken = result.access_token;
+
+
             var client = new FacebookClient();
+         //   client.AppId = "102667733606511";
+         //   client.AppSecret = "1d81ecb0410c847acc39583d3d542643";
             dynamic user = await client.GetTaskAsync("/me",
                 new
                 {

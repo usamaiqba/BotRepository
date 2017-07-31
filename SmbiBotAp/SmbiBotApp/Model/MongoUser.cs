@@ -16,7 +16,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
 
             try
             {
@@ -34,7 +34,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("educational", new BsonArray(multiple));
             try
@@ -51,7 +51,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             try
             {
                 Collec.InsertOneAsync(edu);
@@ -66,7 +66,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             try
             {
                 Collec.InsertOneAsync(prof);
@@ -82,7 +82,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
 
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var result = Collec.Find(filter).SingleOrDefault();
@@ -111,7 +111,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("basic.status", sta);
 
@@ -130,7 +130,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             if (sta == 1)
             {
@@ -153,7 +153,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.
                 Set("professional.company_type", com).
@@ -177,7 +177,7 @@ namespace SmbiBotApp.Model
         {
             var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
             var MongoDB = Client.GetDatabase("peoplehome");
-            var Collec = MongoDB.GetCollection<BsonDocument>("users");
+            var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.Set("project.details", multiple);
             var update2 = Builders<BsonDocument>.Update.Set("basic.status", sta);

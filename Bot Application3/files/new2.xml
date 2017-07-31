@@ -1,0 +1,387 @@
+<?xml version="1.0"?>
+<dataset>
+
+
+-<record>
+    <Serial>31</Serial>
+    <Statements>What doesvlink attribute mean?</Statements>
+    <Options>A. visited link @ B. virtual link @ C. very good link @ D. active link</Options>
+    <Answers>A</Answers>
+    <type>IOS</type>
+</record>
+-<record>
+    <Serial>32</Serial>
+    <Statements>Which attribute is used to name an element uniquely?</Statements>
+    <Options>A. class @ B. id @ C. dot @ D. all of above</Options>
+    <Answers>B</Answers>
+    <type>IOS</type>
+</record>
+
+-<record>
+   <Serial>33</Serial>
+   <Statements>Which tag creates a check box for a form in HTML?</Statements>
+   <Options>a. <checkbox> b. <input type="checkbox"> c. <input=checkbox> d. <input checkbox></Options>
+   <Answers>B</Answers>
+   <type>IOS</type>
+</record>
+
+-<record>
+ <Serial>34</Serial>
+ <Statements>To create a combo box (drop down box) which tag will you use?</Statements>
+ <Options>a. <select> b. <list> c. <input type="dropdown"> d. all of above</Options>
+ <Answers>A</Answers>
+ <type>IOS</type>
+</record>
+
+-<record>
+
+ <Serial>35</Serial>
+ <Statements>Which of the following is not a pair tag?</Statements>
+ <Options>a. <p> b. < u > c. <i> d. <img></Options>
+ <Answers>D</Answers>
+ <type>IOS</type>
+</record>
+
+-<record>
+
+<Serial>36</Serial>
+<Statements>To create HTML document you requirea</Statements>
+<Options>a. web page editing software b. High powered computer c. Just a notepad can be used d. None of above</Options>
+<Answers>C</Answers>
+<type>PHP</type>
+</record>
+
+-<record>
+
+<Serial>37</Serial>
+
+<Statements>The special formatting codes in HTML document used to present contentare</Statements>
+
+<Options>a. tags b. attributes c. values d. None of above</Options>
+
+<Answers>A</Answers>
+
+<type>PHP</type>
+
+</record>
+
+-<record>
+
+<Serial>38</Serial>
+
+<Statements>HTML documents are saved in</Statements>
+
+<Options>a. Special binary format b. Machine language codes c. ASCII text d. None of above</Options>
+
+<Answers>C</Answers>
+
+<type>PHP</type>
+
+</record>
+
+-<record>
+
+<Serial>39</Serial>
+
+<Statements>Some tags enclose the text. Those tags are known as</Statements>
+
+<Options>a. Couple tags b. Single tags c. Double tags d. Pair tags</Options>
+
+<Answers>D</Answers>
+
+<type>PHP</type>
+
+</record>
+
+-<record>
+
+<Serial>40</Serial>
+
+<Statements>The _____ character tells browsers to stop tagging the text</Statements>
+
+<Options>a. ? b. / c. > d. %</Options>
+
+<Answers>B</Answers>
+
+<type>PHP</type>
+
+</record>
+
+-<record>
+
+<Serial>41</Serial>
+
+<Statements>In HTML document the tags</Statements>
+
+<Options>a. Should be written in upper case b. should be written in lower case c. should be written in propercase d. can be written in both uppercase or lowercase</Options>
+
+<Answers>D</Answers>
+
+<type>HTML</type>
+
+</record>
+
+-<record>
+
+<Serial>42</Serial>
+
+<Statements>Marquee is a tag in HTML to</Statements>
+
+<Options>a. mark the list of items to maintaininqueue b. Mark the text so that it is hidden in browser c. Display text with scrolling effect d. None of above</Options>
+
+<Answers>C</Answers>
+
+<type>HTML</type>
+
+</record>
+
+-<record>
+
+<Serial>43</Serial>
+
+<Statements>There are ____ different of heading tags in HTML</Statements>
+
+<Options>a. 4 b. 5 c. 6 d. 7</Options>
+
+<Answers>C</Answers>
+
+<type>HTML</type>
+
+</record>
+
+-<record>
+    <Serial>44</Serial>
+    <Statements>To create a blank line in your web page</Statements>     
+    <Options>a. press Enter two times b. press Shift + Enter c. insert <BR> tag d. insert <BLINE></Options>
+    <Answers>C</Answers>
+    <type>HTML</type>
+</record>
+
+
+
+-<record>
+
+<Serial>45</Serial>
+
+<Statements>Which of the following is not a style tag?</Statements>
+
+<Options>a. <b> b. <tt> c. <i> d. All of above are style tags</Options>
+
+<Answers>D</Answers>
+
+<type>HTML</type>
+
+</record>
+
+
+-<record>
+
+<Serial>46</Serial>
+
+<Statements>The way the browser displays the object can be modified by _____</Statements>
+
+<Options>a. attributes b. parameters c. modifiers d. None of above</Options>
+
+<Answers>A</Answers>
+
+<type>Android</type>
+
+</record>
+
+
+-<record>
+
+<Serial>47</Serial>
+
+<Statements>Which of the following HTML code is valid?</Statements>
+
+<Options>a. <font colour="red"> b. <font color="red"> c. <red><font> d. All of above are style tags</Options>
+
+<Answers>B</Answers>
+
+<type>Android</type>
+
+</record>
+
+
+-<record>
+
+<Serial>48</Serial>
+
+<Statements>Which of the following is an attribute related to font tag?</Statements>
+
+<Options>a. size b. face c. color d. All of above are style tags</Options>
+
+<Answers>D</Answers>
+
+<type>Android</type>
+
+</record>
+
+
+-<record>
+
+<Serial>49</Serial>
+
+<Statements>HTML supports</Statements>
+
+<Options>a. ordered lists b. unordered lists c. both type of lists d. does not support those types</Options>
+
+<Answers>C</Answers>
+
+<type>Android</type>
+
+</record>
+
+
+-<record>
+
+<Serial>50</Serial>
+
+<Statements>What tag is used to list individual items of an ordered list?</Statements>
+
+<Options>a. LI b. OL c. UL d. None of above</Options>
+
+<Answers>A</Answers>
+
+<type>Android</type>
+
+</record>
+
+
+-<record>
+
+<Serial>51</Serial>
+
+<Statements>When should you use path along with file name of picture in IMG tag?</Statements>
+
+<Options>a. path is optional and not necessary b. when the location of image file andhtml file are different c. when image file and html file both are on same location d. path is always necessary when inserting image</Options>
+
+<Answers>B</Answers>
+
+<type>IOS</type>
+
+</record>
+
+
+-<record>
+
+<Serial>52</Serial>
+
+<Statements>Which of the following is not a valid alignment attribute?</Statements>
+
+<Options>a. Left b. Right c. Top d. All of above</Options>
+
+<Answers>C</Answers>
+
+<type>IOS</type>
+
+</record>
+
+
+-<record>
+
+<Serial>53</Serial>
+
+<Statements>Which attribute is used withimg tag to display the text if image could not load in browser?</Statements>
+
+<Options>a. description b. name c. alt d. id </Options>
+
+<Answers>C</Answers>
+
+<type>IOS</type>
+
+</record>
+
+
+-<record>
+
+<Serial>54</Serial>
+
+<Statements>Which attribute can be used with BODY tag to set background color green?</Statements>
+
+<Options>a. background="green" b. bgcolor="green" c. vlink="green" d. None of above</Options>
+
+<Answers>B</Answers>
+
+<type>IOS</type>
+
+</record>
+
+
+-<record>
+
+<Serial>55</Serial>
+
+<Statements>Which attribute you’ll use with TD tag to merge two cells horizontally?</Statements>
+
+<Options>a. merge=colspan2 b. rowspan=2 c. colspan=2 d. merge=row2</Options>
+
+<Answers>C</Answers>
+
+<type>IOS</type>
+
+</record>
+
+
+-<record>
+
+ <Serial>56</Serial>
+ <Statements>Awebpage displays a picture. What tag was used to display that picture?</Statements>
+ <Options>a. picture b.mage c.img d. src</Options>
+ <Answers>C</Answers>
+ <type>PHP</type>
+
+</record>
+
+
+-<record>
+    <Serial>57</Serial>
+    <Statements><b> tag makes the enclosed text bold. What is other tag to make text bold?</Statements>
+    <Options>a. <strong> b. <dar> c. <black> d. <emp></Options>
+    <Answers>A</Answers>
+    <type>PHP</type>
+</record>
+
+
+-<record>
+
+<Serial>58</Serial>
+
+<Statements>Tags and test that are not directly displayed on the page are written in _____ section.</Statements>
+
+<Options>a. <html> b. <head> c. <title> d. <body></Options>
+
+<Answers>B</Answers>
+
+<type>PHP</type>
+
+</record>
+
+
+ -<record>
+
+     <Serial>59</Serial>
+     <Statements>Which tag inserts a line horizontally on your web page?</Statements>
+     <Options>a. <hr> b. <line> c. <line direction="horizontal"> d. <tr></Options>
+     <Answers>A</Answers>
+     <type>PHP</type>
+ </record>
+
+
+-<record>
+     <Serial>60</Serial>
+     <Statements>What should be the first tag in any HTML document?</Statements>
+     <Options>a. <head> b. <title> c. <html> d. <document></Options>
+     <Answers>C</Answers>
+     <type>PHP</type>
+</record>
+
+
+
+
+
+
+
+
+</dataset>
