@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BotDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BotContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="basic_infos" EntityType="BotDatabaseModel.basic_infos" />
+    <EntitySet Name="educational_infos" EntityType="BotDatabaseModel.educational_infos" />
+    <EntitySet Name="professional_Infos" EntityType="BotDatabaseModel.professional_Infos" />
+    <EntitySet Name="project_details" EntityType="BotDatabaseModel.project_details" />
+    <EntitySet Name="projects" EntityType="BotDatabaseModel.project" />
+    <EntitySet Name="skills" EntityType="BotDatabaseModel.skill" />
+    <AssociationSet Name="FK_educational_infos_basic_infos" Association="BotDatabaseModel.FK_educational_infos_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="educational_infos" EntitySet="educational_infos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_professional_Infos_basic_infos" Association="BotDatabaseModel.FK_professional_Infos_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="professional_Infos" EntitySet="professional_Infos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_projects_basic_infos" Association="BotDatabaseModel.FK_projects_basic_infos">
+      <End Role="basic_infos" EntitySet="basic_infos" />
+      <End Role="project" EntitySet="projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_details_projects" Association="BotDatabaseModel.FK_project_details_projects">
+      <End Role="project" EntitySet="projects" />
+      <End Role="project_details" EntitySet="project_details" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="basic_infos">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="educational_infos" Relationship="BotDatabaseModel.FK_educational_infos_basic_infos" FromRole="basic_infos" ToRole="educational_infos" />
+    <NavigationProperty Name="professional_Infos" Relationship="BotDatabaseModel.FK_professional_Infos_basic_infos" FromRole="basic_infos" ToRole="professional_Infos" />
+    <NavigationProperty Name="projects" Relationship="BotDatabaseModel.FK_projects_basic_infos" FromRole="basic_infos" ToRole="project" />
+  </EntityType>
+  <EntityType Name="educational_infos">
+    <Key>
+      <PropertyRef Name="edu_id" />
+    </Key>
+    <Property Name="edu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uni_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pass_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="degree_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="basic_infos" Relationship="BotDatabaseModel.FK_educational_infos_basic_infos" FromRole="educational_infos" ToRole="basic_infos" />
+  </EntityType>
+  <EntityType Name="professional_Infos">
+    <Key>
+      <PropertyRef Name="skill_id" />
+    </Key>
+    <Property Name="skill_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="occupation_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="company_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="position_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="basic_infos" Relationship="BotDatabaseModel.FK_professional_Infos_basic_infos" FromRole="professional_Infos" ToRole="basic_infos" />
+    <Property Name="no_of_projects" Type="Int32" />
+  </EntityType>
+  <EntityType Name="project_details">
+    <Key>
+      <PropertyRef Name="pd_id" />
+    </Key>
+    <Property Name="pd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tools" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="technologies" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="project_id" Type="Int32" />
+    <NavigationProperty Name="project" Relationship="BotDatabaseModel.FK_project_details_projects" FromRole="project_details" ToRole="project" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="basic_infos" Relationship="BotDatabaseModel.FK_projects_basic_infos" FromRole="project" ToRole="basic_infos" />
+    <NavigationProperty Name="project_details" Relationship="BotDatabaseModel.FK_project_details_projects" FromRole="project" ToRole="project_details" />
+  </EntityType>
+  <EntityType Name="skill">
+    <Key>
+      <PropertyRef Name="skill_id" />
+    </Key>
+    <Property Name="skill_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="skill_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_educational_infos_basic_infos">
+    <End Type="BotDatabaseModel.basic_infos" Role="basic_infos" Multiplicity="0..1" />
+    <End Type="BotDatabaseModel.educational_infos" Role="educational_infos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="educational_infos">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_professional_Infos_basic_infos">
+    <End Type="BotDatabaseModel.basic_infos" Role="basic_infos" Multiplicity="0..1" />
+    <End Type="BotDatabaseModel.professional_Infos" Role="professional_Infos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="professional_Infos">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_projects_basic_infos">
+    <End Type="BotDatabaseModel.basic_infos" Role="basic_infos" Multiplicity="0..1" />
+    <End Type="BotDatabaseModel.project" Role="project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="basic_infos">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_details_projects">
+    <End Type="BotDatabaseModel.project" Role="project" Multiplicity="0..1" />
+    <End Type="BotDatabaseModel.project_details" Role="project_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="project_id" />
+      </Principal>
+      <Dependent Role="project_details">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

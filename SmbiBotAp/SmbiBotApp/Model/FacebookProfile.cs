@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 namespace SmbiBotApp.Model
 {
+
     public class FacebookProfile
     {
         public string Name { get; set; }

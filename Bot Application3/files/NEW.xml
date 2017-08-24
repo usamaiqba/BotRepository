@@ -6,48 +6,48 @@
     <Statements>What doesvlink attribute mean?</Statements>
     <Options>A. visited link @ B. virtual link @ C. very good link @ D. active link</Options>
     <Answers>A</Answers>
-    <type>IOS</type>
+    <type>frontend</type>
 </record>
 -<record>
     <Serial>32</Serial>
     <Statements>Which attribute is used to name an element uniquely?</Statements>
     <Options>A. class @ B. id @ C. dot @ D. all of above</Options>
     <Answers>B</Answers>
-    <type>IOS</type>
+    <type>frontend</type>
 </record>
 
 -<record>
    <Serial>33</Serial>
    <Statements>Which tag creates a check box for a form in HTML?</Statements>
-   <Options>a. <checkbox> b. <input type="checkbox"> c. <input=checkbox> d. <input checkbox></Options>
+   <Options>A. <checkbox> @ B. <input type="checkbox"> @ C. <input=checkbox> @ D. <input checkbox></Options>
    <Answers>B</Answers>
-   <type>IOS</type>
+   <type>frontend</type>
 </record>
 
 -<record>
  <Serial>34</Serial>
  <Statements>To create a combo box (drop down box) which tag will you use?</Statements>
- <Options>a. <select> b. <list> c. <input type="dropdown"> d. all of above</Options>
+ <Options>A. <select> @ B. <list> @ C. <input type="dropdown"> @ D. all of above</Options>
  <Answers>A</Answers>
- <type>IOS</type>
+ <type>frontend</type>
 </record>
 
 -<record>
 
  <Serial>35</Serial>
  <Statements>Which of the following is not a pair tag?</Statements>
- <Options>a. <p> b. < u > c. <i> d. <img></Options>
+ <Options>A. <p> @ B. < u > @ C. <i> @ D. <img></Options>
  <Answers>D</Answers>
- <type>IOS</type>
+ <type>frontend</type>
 </record>
 
 -<record>
 
 <Serial>36</Serial>
 <Statements>To create HTML document you requirea</Statements>
-<Options>a. web page editing software b. High powered computer c. Just a notepad can be used d. None of above</Options>
+<Options>A. web page editing software @ B. High powered computer @ C. Just a notepad can be used @ D. None of above</Options>
 <Answers>C</Answers>
-<type>PHP</type>
+<type>backend</type>
 </record>
 
 -<record>
@@ -56,11 +56,11 @@
 
 <Statements>The special formatting codes in HTML document used to present contentare</Statements>
 
-<Options>a. tags b. attributes c. values d. None of above</Options>
+<Options>A. tags @ B. attributes @ C. values @ D. None of above</Options>
 
 <Answers>A</Answers>
 
-<type>PHP</type>
+<type>backend</type>
 
 </record>
 
@@ -70,11 +70,11 @@
 
 <Statements>HTML documents are saved in</Statements>
 
-<Options>a. Special binary format b. Machine language codes c. ASCII text d. None of above</Options>
+<Options>A. Special binary format @ B. Machine language codes @ C. ASCII text @ D. None of above</Options>
 
 <Answers>C</Answers>
 
-<type>PHP</type>
+<type>backend</type>
 
 </record>
 
@@ -84,11 +84,11 @@
 
 <Statements>Some tags enclose the text. Those tags are known as</Statements>
 
-<Options>a. Couple tags b. Single tags c. Double tags d. Pair tags</Options>
+<Options>A. Couple tags @ B. Single tags @ C. Double tags @ D. Pair tags</Options>
 
 <Answers>D</Answers>
 
-<type>PHP</type>
+<type>backend</type>
 
 </record>
 
@@ -98,11 +98,11 @@
 
 <Statements>The _____ character tells browsers to stop tagging the text</Statements>
 
-<Options>a. ? b. / c. > d. %</Options>
+<Options>A. ? @ B. / @ C. > @ D. %</Options>
 
 <Answers>B</Answers>
 
-<type>PHP</type>
+<type>backend</type>
 
 </record>
 
@@ -112,11 +112,11 @@
 
 <Statements>In HTML document the tags</Statements>
 
-<Options>a. Should be written in upper case b. should be written in lower case c. should be written in propercase d. can be written in both uppercase or lowercase</Options>
+<Options>A. Should be written in upper case @ B. should be written in lower case @ C. should be written in propercase @ D. can be written in both uppercase or lowercase</Options>
 
 <Answers>D</Answers>
 
-<type>HTML</type>
+<type>fullstack</type>
 
 </record>
 
@@ -126,11 +126,11 @@
 
 <Statements>Marquee is a tag in HTML to</Statements>
 
-<Options>a. mark the list of items to maintaininqueue b. Mark the text so that it is hidden in browser c. Display text with scrolling effect d. None of above</Options>
+<Options>A. mark the list of items to maintaininqueue @ B. Mark the text so that it is hidden in browser @ C. Display text with scrolling effect @ D. None of above</Options>
 
 <Answers>C</Answers>
 
-<type>HTML</type>
+<type>fullstack</type>
 
 </record>
 
@@ -140,20 +140,20 @@
 
 <Statements>There are ____ different of heading tags in HTML</Statements>
 
-<Options>a. 4 b. 5 c. 6 d. 7</Options>
+<Options>A. 4 @ B. 5 @ C. 6 @ D. 7</Options>
 
 <Answers>C</Answers>
 
-<type>HTML</type>
+<type>fullstack</type>
 
 </record>
 
 -<record>
     <Serial>44</Serial>
     <Statements>To create a blank line in your web page</Statements>     
-    <Options>a. press Enter two times b. press Shift + Enter c. insert <BR> tag d. insert <BLINE></Options>
+    <Options>A. press Enter two times @ B. press Shift + Enter @ C. insert <BR> tag @ D. insert <BLINE></Options>
     <Answers>C</Answers>
-    <type>HTML</type>
+    <type>fullstack</type>
 </record>
 
 
@@ -164,11 +164,11 @@
 
 <Statements>Which of the following is not a style tag?</Statements>
 
-<Options>a. <b> b. <tt> c. <i> d. All of above are style tags</Options>
+<Options>A. <b> @ B. <tt> @ C. <i> @ D. All of above are style tags</Options>
 
 <Answers>D</Answers>
 
-<type>HTML</type>
+<type>fullstack</type>
 
 </record>
 
@@ -179,11 +179,11 @@
 
 <Statements>The way the browser displays the object can be modified by _____</Statements>
 
-<Options>a. attributes b. parameters c. modifiers d. None of above</Options>
+<Options>A. attributes @ B. parameters @ C. modifiers @ D. None of above</Options>
 
 <Answers>A</Answers>
 
-<type>Android</type>
+<type>Python</type>
 
 </record>
 
@@ -194,11 +194,11 @@
 
 <Statements>Which of the following HTML code is valid?</Statements>
 
-<Options>a. <font colour="red"> b. <font color="red"> c. <red><font> d. All of above are style tags</Options>
+<Options>A. <font colour="red"> @ B. <font color="red"> @ C. <red><font> @ D. All of above are style tags</Options>
 
 <Answers>B</Answers>
 
-<type>Android</type>
+<type>python</type>
 
 </record>
 
@@ -209,11 +209,11 @@
 
 <Statements>Which of the following is an attribute related to font tag?</Statements>
 
-<Options>a. size b. face c. color d. All of above are style tags</Options>
+<Options>A. size @ B. face @ C. color @ D. All of above are style tags</Options>
 
 <Answers>D</Answers>
 
-<type>Android</type>
+<type>python</type>
 
 </record>
 
@@ -224,11 +224,11 @@
 
 <Statements>HTML supports</Statements>
 
-<Options>a. ordered lists b. unordered lists c. both type of lists d. does not support those types</Options>
+<Options>A. ordered lists @ B. unordered lists @ C. both type of lists @ D. does not support those types</Options>
 
 <Answers>C</Answers>
 
-<type>Android</type>
+<type>python</type>
 
 </record>
 
@@ -239,11 +239,11 @@
 
 <Statements>What tag is used to list individual items of an ordered list?</Statements>
 
-<Options>a. LI b. OL c. UL d. None of above</Options>
+<Options>A. LI @ B. OL @ C. UL @ D. None of above</Options>
 
 <Answers>A</Answers>
 
-<type>Android</type>
+<type>python</type>
 
 </record>
 
@@ -254,11 +254,11 @@
 
 <Statements>When should you use path along with file name of picture in IMG tag?</Statements>
 
-<Options>a. path is optional and not necessary b. when the location of image file andhtml file are different c. when image file and html file both are on same location d. path is always necessary when inserting image</Options>
+<Options>A. path is optional and not necessary @ B. when the location of image file andhtml file are different @ C. when image file and html file both are on same location @ D. path is always necessary when inserting image</Options>
 
 <Answers>B</Answers>
 
-<type>IOS</type>
+<type>SQL</type>
 
 </record>
 
@@ -269,11 +269,11 @@
 
 <Statements>Which of the following is not a valid alignment attribute?</Statements>
 
-<Options>a. Left b. Right c. Top d. All of above</Options>
+<Options>A. Left @ B. Right @ C. Top @ D. All of above</Options>
 
 <Answers>C</Answers>
 
-<type>IOS</type>
+<type>SQL</type>
 
 </record>
 
@@ -284,11 +284,11 @@
 
 <Statements>Which attribute is used withimg tag to display the text if image could not load in browser?</Statements>
 
-<Options>a. description b. name c. alt d. id </Options>
+<Options>A. description @ B. name @ C. alt @ D. id </Options>
 
 <Answers>C</Answers>
 
-<type>IOS</type>
+<type>SQL</type>
 
 </record>
 
@@ -299,11 +299,11 @@
 
 <Statements>Which attribute can be used with BODY tag to set background color green?</Statements>
 
-<Options>a. background="green" b. bgcolor="green" c. vlink="green" d. None of above</Options>
+<Options>A. background="green" @ B. bgcolor="green" @ C. vlink="green" @ D. None of above</Options>
 
 <Answers>B</Answers>
 
-<type>IOS</type>
+<type>SQL</type>
 
 </record>
 
@@ -314,11 +314,11 @@
 
 <Statements>Which attribute you’ll use with TD tag to merge two cells horizontally?</Statements>
 
-<Options>a. merge=colspan2 b. rowspan=2 c. colspan=2 d. merge=row2</Options>
+<Options>A. merge=colspan2 @ B. rowspan=2 @ C. colspan=2 @ D. merge=row2</Options>
 
 <Answers>C</Answers>
 
-<type>IOS</type>
+<type>SQL</type>
 
 </record>
 
@@ -327,9 +327,9 @@
 
  <Serial>56</Serial>
  <Statements>Awebpage displays a picture. What tag was used to display that picture?</Statements>
- <Options>a. picture b.mage c.img d. src</Options>
+ <Options>A. picture @ B.mage @ C.img @ D. src</Options>
  <Answers>C</Answers>
- <type>PHP</type>
+ <type>git</type>
 
 </record>
 
@@ -337,9 +337,9 @@
 -<record>
     <Serial>57</Serial>
     <Statements><b> tag makes the enclosed text bold. What is other tag to make text bold?</Statements>
-    <Options>a. <strong> b. <dar> c. <black> d. <emp></Options>
+    <Options>A. <strong> @ B. <dar> @ C. <black> @ D. <emp></Options>
     <Answers>A</Answers>
-    <type>PHP</type>
+    <type>git</type>
 </record>
 
 
@@ -349,11 +349,11 @@
 
 <Statements>Tags and test that are not directly displayed on the page are written in _____ section.</Statements>
 
-<Options>a. <html> b. <head> c. <title> d. <body></Options>
+<Options>A. <html> @ B. <head> @ C. <title> @ D. <body></Options>
 
 <Answers>B</Answers>
 
-<type>PHP</type>
+<type>git</type>
 
 </record>
 
@@ -362,16 +362,144 @@
 
      <Serial>59</Serial>
      <Statements>Which tag inserts a line horizontally on your web page?</Statements>
-     <Options>a. <hr> b. <line> c. <line direction="horizontal"> d. <tr></Options>
+     <Options>A. <hr> @ B. <line> @ C. <line direction="horizontal"> @ D. <tr></Options>
      <Answers>A</Answers>
-     <type>PHP</type>
+     <type>git</type>
  </record>
 
 
 -<record>
      <Serial>60</Serial>
      <Statements>What should be the first tag in any HTML document?</Statements>
-     <Options>a. <head> b. <title> c. <html> d. <document></Options>
+     <Options> A. <head> @ B. <title> @ C. <html> @ D. <document></Options>
      <Answers>C</Answers>
-     <type>PHP</type>
+     <type>git</type>
+</record>
+
+-<record>
+
+<Serial>61</Serial>
+
+<Statements>Number of investments in last year?</Statements>
+
+<Options>A. 1 @ B. 2-5 @ C. 5-10 @ D. more than 10</Options>
+
+<Answers>B</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+-<record>
+
+<Serial>62</Serial>
+
+<Statements>How many more investments are you planning to make this year?</Statements>
+
+<Options>A. 1 @ B. 2-5 @ C. 5-10 @ D. more than 10</Options>
+
+<Answers>C</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+-<record>
+
+<Serial>63</Serial>
+
+<Statements>How many years have you been working?</Statements>
+
+<Options>A. 3 @ B. 5 @ C. 10 @ D. more than 10</Options>
+
+<Answers>C</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+-<record>
+
+<Serial>64</Serial>
+
+<Statements>What type of investor are you?</Statements>
+
+<Options>A. Angerl investor @ B. Peer-to-peer lender @ C. Venture Capitalist @ D. Personal investors</Options>
+
+<Answers>B</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+-<record>
+
+<Serial>65</Serial>
+
+<Statements>How old is your fund?</Statements>
+
+<Options>A. 3 years @ B. 5 years @ C. 10 years @ D. 15 years</Options>
+
+<Answers>C</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+-<record>
+
+ <Serial>66</Serial>
+ <Statements>How are decisions made in your partnership?</Statements>
+ <Options>A. Hands-off @ B. hands-on</Options>
+ <Answers>C</Answers>
+ <type>investor</type>
+
+</record>
+
+
+-<record>
+    <Serial>67</Serial>
+    <Statements>What is your investment process, and how long does it take?</Statements>
+    <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+    <Answers>A</Answers>
+    <type>investor</type>
+</record>
+
+
+-<record>
+
+<Serial>68</Serial>
+
+<Statements>What is your check size?</Statements>
+
+<Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+
+<Answers>B</Answers>
+
+<type>investor</type>
+
+</record>
+
+
+ -<record>
+
+     <Serial>69</Serial>
+     <Statements>What is your follow-on strategy?</Statements>
+     <Options>A. To make one-time investment @ B. To make more investments regularly @ C. Schedule routine meetings and decide</Options>
+     <Answers>A</Answers>
+     <type>investor</type>
+ </record>
+
+
+-<record>
+     <Serial>70</Serial>
+     <Statements>How do you help companies you back?</Statements>
+     <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. <document>Help in scaling the business</Options>
+     <Answers>C</Answers>
+     <type>investor</type>
 </record>

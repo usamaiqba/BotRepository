@@ -59,6 +59,9 @@ namespace SmbiBotApp
     public class MessagesController : ApiController
     {
 
+        HttpClient client = new HttpClient();//1
+        public static string userid;//2
+        public static readonly Uri FacebookOauthCallback = new Uri("http://localhost:3979/api/OAuthCallback");//3
         public List<string> col = new List<string>();
         public static List<string> data = new List<string>();
         public static List<string> avoid = new List<string>();
@@ -67,8 +70,10 @@ namespace SmbiBotApp
         static int flag = 0;
         static int counter = 1;
         static int callback = 0;
+        static int des_pro = 0;
         static string id = null;
         static string occupation = null;
+        static string entity = null;
         static int pro_count = 1;
         static bool wait = true;
         static int ques_count = 0;
@@ -106,14 +111,14 @@ namespace SmbiBotApp
             col.Add("What is your last name ?");
             col.Add("How old are you ?");
             col.Add("Are you a guy or a girl ?");
-            col.Add("Where are you currently living ?");
+            col.Add("Where are you currently living (city)?");
             col.Add("what is your email address ?");
             col.Add("Now that we're acquainted I would like to learn a little about your education and skills.");
             col.Add("What university did you attend ?");//9
             col.Add("When did you graduate ?");//10
             col.Add("What did you study ?");//11
             col.Add("Is this the highest level of education you attainted ?");//12
-            col.Add("What sort of company are you interested in working for:");//13
+            col.Add("What sort of company are you interested in for investment ?");//13
             col.Add("What sort of designer are you ?");//14
             col.Add("How many projects or products you have worked on ?");//15
             col.Add("what is the title of your");//16
@@ -122,7 +127,7 @@ namespace SmbiBotApp
             col.Add("What web development languages are you familiar with : (select all those that apply)");//19
             col.Add("Describe the project or role you were most proud of ? What sort did you do in your capcity and what were the outcomes / achievements ? ");
             col.Add("Is there any other project, product , or work experience. You would like to share with us ?");
-            col.Add("what sort of developer are you ?");//22
+            col.Add("what sort of marketer are you ?");//22
             col.Add("my first name is");//13//23
             col.Add("my last name is");//14//24
             col.Add("my age is");//15//25
@@ -158,7 +163,34 @@ namespace SmbiBotApp
             col.Add("Demonstrate your understanding of the most important security concerns when developing websites and what can be done to keep servers,software and data safe from harm");//55
             col.Add("Show your understanding of the workflow that makes it easier to build websites,track share project files and leverage code libraries");//56
             col.Add("Demonstrate your knowledge of the frontend and backend framework libraries to unlock more oppertunities");//57
+            col.Add("Demonstrate your ability to apply design principles to your site to make it behave in ways that users want and expect");//58 
+            col.Add("Demonstrate your ability to integrate accessibility into the design process to make your projects more accessible to all people");//59
+            col.Add("Demonstrate your understanding of the concepts behind responsive design, covering concepts of density, fluid grids, images, as well as design strategies that guide the project");//60
+            col.Add("Show your understanding and ability to utilize the most common frontend frameworks and tools (Bootstrap 3, React.js, Sass)"); //61
+            col.Add("Demonstrate your skills in basics of Object-Oriented programming from abstraction and inheritance to your ability to use cases and create a conceptual modesl for your application");//62
+            col.Add("Explain your understanding of Java SE, in which, counting a few, fancy mobile apps, desktop, web applications are built");//63
+            col.Add("Show how you cater with common Java challenges that occur during the development process.");//64
+            col.Add("Demonstrate your knowledge of the 7 object oriented design patters (singleton, observer, decorator, factor) that emblish your development skills.");//65
+            col.Add("Demonstrate your ability to use Java to its fullest through platform and framework  agonistic code");//66
+            col.Add("Demonstrate how well can you read and manage data from relational databases such as MySQL and SQL Server using the Java Database Connectivity (JDBC) API in applications programmed with Java");//67
+            col.Add("You will be tested on online marketing techniques specifically on how to build a successful online marketing campaign for all digital, channels: search, video, social, email, and display");//68
+            col.Add("Prove your understanding of the foundational concepts of search engine optimization from keyword planning, content optimization, link building, for ecommerce, local search, and mobile audiences");//69
+            col.Add("You will be tested on your knowledge of using google analytics to measure website performance, traffic, advert performance, and social media activity");//70
+            col.Add("Demonstrate your ability in developing, implementing, and measuring a successful content marketing strategy");//71
+            col.Add("Demonstrate your knowledge of ensuring marketing campaigns keep up with pace of mobile, having your website and emails optimized for mobile visitors, launching SMS campaigns, advertising on mobile, and much more");//72
+            col.Add("You will be tested on your knowledge of starting a lead generation program and converting prospects into loyal customers");//73
+            col.Add("Demonstrate your understanding of growth hacking techniques that can quickly expand your customer base using low cost methods");//74
+            col.Add("You will be tested on your abilities to integrate all the moving parts – email, social, media, search into a successful message of your brand");//75
+            col.Add("Demonstrate your understanding of basic sales skills used to develop professionally and build more successful relationships");//76
+            col.Add("Have your listening skills and behavior evaluated");//77
+            col.Add("Demonstrate your ability to interact with others by being assertive");//78
+            col.Add("Demonstrate your ability to bounce back from difficult situations");//79
+            col.Add("Demonstrate your understanding of the essential steps that underlie ever sales process and their implementation into a workflow");//80
+            col.Add("Show your ability to ask sales questions that lead to high quality interactions with customers and clients");//81
+            col.Add("Demonstrate your ability of managing the relationship between your brand, product/service, price");//82
+            col.Add("Demonstrate your understanding of negotiating deals that stick");//83
 
+            col.Add("Now start the questions");//62
 
             
             ques.Add("HTML is what type of language");
@@ -205,23 +237,23 @@ namespace SmbiBotApp
             if (activity.Type == ActivityTypes.Message)
             {
                 var phrase = activity.Text;
-               // reply.Text = activity.From.Id;
-               // await connector.Conversations.ReplyToActivityAsync(reply);
+                    // reply.Text = activity.From.Id;
+                    // await connector.Conversations.ReplyToActivityAsync(reply);
 
-                  //1 XmlDocument doc = new XmlDocument();
-                  //2 doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usama3.xml");
-                  //3 string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
-                    //          // string json = JsonConvert.SerializeObject(jsonText);
+                    //XmlDocument doc = new XmlDocument();
+                    //doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usama3.xml");
+                    //string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
+                    // //          // string json = JsonConvert.SerializeObject(jsonText);
 
-                    ////write string to file
-                    ////  System.IO.File.WriteAllText("C:\\test\\path.json", jsonText);
-                   //4 var bson = BsonSerializer.Deserialize<BsonDocument>(jsonText); //Deserialize JSON String to BSon Document
+                    // ////write string to file
+                    // ////  System.IO.File.WriteAllText("C:\\test\\path.json", jsonText);
+                    //var bson = BsonSerializer.Deserialize<BsonDocument>(jsonText); //Deserialize JSON String to BSon Document
 
-                  //5  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-                  //6  var MongoDB = Client.GetDatabase("peoplehome");
-                  //7  var Collec = MongoDB.GetCollection<BsonDocument>("questions");
-                  //8  await Collec.InsertOneAsync(bson);
-                    ////var pro = new BsonDocument
+                    //var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+                    //var MongoDB = Client.GetDatabase("talenthome");
+                    //var Collec = MongoDB.GetCollection<BsonDocument>("questions");
+                    //await Collec.InsertOneAsync(bson);
+                    // ////var pro = new BsonDocument
                     ////  {
                     ////      {"totalquest" , new BsonArray().Add(bson) }
                     // // };
@@ -239,7 +271,14 @@ namespace SmbiBotApp
 
 
                     var luisresp = await LuisService.ParseUserInput(phrase);
-            back:
+
+                    while (luisresp == null)
+                    {
+                        luisresp = await LuisService.ParseUserInput(phrase);
+                    }
+
+
+                back:
 
                 if (luisresp.intents.Count() > 0)
                 {
@@ -251,76 +290,117 @@ namespace SmbiBotApp
                         switch (str.intent)
                         {
                             case "None":
-                                callback = 1;
-                                switch (count)
-                                {
-                                    case 1:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(23) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
 
-                                    case 2:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(24) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                var validation_result = new Tuple<bool, string>(true, "");//4
+                              //  validation_result = input_validation(activity.Text, count);//5
+                                    if (validation_result.Item1)//6
+                                    {
 
-                                    case 3:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(25) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                        callback = 1;
+                                        switch (count)
+                                        {
+                                            case 1:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(23) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 4:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(26) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 2:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(24) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 5:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(27) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 3:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(25) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 6:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(28) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 4:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(26) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 7:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(29) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 5:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(27) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 8:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(30) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 6:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(28) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 9:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(31) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 7:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(29) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 10:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(36) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 8:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(30) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 11:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(37) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
+                                            case 9:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(31) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                    case 12:
-                                        luisresp = await LuisService.ParseUserInput(col.ElementAt(38) + " " + luisresp.query);
-                                        replymesge = luisresp.query;
-                                        break;
-                                }
+                                            case 10:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(36) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
 
-                                break;
+                                            case 11:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(37) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
+
+                                            case 12:
+                                                luisresp = await LuisService.ParseUserInput(col.ElementAt(38) + " " + luisresp.query);
+                                                replymesge = luisresp.query;
+                                                break;
+                                        }
+                                    }
+                                    else//7
+                                    {
+                                        switch (count)
+                                        {
+                                            case 1:
+                                            case 2:
+                                            case 4:
+                                            case 5:
+                                            case 7:
+                                            case 9:
+                                                replymesge = col.ElementAt(48) + " using alphabets only..." + "\n" + validation_result.Item2;
+                                                break;
+                                            case 3:
+                                            case 8:
+                                            case 10:
+                                                replymesge = col.ElementAt(48) + " using numbers only..." + "\n" + validation_result.Item2;
+                                                break;
+                                            case 6:
+                                                replymesge = col.ElementAt(48) + " e.g. example@smbi.ca " + "\n" + validation_result.Item2;
+                                                break;
+
+                                            default:
+                                                replymesge = col.ElementAt(48) + "\n" + validation_result.Item2;
+                                                break;
+                                        }
+                                    }
+                                    break;
 
                             case "questions":
                                 callback = 0;
                                 replymesge = luisresp.query;
-                                var entity = luisresp.entities[0].entity.ToLower();
+                                    if (luisresp.entities.Length == 0)
+                                    {
+                                        entity = luisresp.query;
+                                    }
+                                    else
+                                    {
+                                        entity = luisresp.entities[0].entity.ToLower();
+                                    }   
+
+                                   
                                 if (!avoid.Contains(entity))
                                 {
                                     repeat = 1;
@@ -332,31 +412,90 @@ namespace SmbiBotApp
                                     {
                                         avoid.Add(entity);
                                     }
-                                    if (entity.Substring(0, 4) == "mode")
-                                    {
-                                        entity = entity.Substring(0, 4);
-                                    }
-                                    else if (entity.Substring(0, 4) == "modu")
-                                    {
-                                        entity = entity.Substring(0, 6);
-                                    }
-                                    else if (avoid.Contains("thanks"))
-                                    {
-                                        avoid.Add("another");
-                                    }
-                                    else if (avoid.Contains("test"))
-                                    {
-                                        avoid.Remove("test");
-                                    }
+                                        if (entity.Substring(0, 4) == "mode")
+                                        {
+                                            entity = entity.Substring(0, 4);
+                                        }
+                                        else if (entity.Substring(0, 4) == "modu")
+                                        {
+                                            entity = entity.Substring(0, 6);
+                                        }
+                                        else if (entity.Substring(0, 4) == "deve")
+                                        {
+                                            entity = entity.Substring(0, 9);
+                                        }
+                                        else if (entity.Substring(0, 4) == "mark")
+                                        {
+                                            entity = entity.Substring(0, 8);
+                                        }
+                                        else if (avoid.Contains("thanks"))
+                                        {
+                                            avoid.Add("another");
+                                        }
+                                        else if (avoid.Contains("test"))
+                                        {
+                                            avoid.Remove("test");
+                                        }
+                                        else if (avoid.Contains("another"))
+                                        {
+                                            int i = 0;
+                                            while (avoid.Contains("mode" + i))
+                                            {
+                                                avoid.Remove("mode" + i);
+                                                i++;
+                                            }
+
+                                        }
+                                                   
                                     switch (entity)
                                     {
                                         case "started":
+                                                //var conversationReference = Microsoft.Bot.Builder.ConnectorEx.Extensions.ToConversationReference(activity);
+                                                //var fbLoginUrl = FacebookHelpers.GetFacebookLoginURL(conversationReference, FacebookOauthCallback.ToString());
+                                                //reply.Text = "Please login in using this card";
+                                                //reply.Attachments = new List<Attachment>();
+                                                //List<CardAction> cardbuttons = new List<CardAction>();
+                                                //CardAction button = new CardAction()
+                                                //{
+                                                //    Title = "Login",
+                                                //    Type = "openUrl",
 
+                                                //    Value = fbLoginUrl,
+
+                                                //};
+                                                ////.Attachments.Add(SigninCard.Create("You need to authorize me",
+                                                ////                                       "Login to Facebook!",
+                                                ////                                      fbLoginUrl
+                                                ////                                     ).ToAttachment());
+                                                //cardbuttons.Add(button);
+                                                //SigninCard signin = new SigninCard()
+                                                //{
+                                                //    Buttons = cardbuttons,
+                                                //};
+                                                //Attachment jobattachment = signin.ToAttachment();
+                                                //reply.Attachments.Add(jobattachment);
+                                                //reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                                                //await connector.Conversations.ReplyToActivityAsync(reply);
+                                                //while (userid == null)
+                                                //{ }
+                                            des_pro = 0;
+                                            data.Clear();
+                                            avoid.Clear();
+                                            count = 1;
+                                            counter = 1;
+                                            pro_count = 1;
+                                            reply.Text = "Bot is retrieving information" + "\n\n";
+                                            await connector.Conversations.ReplyToActivityAsync(reply);
                                             FacebookServices fbc = new FacebookServices();
                                             profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
 
                                             if (profile != null)
                                             {
+                                                //data.Clear();
+                                                //avoid.Clear();
+                                                //count = 1;
+                                                //counter = 1;
+                                                //pro_count = 1;    
                                                 id = profile[0];
                                                 data.Add(id);
                                                 var result = MongoUser.exist_user(profile[0]);
@@ -368,6 +507,7 @@ namespace SmbiBotApp
                                                     var res = JsonConvert.DeserializeObject<MongoData>(result.ToJson());
                                                     if (res.basic.status == 1)
                                                     {
+                                                        des_pro = 1;
                                                         count = 6;
                                                         counter = 6;
                                                         str.intent = "emailAddress";
@@ -375,6 +515,7 @@ namespace SmbiBotApp
                                                     }
                                                     else if (res.basic.status == 2)
                                                     {
+                                                        des_pro = 1;
                                                         count = 10;
                                                         counter = 10;
                                                         str.intent = "projects";
@@ -382,6 +523,7 @@ namespace SmbiBotApp
                                                     }
                                                     else if (res.basic.status == 3)
                                                     {
+                                                        des_pro = 2;
                                                         count = 12;
                                                         counter = 12;
                                                         str.intent = "test";
@@ -389,7 +531,7 @@ namespace SmbiBotApp
                                                     }
                                                     else if (res.basic.status == 4)
                                                     {
-
+                                                        des_pro = 1;
                                                         count = 13;
                                                         counter = 13;
                                                         str.intent = "viewProfile";
@@ -423,8 +565,10 @@ namespace SmbiBotApp
                                             Thread.Sleep(1100);
                                             replymesge = col.ElementAt(1);
                                             infoConfirm(reply);
+                                            des_pro = 0;
                                             break;
                                         case "basic":
+                                            des_pro = 1;
                                             count = 7;
                                             counter = 7;
                                             data.Clear();
@@ -441,6 +585,7 @@ namespace SmbiBotApp
 
                                             break;
                                         case "details":
+                                            des_pro = 1;
                                             replymesge = col.ElementAt(2);
                                             count = 1;
                                             break;
@@ -465,12 +610,18 @@ namespace SmbiBotApp
 
                                         case "developer":
                                             replymesge = col.ElementAt(49);
-                                            select_modules(reply);
+                                            development_types(reply,luisresp);
                                             break;
 
+                                        case "marketer":
+                                             replymesge = col.ElementAt(49);
+                                             marketing_types(reply, luisresp);
+                                             break;
+
                                         case "module":
-                                             entity = luisresp.entities[0].entity.ToLower();
-                                             replymesge = check_module(entity, replymesge, reply);
+                                            //entity = luisresp.entities[0].entity.ToLower();
+                                             replymesge = module_types(reply, luisresp, replymesge);
+                                            // replymesge = check_module(entity, replymesge, reply);
                                              break;
 
 
@@ -486,7 +637,7 @@ namespace SmbiBotApp
                                             break;
 
                                         case "test":
-
+                                            des_pro = 0;
                                             var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
                                             if (usertest.test != null)
                                             {
@@ -510,9 +661,9 @@ namespace SmbiBotApp
                                             if (flagi != 0)
                                             {
 
-                                                reply.Text = col.ElementAt(43);
-                                                await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
+                                              //  reply.Text = col.ElementAt(43);
+                                              //  await connector.Conversations.ReplyToActivityAsync(reply);
+                                              //  Thread.Sleep(2000);
 
                                                 testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test(activity.Text.Substring(22).ToLower()).ToJson());
                                                 display = (testsretrieved.record.Where(x => x.type.ToLower() == activity.Text.Substring(22).ToLower())).ToArray();
@@ -610,6 +761,7 @@ namespace SmbiBotApp
                                 else
                                 {
                                     repeat = 0;
+                                    avoid.Remove(avoid.Last());
                                 }
                                 break;
 
@@ -682,61 +834,86 @@ namespace SmbiBotApp
                                         }
 
                                         var number = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-                                        if (pro_count > 0 && pro_count <= number.project.no_of_projects)
-                                        {
-                                            if (pro_count > 1)
+                                            if (number.project == null)
                                             {
-                                                data.Add(luisresp.query.Substring(41));
+                                                replymesge = "sorry wrong input";
                                             }
+                                            else
+                                            {
 
-                                            replymesge = correctSequence("projects", replymesge, 16) + " " + pro_count.ToOrdinalWords() + " project ?";
+                                                if (pro_count > 0 && pro_count <= number.project.no_of_projects)
+                                                {
+                                                    if (pro_count > 1)
+                                                    {
+                                                        data.Add(luisresp.query.Substring(41));
+                                                    }
 
-                                        }
-                                        else
-                                        {
-                                            data.Add(luisresp.query.Substring(41));
-                                            pro_details();
-                                            reply.Text = col.ElementAt(39);
-                                            await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(2000);
-                                            reply.Text = col.ElementAt(40);
-                                            await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(2000);
-                                            replymesge = col.ElementAt(41);
-                                            choose_tech(reply);
-                                            count = count + 2;
-                                            counter = counter + 2;
-                                        }
+                                                    replymesge = correctSequence("projects", replymesge, 16) + " " + pro_count.ToOrdinalWords() + " project ?";
+
+                                                }
+                                                else
+                                                {
+                                                    data.Add(luisresp.query.Substring(41));
+                                                    pro_details();
+                                                    reply.Text = col.ElementAt(39);
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(2000);
+                                                    reply.Text = col.ElementAt(40);
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(2000);
+                                                    replymesge = col.ElementAt(41);
+                                                    choose_tech(reply);
+                                                    count = count + 2;
+                                                    counter = counter + 2;
+                                                }
+                                            }
                                         break;
 
                                     case 11:
                                         var numb = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-                                        if (pro_count > 0 && pro_count <= numb.project.no_of_projects)
-                                        {
-
-                                            if (pro_count == 1)
+                                            if (numb.project == null)
                                             {
-                                                data.Add(luisresp.query);
+                                                replymesge = "sorry wrong input";
                                             }
                                             else
                                             {
-                                                data.Add(luisresp.query.Substring(27));
+                                                if (pro_count > 0 && pro_count <= numb.project.no_of_projects)
+                                                {
+
+                                                    if (pro_count == 1)
+                                                    {
+                                                        data.Add(luisresp.query);
+                                                    }
+                                                    else
+                                                    {
+                                                        data.Add(luisresp.query.Substring(27));
+                                                    }
+
+                                                    replymesge = correctSequence("title", replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
+                                                    pro_count++;
+                                                    count = count - 2;
+                                                    counter = counter - 2;
+                                                }
+                                                else
+                                                {
+
+                                                }
                                             }
-
-                                            replymesge = correctSequence("title", replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
-                                            pro_count++;
-                                            count = count - 2;
-                                            counter = counter - 2;
-                                        }
-                                        else
-                                        {
-
-                                        }
                                         break;
 
                                     case 12:
-                                        replymesge = col.ElementAt(41);
-                                        choose_tech(reply);
+
+                                            if (des_pro == 2)
+                                            {
+                                                des_pro = 0;
+                                                replymesge = col.ElementAt(41);
+                                                choose_tech(reply);
+                                            }
+                                            else
+                                            {
+                                                replymesge = "sorry wrong input";
+                                            }
+
                                         break;
 
                                     case 13:
@@ -831,7 +1008,15 @@ namespace SmbiBotApp
         {
             try
             {
-                symb = luisresp.entities[0].entity;
+                if (luisresp.entities.Length == 0)
+                {
+                    symb = luisresp.query;
+                }
+                else
+                {
+                    symb = luisresp.entities[0].entity.ToLower();
+                }
+           
                 if (symb != string.Empty)
                 {
                     data.Add(symb);
@@ -960,15 +1145,25 @@ namespace SmbiBotApp
 
         private string correctSequence(string intent, string reply, int x)
         {
-            if (Enum.GetName(typeof(decision), counter) == intent)
+            if (des_pro == 1)
             {
-                reply = col.ElementAt(x);
-                count++;
-                counter++;
+
+                if (Enum.GetName(typeof(decision), counter) == intent)
+                {
+                    reply = col.ElementAt(x);
+                    count++;
+                    counter++;
+                }
+                else
+                {
+                    reply = "Sorry wrong input" + "\n\n" + col.ElementAt(x - 1);
+                }
             }
             else
             {
-                reply = "Sorry wrong input" + "\n\n" + col.ElementAt(x - 1);
+                reply = "Sorry wrong input";
+                data.Remove(data.Last());
+
             }
             return reply;
         }
@@ -1142,23 +1337,65 @@ namespace SmbiBotApp
             {
                 Value = "ok you are designer of UX / UI",
                 Type = "postBack",
-                Title = "UX / UI"
+                Title = "UX / UI Designer"
             };
             CardAction Button2 = new CardAction()
             {
                 Value = "ok you are designer of Graphic / Web",
                 Type = "postBack",
-                Title = "Graphic / Web",
+                Title = "Graphic Designer",
+            };
+            //CardAction Button3 = new CardAction()
+            //{
+            //    Value = "ok you are designer of Full Stack",
+            //    Type = "postBack",
+            //    Title = "Full Stack",
+            //};
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+          //  cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void select_graphic(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you are designer of UX / UI",
+                Type = "postBack",
+                Title = "Layout and Composition"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you are designer of Graphic / Web",
+                Type = "postBack",
+                Title = "Typography",
             };
             CardAction Button3 = new CardAction()
             {
                 Value = "ok you are designer of Full Stack",
                 Type = "postBack",
-                Title = "Full Stack",
+                Title = "Logo Design",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "ok you are designer of Full Stack",
+                Type = "postBack",
+                Title = "Design Tools",
             };
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
             cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons,
@@ -1175,33 +1412,33 @@ namespace SmbiBotApp
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "ok you are developer of Full Stack",
+                Value = "ok you are developeroffullstack",
                 Type = "postBack",
                 Title = "Full Stack Web Developer"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "ok you are developer of Full Stack",
+                Value = "ok you are developeroffrontend",
                 Type = "postBack",
                 Title = "Front End Web Developer",
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "ok you are developer of Full Stack",
+                Value = "ok you are developerofapplication",
                 Type = "postBack",
-                Title = "Application Web/Developer",
+                Title = "Application Developer",
             };
             CardAction Button4 = new CardAction()
             {
-                Value = "ok you are developer of Full Stack",
+                Value = "ok you are developerofmobile",
                 Type = "postBack",
-                Title = "Mobile Development",
+                Title = "Mobile Developer",
             };
             CardAction Button5 = new CardAction()
             {
-                Value = "ok you are developer of Full Stack",
+                Value = "ok you are developerofcloud",
                 Type = "postBack",
-                Title = "Cloud Development",
+                Title = "Cloud Developer",
             };
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
@@ -1218,7 +1455,306 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
-        private void select_modules(Activity reply)
+        private void select_marketing(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you are marketerofdigital",
+                Type = "postBack",
+                Title = "Digital Marketer"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you are marketerofsales",
+                Type = "postBack",
+                Title = "Sales Representative",
+            };
+
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void development_types(Activity reply, LuisResponse luis)
+        {
+            var enty = luis.entities[0].entity.ToLower();
+            enty = enty.Substring(11);
+            switch (enty)
+            {
+                case "fullstack":
+                    fullstack_developer(reply,luis);
+                    break;
+                case "frontend":
+                    frontend_developer(reply, luis);
+                    break;
+                case "application":
+                    application_developer(reply, luis);
+                    break;
+                case "mobile":
+                    mobile_developer(reply, luis);
+                    break;
+                case "cloud":
+                    cloud_developer(reply, luis);
+                    break;
+
+            }
+
+        }
+
+        private void marketing_types(Activity reply, LuisResponse luis)
+        {
+            var enty = luis.entities[0].entity.ToLower();
+            enty = enty.Substring(10);
+            switch (enty)
+            {
+                case "digital":
+                    digital_marketer(reply, luis);
+                    break;
+                case "sales":
+                    sales_representator(reply, luis);
+                    break;
+            }
+
+        }
+
+        private string module_types(Activity reply, LuisResponse luis, string mesj)
+        {
+
+            var enty = luis.entities[0].entity.ToLower();
+            enty = enty.Substring(9);
+            switch (enty)
+            {
+                case "fullstack":
+                    mesj = fullstack_module(reply, luis, mesj);
+                    break;
+                case "frontend":
+                    mesj = frontend_module(reply, luis, mesj);
+                    break;
+                case "application":
+                    mesj = application_module(reply, luis, mesj);
+                    break;
+                case "mobile":
+                    mesj = mobile_module(reply, luis, mesj);
+                    break;
+                case "cloud":
+                    mesj = cloud_module(reply, luis, mesj);
+                    break;
+
+            }
+
+            return mesj;
+        }
+
+        private void fullstack_developer(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1offullstack",
+                Type = "postBack",
+                Title = "Web Development Foundations"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2offullstack",
+                Type = "postBack",
+                Title = "Programing Fundamentals",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3offullstack",
+                Type = "postBack",
+                Title = "Essential Frontend Languages",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "ok you want to complete module4offullstack",
+                Type = "postBack",
+                Title = "Database Foundations",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "ok you want to complete module5offullstack",
+                Type = "postBack",
+                Title = "Essential Backend Languages",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "ok you want to complete module6offullstack",
+                Type = "postBack",
+                Title = "Security Foundations",
+            };
+            CardAction Button7 = new CardAction()
+            {
+                Value = "ok you want to complete module7offullstack",
+                Type = "postBack",
+                Title = "Web Projects Workflows",
+            };
+            CardAction Button8 = new CardAction()
+            {
+                Value = "ok you want to complete module8offullstack",
+                Type = "postBack",
+                Title = "Fullstack Frameworks",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            cardButtons.Add(Button7);
+            cardButtons.Add(Button8);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void frontend_developer(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1",
+                Type = "postBack",
+                Title = "Web Development Foundations"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2",
+                Type = "postBack",
+                Title = "Programing Fundamentals",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3",
+                Type = "postBack",
+                Title = "User Experience for Web Designers",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "ok you want to complete module4",
+                Type = "postBack",
+                Title = "UX Foundations Accessibility",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "ok you want to complete module5",
+                Type = "postBack",
+                Title = "Responsive Design",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "ok you want to complete module6",
+                Type = "postBack",
+                Title = "Framework & Tools",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void application_developer(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1ofjava",
+                Type = "postBack",
+                Title = "Java"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2ofcsharp",
+                Type = "postBack",
+                Title = "C-Sharp",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3ofpython",
+                Type = "postBack",
+                Title = "Python",
+            };
+    
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void mobile_developer(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1",
+                Type = "postBack",
+                Title = "Android"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2",
+                Type = "postBack",
+                Title = "iOS",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3",
+                Type = "postBack",
+                Title = "Cross-Platform",
+            };
+       
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+               
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void cloud_developer(Activity reply, LuisResponse luis)
         {
             reply.Attachments = new List<Attachment>();
             List<CardAction> cardButtons = new List<CardAction>();
@@ -1288,8 +1824,151 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
-        private string check_module(string ent, string mesj, Activity reply)
+        private void digital_marketer(Activity reply, LuisResponse luis)
         {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test onlinemarketing",
+                Type = "postBack",
+                Title = "Online Marketing Foundations"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "you selected the test seofoundations",
+                Type = "postBack",
+                Title = "SEO Foundations",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "you selected the test googleanalytics",
+                Type = "postBack",
+                Title = "Google Analytics",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "you selected the test contentmarketing",
+                Type = "postBack",
+                Title = "Content Marketing Fundamentals",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "you selected the test mobilemarketing",
+                Type = "postBack",
+                Title = "Mobile Marketing Foundations",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "you selected the test leadgeneration",
+                Type = "postBack",
+                Title = "Lead Generation Foundations",
+            };
+            CardAction Button7 = new CardAction()
+            {
+                Value = "you selected the test growthhacking",
+                Type = "postBack",
+                Title = "Growth Hacking",
+            };
+            CardAction Button8 = new CardAction()
+            {
+                Value = "you selected the test onlinemarketingplan",
+                Type = "postBack",
+                Title = "Online Marketing Plan",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            cardButtons.Add(Button7);
+            cardButtons.Add(Button8);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void sales_representator(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test salescareer",
+                Type = "postBack",
+                Title = "Sales Career"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "you selected the test effectivelistening",
+                Type = "postBack",
+                Title = "Effective Listening",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "you selected the test assertiveness",
+                Type = "postBack",
+                Title = "Assertiveness",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "you selected the test resilience",
+                Type = "postBack",
+                Title = "Resilience",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "you selected the test salesfoundations",
+                Type = "postBack",
+                Title = "Sales Foundations",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "you selected the test askingquestions",
+                Type = "postBack",
+                Title = "Asking Questions",
+            };
+            CardAction Button7 = new CardAction()
+            {
+                Value = "you selected the test creatingcustomervalue",
+                Type = "postBack",
+                Title = "Creating Customer Value",
+            };
+            CardAction Button8 = new CardAction()
+            {
+                Value = "you selected the test salesnegotiation",
+                Type = "postBack",
+                Title = "Sales Negotiation",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            cardButtons.Add(Button7);
+            cardButtons.Add(Button8);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private string fullstack_module(Activity reply,LuisResponse luis,string mesj)
+        {
+           
+            var ent = luis.entities[0].entity.ToLower();
+            ent = ent.Substring(0,7);
             switch (ent)
             {
                 case "module1":
@@ -1335,6 +2014,174 @@ namespace SmbiBotApp
             return mesj;
         }
 
+        private string frontend_module(Activity reply, LuisResponse luis, string mesj)
+        {
+
+            var ent = luis.entities[0].entity.ToLower();
+            ent = ent.Substring(0, 7);
+            switch (ent)
+            {
+                case "module1":
+                    mesj = col.ElementAt(50);
+                    webdevelopment_test(reply);
+
+                    break;
+
+                case "module2":
+                    mesj = col.ElementAt(51);
+
+                    break;
+
+                case "module3":
+                    mesj = col.ElementAt(58);
+
+                    break;
+
+                case "module4":
+                    mesj = col.ElementAt(59);
+                    break;
+
+                case "module5":
+                    mesj = col.ElementAt(60);
+               
+                    break;
+
+                case "module6":
+                    mesj = col.ElementAt(61);
+                    frameworktools_test(reply);
+                    break;
+            }
+            return mesj;
+        }
+            
+        private string application_module(Activity reply, LuisResponse luis, string mesj)
+        {
+
+            var ent = luis.entities[0].entity.ToLower();
+            ent = ent.Substring(0, 7);
+            switch (ent)
+            {
+                case "module1":
+                    mesj = col.ElementAt(50);
+                    java_test(reply,luis);
+
+                    break;
+
+                case "module2":
+                    mesj = col.ElementAt(51);
+                    csharp_test(reply,luis);
+                    break;
+
+                case "module3":
+                    mesj = col.ElementAt(52);
+                    python_test(reply,luis);
+
+                    break;
+
+            }
+            return mesj;
+        }
+
+        private string mobile_module(Activity reply, LuisResponse luis, string mesj)
+        {
+
+            var ent = luis.entities[0].entity.ToLower();
+            ent = ent.Substring(0, 7);
+            switch (ent)
+            {
+                case "module1":
+                    mesj = col.ElementAt(50);
+                    webdevelopment_test(reply);
+
+                    break;
+
+                case "module2":
+                    mesj = col.ElementAt(51);
+
+                    break;
+
+                case "module3":
+                    mesj = col.ElementAt(52);
+                    frontend_test(reply);
+
+                    break;
+
+                case "module4":
+                    mesj = col.ElementAt(53);
+                    break;
+
+                case "module5":
+                    mesj = col.ElementAt(54);
+                    backend_test(reply);
+                    break;
+
+                case "module6":
+                    mesj = col.ElementAt(55);
+                    break;
+
+                case "module7":
+                    mesj = col.ElementAt(56);
+                    projects_test(reply);
+                    break;
+
+                case "module8":
+                    mesj = col.ElementAt(57);
+                    break;
+
+            }
+            return mesj;
+        }
+
+        private string cloud_module(Activity reply, LuisResponse luis, string mesj)
+        {
+
+            var ent = luis.entities[0].entity.ToLower();
+            ent = ent.Substring(0, 7);
+            switch (ent)
+            {
+                case "module1":
+                    mesj = col.ElementAt(50);
+                    webdevelopment_test(reply);
+
+                    break;
+
+                case "module2":
+                    mesj = col.ElementAt(51);
+
+                    break;
+
+                case "module3":
+                    mesj = col.ElementAt(52);
+                    frontend_test(reply);
+
+                    break;
+
+                case "module4":
+                    mesj = col.ElementAt(53);
+                    break;
+
+                case "module5":
+                    mesj = col.ElementAt(54);
+                    backend_test(reply);
+                    break;
+
+                case "module6":
+                    mesj = col.ElementAt(55);
+                    break;
+
+                case "module7":
+                    mesj = col.ElementAt(56);
+                    projects_test(reply);
+                    break;
+
+                case "module8":
+                    mesj = col.ElementAt(57);
+                    break;
+
+            }
+            return mesj;
+        }
+        
         private void webdevelopment_test(Activity reply)
         {
             reply.Attachments = new List<Attachment>();
@@ -1475,6 +2322,238 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
+        private void frameworktools_test(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test bootstrap",
+                Type = "postBack",
+                Title = "Bootstrap 3"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "you selected the test react.js",
+                Type = "postBack",
+                Title = "React.js",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "you selected the test sass",
+                Type = "postBack",
+                Title = "Sass",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void java_test(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test objectorienteddesign",
+                Type = "postBack",
+                Title = "Object-Oriented Design"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "you selected the test javaessentialtraining",
+                Type = "postBack",
+                Title = "Java & Essential Training",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "you selected the test codeclinicjava",
+                Type = "postBack",
+                Title = "Code Clinic:Java",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "you selected the test designpatterns",
+                Type = "postBack",
+                Title = "Design Patterns",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "you selected the test advancedjavaprogramming",
+                Type = "postBack",
+                Title = "Advanced Java Programming",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "you selected the test javadatabaseintegration",
+                Type = "postBack",
+                Title = "Java:Database Integration JDBC",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void csharp_test(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1offullstack",
+                Type = "postBack",
+                Title = "Web Development Foundations"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2offullstack",
+                Type = "postBack",
+                Title = "Programing Fundamentals",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3offullstack",
+                Type = "postBack",
+                Title = "Essential Frontend Languages",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "ok you want to complete module4offullstack",
+                Type = "postBack",
+                Title = "Database Foundations",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "ok you want to complete module5offullstack",
+                Type = "postBack",
+                Title = "Essential Backend Languages",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "ok you want to complete module6offullstack",
+                Type = "postBack",
+                Title = "Security Foundations",
+            };
+            CardAction Button7 = new CardAction()
+            {
+                Value = "ok you want to complete module7offullstack",
+                Type = "postBack",
+                Title = "Web Projects Workflows",
+            };
+            CardAction Button8 = new CardAction()
+            {
+                Value = "ok you want to complete module8offullstack",
+                Type = "postBack",
+                Title = "Fullstack Frameworks",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            cardButtons.Add(Button7);
+            cardButtons.Add(Button8);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+        private void python_test(Activity reply, LuisResponse luis)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "ok you want to complete module1offullstack",
+                Type = "postBack",
+                Title = "Web Development Foundations"
+            };
+            CardAction Button2 = new CardAction()
+            {
+                Value = "ok you want to complete module2offullstack",
+                Type = "postBack",
+                Title = "Programing Fundamentals",
+            };
+            CardAction Button3 = new CardAction()
+            {
+                Value = "ok you want to complete module3offullstack",
+                Type = "postBack",
+                Title = "Essential Frontend Languages",
+            };
+            CardAction Button4 = new CardAction()
+            {
+                Value = "ok you want to complete module4offullstack",
+                Type = "postBack",
+                Title = "Database Foundations",
+            };
+            CardAction Button5 = new CardAction()
+            {
+                Value = "ok you want to complete module5offullstack",
+                Type = "postBack",
+                Title = "Essential Backend Languages",
+            };
+            CardAction Button6 = new CardAction()
+            {
+                Value = "ok you want to complete module6offullstack",
+                Type = "postBack",
+                Title = "Security Foundations",
+            };
+            CardAction Button7 = new CardAction()
+            {
+                Value = "ok you want to complete module7offullstack",
+                Type = "postBack",
+                Title = "Web Projects Workflows",
+            };
+            CardAction Button8 = new CardAction()
+            {
+                Value = "ok you want to complete module8offullstack",
+                Type = "postBack",
+                Title = "Fullstack Frameworks",
+            };
+            cardButtons.Add(Button1);
+            cardButtons.Add(Button2);
+            cardButtons.Add(Button3);
+            cardButtons.Add(Button4);
+            cardButtons.Add(Button5);
+            cardButtons.Add(Button6);
+            cardButtons.Add(Button7);
+            cardButtons.Add(Button8);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons,
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+        }
+
+
         private void test_type(Activity reply)
         {
             reply.Attachments = new List<Attachment>();
@@ -1517,9 +2596,7 @@ namespace SmbiBotApp
             string rep = null;
             switch (occupy.professional.occupation_type)
             {
-                case "Product":
-                      break;
-
+              
                 case "Design":
                     rep = col.ElementAt(14);
                     select_design(reply);
@@ -1529,12 +2606,12 @@ namespace SmbiBotApp
                     rep = col.ElementAt(48);
                     select_development(reply);
                     break;
-                case "Marketing":
+                case "MarketingSales":
+                    rep = col.ElementAt(22);
+                    select_marketing(reply);
                     break;
-                case "Sales":
-                    break;
-                case "Administration":
-                    break;
+           
+             
 
             }
 
@@ -1587,6 +2664,28 @@ namespace SmbiBotApp
             cardButtons.Add(Button4);
             cardButtons.Add(Button5);
             cardButtons.Add(Button6);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+
+        }
+
+        private void choose_invest(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test Investor",  //technology
+                Type = "postBack",
+                Title = "Start"
+            };
+            cardButtons.Add(Button1);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons
@@ -1655,20 +2754,11 @@ namespace SmbiBotApp
 
         }
 
-
         private void JobOptions(Activity reply)
         {
             reply.Attachments = new List<Attachment>();
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
-            {
-                Value = "Product is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
-                Type = "postBack",
-                Title = "Product"
-
-            };
-
-            CardAction Button2 = new CardAction()
             {
                 Value = "Design is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
@@ -1676,38 +2766,24 @@ namespace SmbiBotApp
 
             };
 
-            CardAction Button3 = new CardAction()
+            CardAction Button2 = new CardAction()
             {
                 Value = "Development is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Development"
             };
 
-            CardAction Button4 = new CardAction()
+            CardAction Button3 = new CardAction()
             {
-                Value = "Marketing is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "MarketingSales is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
                 Title = "Marketing"
             };
 
-            CardAction Button5 = new CardAction()
-            {
-                Value = "Sales is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
-                Type = "postBack",
-                Title = "Sales"
-            };
-            CardAction Button6 = new CardAction()
-            {
-                Value = "Administration is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
-                Type = "postBack",
-                Title = "Administration"
-            };
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
             cardButtons.Add(Button3);
-            cardButtons.Add(Button4);
-            cardButtons.Add(Button5);
-            cardButtons.Add(Button6);
+          
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons
@@ -1718,7 +2794,6 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
 
         }
-
 
         private void test(Activity reply, string opt, int mod)
         {
@@ -1762,6 +2837,8 @@ namespace SmbiBotApp
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
+
+        
     }
 
     //internal class MemberDialog : IDialog<object>

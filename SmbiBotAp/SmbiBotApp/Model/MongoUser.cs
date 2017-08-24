@@ -14,8 +14,9 @@ namespace SmbiBotApp.Model
         
         public static bool add_basic_info(BsonDocument info)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            //  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
 
             try
@@ -32,8 +33,9 @@ namespace SmbiBotApp.Model
 
         public static void add_edu_infos(List<BsonDocument> multiple, string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/peoplehome");
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("educational", new BsonArray(multiple));
@@ -49,8 +51,10 @@ namespace SmbiBotApp.Model
 
         public static void add_edu_info(BsonDocument edu)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            //  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             try
             {
@@ -64,8 +68,10 @@ namespace SmbiBotApp.Model
 
         public static void add_prof_info(BsonDocument prof)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             try
             {
@@ -80,8 +86,10 @@ namespace SmbiBotApp.Model
 
         public static BsonDocument exist_user(string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            //  var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
 
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
@@ -109,8 +117,10 @@ namespace SmbiBotApp.Model
 
         public static void upd_basic_info(int sta, string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update = Builders<BsonDocument>.Update.Set("basic.status", sta);
@@ -128,8 +138,10 @@ namespace SmbiBotApp.Model
 
         public static void upd_test_info(BsonDocument record, int sta, string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+           // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             if (sta == 1)
@@ -151,8 +163,11 @@ namespace SmbiBotApp.Model
 
         public static void upd_pro_info(string com, string pos, BsonDocument proj, int sta, string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+           // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+        
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.
@@ -175,8 +190,10 @@ namespace SmbiBotApp.Model
 
         public static void upd_project_info(List<BsonDocument> multiple, int sta, string id)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+         //   var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("botusers");
             var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var update1 = Builders<BsonDocument>.Update.Set("project.details", multiple);
@@ -196,8 +213,10 @@ namespace SmbiBotApp.Model
 
         public static BsonDocument get_skill_id(string ski)
         {
-            var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
-            var MongoDB = Client.GetDatabase("peoplehome");
+            // var Client = new MongoClient("mongodb://nabeel:nabeel@ds161742.mlab.com:61742/peoplehome");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("skills");
 
             var filter = Builders<BsonDocument>.Filter.Eq("skill.UXUI", "1");
@@ -228,8 +247,8 @@ namespace SmbiBotApp.Model
 
         public static BsonValue ret_sel_test(string tech)
         {
-            var Client = new MongoClient();
-            var MongoDB = Client.GetDatabase("test");
+            var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+            var MongoDB = Client.GetDatabase("talenthome");
             var Collec = MongoDB.GetCollection<BsonDocument>("questions");
             var filter = Builders<BsonDocument>.Filter.Eq("dataset.record.type", tech);
             var result = Collec.Find(filter).SingleOrDefault().ElementAt(1).Value;

@@ -15,6 +15,7 @@ using Facebook;
 using System.Web.Configuration;
 using System.Configuration;
 using System.Collections;
+using Microsoft.Bot.Connector;
 
 namespace Bot_Application3.Services
 {
@@ -69,12 +70,14 @@ namespace Bot_Application3.Services
         }
 
 
-        public async Task<FacebookProfile> GetFacebookProfileAsync()
+        public async Task<FacebookProfile> GetFacebookProfileAsync(Activity act)
         {
           //  string escapedString = Uri.EscapeDataString(accessToken);
             string app_id = "102667733606511";
             string app_secret = "1d81ecb0410c847acc39583d3d542643";
-            string client_Id = "1323033824440894";
+           // string client_Id = "1323033824440894";
+
+               string redirect_uri = $"http://localhost:3979/api/OAuthCallback?userId={act.From.Id}&botId={act.Id}&conversationId={act.Conversation.Id}&serviceUrl={act.ServiceUrl}&channelId=emulator";
             //  string uri =$"https://graph.facebook.com/endpoint?key=value&amp;access_token=102667733606511|1d81ecb0410c847acc39583d3d542643";
             //  string uri = string.Format("https://graph.facebook.com/{0}/{1}/{2}/{3}/name,gender",client_Id,app_id,app_secret,accessToken);
 

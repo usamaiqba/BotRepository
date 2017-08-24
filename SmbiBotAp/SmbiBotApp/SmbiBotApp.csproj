@@ -190,6 +190,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\OAuthCallbackController.cs" />
     <Compile Include="Model\FacebookProfile.cs" />
     <Compile Include="Model\LuisData.cs" />
     <Compile Include="Model\LuisResponse.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Services\facebook.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Services\FacebookHelpers.cs" />
     <Compile Include="Services\FacebookServices.cs" />
     <Compile Include="Services\HookService.cs" />
     <Compile Include="Services\LuisService.cs" />
@@ -221,8 +223,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Properties\webjobs-list.json" />
-    <None Include="Properties\PublishProfiles\SmbiBotApp20170320112332 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\SmbiBotApp20170320112332 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SmbiBotApp20170804124326 - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

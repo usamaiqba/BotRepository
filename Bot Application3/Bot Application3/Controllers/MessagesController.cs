@@ -117,7 +117,9 @@ namespace Bot_Application3
         static int flag = 0;
         static int counter = 1;
         static int callback = 0;
+        static int des_pro = 0;
         static string id = null;
+        static string entity = null;
         static string occupation = null;
         static int pro_count = 1;
         static bool wait = true;
@@ -133,6 +135,7 @@ namespace Bot_Application3
 
         public enum decision
         {
+           
             firstName = 1,
             lastName = 2,
             myAge = 3,
@@ -208,6 +211,7 @@ namespace Bot_Application3
             col.Add("Demonstrate your understanding of the most important security concerns when developing websites and what can be done to keep servers,software and data safe from harm");//55
             col.Add("Show your understanding of the workflow that makes it easier to build websites,track share project files and leverage code libraries");//56
             col.Add("Demonstrate your knowledge of the frontend and backend framework libraries to unlock more oppertunities");//57
+            col.Add("let start the equestions"); // 58
 
             ques.Add("HTML is what type of language");
             ques.Add("HTML use");
@@ -257,6 +261,16 @@ namespace Bot_Application3
                 if (activity.Type == ActivityTypes.Message)
                 {
                     var phrase = activity.Text;
+
+                    //XmlDocument doc = new XmlDocument();
+                    //doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usama3.xml");
+                    //string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
+                    //var bson = BsonSerializer.Deserialize<BsonDocument>(jsonText); //Deserialize JSON String to BSon Document
+                    //var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
+                    //var MongoDB = Client.GetDatabase("talenthome");
+                    //var Collec = MongoDB.GetCollection<BsonDocument>("questions");
+                    //await Collec.InsertOneAsync(bson);
+
                     //var usr = new BsonDocument();
                     //usr["firstname"] = "usama";
                     //usr["lastname"] = "iqbal";
@@ -294,6 +308,7 @@ namespace Bot_Application3
 
 
 
+
                     var luisresp = await LuisService.ParseUserInput(phrase);
 
                 //  activity.Text.Replace(activity.Text,"text replaced successfully");
@@ -304,7 +319,7 @@ namespace Bot_Application3
                     //  var xha = activity.Text.Replace(activity.Text, "text replaced successfully");
                     if (luisresp.intents.Count() > 0)
                     {
-
+                    
                         //   if (!avoid.Contains(enti))
                         //  {
                         //     avoid.Add(enti);
@@ -386,7 +401,14 @@ namespace Bot_Application3
                                 case "questions":
                                     callback = 0;
                                     replymesge = luisresp.query;
-                                     var entity = luisresp.entities[0].entity.ToLower();
+                                    if (luisresp.entities.Length == 0)
+                                    {
+                                        entity = luisresp.query;
+                                    }
+                                    else
+                                    {
+                                        entity = luisresp.entities[0].entity.ToLower();
+                                    }
                                     if (!avoid.Contains(entity))
                                     {
                                         repeat = 1;
@@ -428,13 +450,20 @@ namespace Bot_Application3
                                         switch (entity)
                                         {
                                             case "started":
-
+                                            
+                                                des_pro = 0;
+                                                data.Clear();
+                                                avoid.Clear();
+                                                count = 1;
+                                                counter = 1;
+                                                pro_count = 1;
                                                 // facebook fb = new facebook();
                                                 // fb.GetDataFromFB();
                                                 //fb.getdatafromfb();
                                                 FacebookServices fbc = new FacebookServices();
-                                                // await fbc.GetFacebookProfileAsync();
+                                                await fbc.GetFacebookProfileAsync(activity);
                                                 // await fbc.GetToken();
+                                              
                                                 profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
                                                 // EAABdYDHKoG8BAOaoRbN8auIbRl8jHS46l7tRxaqOuqBbeXK0LZC4XRxZBYfpZBhQYuNtU1fbxqoAWaPjVCoS5dQuGDgbZB24RIxxZBljqwWMdYhqaK45vx9dZAiO44HTxVwWpqupZBwjRfOikjRJXxPo72QXAgcWy9BgkYrDXwCMGU8By0AgyehCWJLcg5ZAbrsZD
                                                 //profile = await fbc.GetUser("EAABdYDHKoG8BAEDusKOlAqBAAZAPeZBaSTOpYIbpznGohSzHZCScRyQqObg66TwxlbtY3tQGsnqAZAnLLe9e0zZBczKm0mYNu15WAJzu41w7GbYzafho9beDYaZAZBdqlIjwO6g4nuNwMznr6b1IvVdJpZCiaKzjESXZCi5kK3cZApfpzTGt2mMAnGFWQwda2oHacZD");
@@ -467,6 +496,7 @@ namespace Bot_Application3
 
                                                         if (res.basic.status == 1)
                                                         {
+                                                            des_pro = 1;
                                                             count = 6;
                                                             counter = 6;
                                                             str.intent = "emailAddress";
@@ -474,6 +504,7 @@ namespace Bot_Application3
                                                         }
                                                         else if (res.basic.status == 2)
                                                         {
+                                                            des_pro = 1;
                                                             count = 10;
                                                             counter = 10;
                                                             str.intent = "projects";
@@ -481,6 +512,7 @@ namespace Bot_Application3
                                                         }
                                                         else if (res.basic.status == 3)
                                                         {
+                                                            des_pro = 2;
                                                             count = 12;
                                                             counter = 12;
                                                             str.intent = "test";
@@ -488,6 +520,7 @@ namespace Bot_Application3
                                                         }
                                                         else if (res.basic.status == 4)
                                                         {
+                                                            des_pro = 1;
                                                             count = 13;
                                                             counter = 13;
                                                             str.intent = "viewProfile";
@@ -509,6 +542,7 @@ namespace Bot_Application3
                                                 JobOptions(reply);
                                                 break;
                                             case "profile":
+                                                //des_pro = 1;
                                                 string[] occup = luisresp.query.Split();
                                                 occupation = occup[0];
                                                 reply.Text = col.ElementAt(0);
@@ -520,8 +554,10 @@ namespace Bot_Application3
                                                 Thread.Sleep(1100);
                                                 replymesge = col.ElementAt(1);
                                                 infoConfirm(reply);
+                                                des_pro = 0;
                                                 break;
                                             case "basic":
+                                                des_pro = 1;
                                                 count = 7;
                                                 counter = 7;
                                                 data.Clear();
@@ -538,6 +574,7 @@ namespace Bot_Application3
 
                                                 break;
                                             case "details":
+                                                des_pro = 1;
                                                 replymesge = col.ElementAt(2);
                                                 count = 1;
                                                 break;
@@ -592,6 +629,7 @@ namespace Bot_Application3
                                             //    break;
 
                                             case "test":
+                                                des_pro = 0;
                                                 // var result = MongoUser.exist_user(id);
                                                 var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
 
@@ -804,30 +842,37 @@ namespace Bot_Application3
 
                                             //var nmber = MongoUser.exist_user(id);
                                             var number = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-                                            if (pro_count > 0 && pro_count <= number.project.no_of_projects)
+                                            if (number.project == null)
                                             {
-                                                if (pro_count > 1)
-                                                {
-                                                    data.Add(luisresp.query.Substring(41));
-                                                }
-
-                                                replymesge = correctSequence("projects", replymesge, 16) + " " + pro_count.ToOrdinalWords() + " project ?";
-
+                                                replymesge = "sorry wrong input";
                                             }
                                             else
                                             {
-                                                data.Add(luisresp.query.Substring(41));
-                                                pro_details();
-                                                reply.Text = col.ElementAt(39);
-                                                await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
-                                                reply.Text = col.ElementAt(40);
-                                                await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
-                                                replymesge = col.ElementAt(41);
-                                                choose_tech(reply);
-                                                count = count + 2;
-                                                counter = counter + 2;
+                                                if (pro_count > 0 && pro_count <= number.project.no_of_projects)// exception
+                                                {
+                                                    if (pro_count > 1)
+                                                    {
+                                                        data.Add(luisresp.query.Substring(41));
+                                                    }
+
+                                                    replymesge = correctSequence("projects", replymesge, 16) + " " + pro_count.ToOrdinalWords() + " project ?";
+
+                                                }
+                                                else
+                                                {
+                                                    data.Add(luisresp.query.Substring(41));
+                                                    pro_details();
+                                                    reply.Text = col.ElementAt(39);
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(2000);
+                                                    reply.Text = col.ElementAt(40);
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                    Thread.Sleep(2000);
+                                                    replymesge = col.ElementAt(41);
+                                                    choose_tech(reply);
+                                                    count = count + 2;
+                                                    counter = counter + 2;
+                                                }
                                             }
                                             break;
 
@@ -835,40 +880,58 @@ namespace Bot_Application3
                                                 // var num = user.find_user_occu(id);
                                                 //var rem = reply.RemoveMentionText(reply.Id);
                                             var numb = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-
-                                            if (pro_count > 0 && pro_count <= numb.project.no_of_projects)
+                                            if (numb.project == null)
                                             {
-
-                                                if (pro_count == 1)
-                                                    data.Add(luisresp.query);
-                                                else
-                                                    data.Add(luisresp.query.Substring(27));
-
-                                                //   check_entity(symb, luisresp);
-                                                replymesge = correctSequence("title", replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
-                                                //var rema = reply.RemoveMentionText(reply.ReplyToId);
-                                                //rem = activity.RemoveMentionText(activity.Id);
-                                                //rem = activity.RemoveMentionText(activity.Recipient.Id);
-                                                //rem = activity.RemoveMentionText(activity.From.Id);
-                                                //var id = activity.From.Id;
-                                                //rema = activity.RemoveMentionText(activity.ReplyToId);
-
-                                                pro_count++;
-
-                                                count = count - 2;
-                                                counter = counter - 2;
+                                                replymesge = "sorry wrong input";
                                             }
                                             else
                                             {
+                                                if (pro_count > 0 && pro_count <= numb.project.no_of_projects)
+                                                {
 
+                                                    if (pro_count == 1)
+                                                        data.Add(luisresp.query);
+                                                    else
+                                                        data.Add(luisresp.query.Substring(27));
+
+                                                    //   check_entity(symb, luisresp);
+                                                    replymesge = correctSequence("title", replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
+                                                    //var rema = reply.RemoveMentionText(reply.ReplyToId);
+                                                    //rem = activity.RemoveMentionText(activity.Id);
+                                                    //rem = activity.RemoveMentionText(activity.Recipient.Id);
+                                                    //rem = activity.RemoveMentionText(activity.From.Id);
+                                                    //var id = activity.From.Id;
+                                                    //rema = activity.RemoveMentionText(activity.ReplyToId);
+
+                                                    pro_count++;
+
+                                                    count = count - 2;
+                                                    counter = counter - 2;
+                                                }
+                                                else
+                                                {
+
+                                                }
                                             }
                                             break;
 
                                         case 12:
 
+                                            if (des_pro == 2)
+                                            {
+                                                des_pro = 0;
+                                                replymesge = col.ElementAt(41);
+                                                choose_tech(reply);
+                                            }
+                                            else
+                                            {
+                                                replymesge = "sorry wrong input";
+                                            }
 
-                                            replymesge = col.ElementAt(41);
-                                            choose_tech(reply);
+                                            //else
+                                            //{
+                                            //    replymesge = "sorry wrong input";
+                                            //}
                                             //var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
                                             //int flagi = 0;
                                             //if (usertest.test != null)
@@ -1044,7 +1107,15 @@ namespace Bot_Application3
         {
             try
             {
-                symb = luisresp.entities[0].entity;
+                if (luisresp.entities.Length == 0)
+                {               
+                    symb = luisresp.query;
+                }
+                else
+                {
+                    symb = luisresp.entities[0].entity.ToLower();
+                }
+           
                 if (symb != string.Empty)
                 {
                     data.Add(symb);
@@ -1181,15 +1252,24 @@ namespace Bot_Application3
 
         private string correctSequence(string intent, string reply, int x)
         {
-            if (Enum.GetName(typeof(decision), counter) == intent)
+            if (des_pro == 1)
             {
-                reply = col.ElementAt(x);
-                count++;
-                counter++;
+
+                if (Enum.GetName(typeof(decision), counter) == intent)
+                {
+                    reply = col.ElementAt(x);
+                    count++;
+                    counter++;
+                }
+                else
+                {
+                    reply = "Sorry wrong input" + "\n\n" + col.ElementAt(x - 1);
+                }
             }
             else
             {
-                reply = "Sorry wrong input" +"\n\n" + col.ElementAt(x - 1);
+                   reply = "Sorry wrong input";
+                   data.Remove(data.Last());
             }
             return reply;
         }
@@ -1766,6 +1846,10 @@ namespace Bot_Application3
                     break;
                 case "Administration":
                     break;
+                case "Investor":
+                    rep = col.ElementAt(58);
+                    choose_invest(reply);
+                    break;
 
             }
 
@@ -1818,6 +1902,28 @@ namespace Bot_Application3
             cardButtons.Add(Button4);
             cardButtons.Add(Button5);
             cardButtons.Add(Button6);
+            HeroCard jobCard = new HeroCard()
+            {
+                Buttons = cardButtons
+            };
+
+            Attachment jobAttachment = jobCard.ToAttachment();
+            reply.Attachments.Add(jobAttachment);
+            reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+
+        }
+
+        private void choose_invest(Activity reply)
+        {
+            reply.Attachments = new List<Attachment>();
+            List<CardAction> cardButtons = new List<CardAction>();
+            CardAction Button1 = new CardAction()
+            {
+                Value = "you selected the test Investor",  //technology
+                Type = "postBack",
+                Title = "Start"
+            };
+            cardButtons.Add(Button1);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons
@@ -1928,9 +2034,9 @@ namespace Bot_Application3
             };
             CardAction Button6 = new CardAction()
             {
-                Value = "Administration is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
+                Value = "Investor is an interesting career choice. Before we use our magic sauce to match you let's get your profile setup.",
                 Type = "postBack",
-                Title = "Administration"
+                Title = "Investor"
             };
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);

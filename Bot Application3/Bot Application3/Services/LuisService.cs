@@ -22,8 +22,11 @@ namespace Bot_Application3.Services
             using (var client = new HttpClient())
             {
                 //   string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/45ea4b09-2acf-46fc-a23e-62c59ce38901?subscription-key=9898c808f2b74e0d8267ae2c39d818d3&verbose=true&q={escapedString}";
-                string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/45ea4b09-2acf-46fc-a23e-62c59ce38901?subscription-key=9898c808f2b74e0d8267ae2c39d818d3&timezoneOffset=0.0&verbose=true&q={escapedString}"; // usama
-              //  string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/e1497dd1-64dc-4fac-8e78-ec01ab990ca0?subscription-key=9d70f83f88cf4293ab0656178c22c692&timezoneOffset=0&verbose=true&q={escapedString}";   // waseem
+                // string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/45ea4b09-2acf-46fc-a23e-62c59ce38901?subscription-key=9898c808f2b74e0d8267ae2c39d818d3&timezoneOffset=0.0&verbose=true&q={escapedString}"; // usama
+                // string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/e1497dd1-64dc-4fac-8e78-ec01ab990ca0?subscription-key=9d70f83f88cf4293ab0656178c22c692&timezoneOffset=0&verbose=true&q={escapedString}";   // waseem
+
+                string uri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/3d52c5ee-e4a3-4f05-a77e-52f87a347c06?subscription-key=ebf2a6c25c8543b28d4e0ad853beda42&verbose=true&timezoneOffset=0&q={escapedString}";//rizwan
+
                 var msg = await client.GetAsync(uri);
                 if (msg.IsSuccessStatusCode)
                 {

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<record>
+		<Serial>1</Serial>
+		<Statements>HTML is what type of language ?</Statements>
+		<Options>Scripting Language,Markup Language,Programming Language,Network Protocol</Options>
+		<Answers>B</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>2</Serial>
+		<Statements>HTML uses </Statements>
+		<Options>User defined tags,Pre-specified tags,Fixed tags defined by the language,Tags only for linking</Options>
+		<Answers>C</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>3</Serial>
+		<Statements>The year in which HTML was first proposed _______. </Statements>
+		<Options>1990198020001990</Options>
+		<Answers>A</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>4</Serial>
+		<Statements>Fundamental HTML Block is known as ___________. </Statements>
+		<Options>HTML Body,HTML Tag,HTML Attribute,HTML Element</Options>
+		<Answers>B</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>5</Serial>
+		<Statements>Apart from &lt;b&gt; tag, what other tag makes text bold ?</Statements>
+		<Options>A. &lt;fat&gt; B. &lt;strong&gt;
+C. &lt;black&gt; D. &lt;emp&gt;</Options>
+		<Answers>B</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>6</Serial>
+		<Statements> What is the full form of HTML? </Statements>
+		<Options>A. HyperText Markup Language B. Hyper Teach Markup Language
+C. Hyper Tech Markup Language D. None of these</Options>
+		<Answers>A</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>7</Serial>
+		<Statements>Who is Known as the father of World Wide Web (WWW)?</Statements>
+		<Options>A. Robert Cailliau B. Tim Thompson
+C. Charles Darwin D. Tim Berners-Lee</Options>
+		<Answers>D</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>8</Serial>
+		<Statements>What should be the first tag in any HTML document? </Statements>
+		<Options>A. &lt;head&gt; B. &lt;title&gt;
+C. &lt;html&gt; D. &lt;document&gt;</Options>
+		<Answers>C</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>9</Serial>
+		<Statements>How can you make a bulleted list with numbers? </Statements>
+		<Options>A. &lt;dl&gt; B. &lt;ol&gt;
+C. &lt;list&gt; D. &lt;ul&gt;</Options>
+		<Answers>B</Answers>
+		<type>HTML</type>
+	</record>
+	<record>
+		<Serial>10</Serial>
+		<Statements>What tag is used to display a picture in a HTML page?</Statements>
+		<Options>A. picture B. image
+C. img D. src</Options>
+		<Answers>C</Answers>
+		<type>HTML</type>
+	</record>
+	
+</dataset>
