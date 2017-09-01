@@ -115,7 +115,7 @@ namespace SmbiBotApp.Services
                 Tuple.Create("client_id", FacebookAppId),
                 Tuple.Create("redirect_uri", redirectUri),
                 Tuple.Create("response_type", "code"),
-                Tuple.Create("scope", "public_profile,email,user_birthday,age_range,user_location,user_hometown"),
+                Tuple.Create("scope", "public_profile,email,user_birthday,user_location"),
                 Tuple.Create("state", Convert.ToString(new Random().Next(9999)))
                 );
 

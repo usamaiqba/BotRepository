@@ -29,6 +29,7 @@ namespace SmbiBotApp.Controllers
         public async Task<HttpResponseMessage> OAuthCallback([FromUri] string userId, [FromUri] string botId, [FromUri] string conversationId, [FromUri] string channelId, [FromUri] string serviceUrl, [FromUri] string code, [FromUri] string state, CancellationToken token)
         {
             // Get the resumption cookie
+
             var address = new Address
                 (
                     // purposefully using named arguments because these all have the same type
@@ -50,10 +51,11 @@ namespace SmbiBotApp.Controllers
             msg.Text = accessToken.AccessToken;
             var valid = await FacebookHelpers.ValidateAccessToken(msg.Text);
             var name = await FacebookHelpers.GetFacebookProfileName(msg.Text);
-            FacebookProfile fp = new FacebookProfile();
-            fp.Id = name;
-            fp.Name = msg.Text;
+            //FacebookProfile fp = new FacebookProfile();
+            //fp.Id = name;
+            //fp.Name = msg.Text;
             MessagesController.userid = name;
+            MessagesController.acctoken = accessToken.AccessToken;
             // Resume the conversation to SimpleFacebookAuthDialog
 
             //await Conversation.ResumeAsync(conversationReference, msg);

@@ -60,12 +60,15 @@ namespace SmbiBotApp
     {
 
         HttpClient client = new HttpClient();//1
-        public static string userid;//2
-        public static readonly Uri FacebookOauthCallback = new Uri("http://localhost:3979/api/OAuthCallback");//3
+        public static string userid = null;//2
+        public static string acctoken = null;//4
+        public static readonly Uri FacebookOauthCallback = new Uri("http://smbibotapp20170804124326.azurewebsites.net/api/OAuthCallback");//3//5
         public List<string> col = new List<string>();
         public static List<string> data = new List<string>();
         public static List<string> avoid = new List<string>();
         static string[] profile = new string[7];
+        public static string[] missing = null;
+        static int missed = 0;
         static int count = 0;
         static int flag = 0;
         static int counter = 1;
@@ -103,6 +106,20 @@ namespace SmbiBotApp
             viewProfile = 13,
 
         };
+
+        public enum user_profile
+        {
+            id = 0,
+            first_name = 1,
+            last_name = 2,
+            birthday = 3,
+            gender = 4,
+            location = 5,
+            email = 6,
+
+        };
+
+
         private void asked()
         {
             col.Add("Before I get matching you to the perfect job. I'll have to first setup your profile.");
@@ -286,9 +303,18 @@ namespace SmbiBotApp
                     try
                     {
                         var symb = string.Empty;
-                    next:
+                        next:
+                            //if (missed == 1)//fb
+                            //{
+                            //    str.intent = "misdata";
+                            //    missed = 0;
+                            //}
                         switch (str.intent)
                         {
+                            //case "misdata"://fb
+                            //     fbmissing_data();
+                            //     break;
+
                             case "None":
 
                                 var validation_result = new Tuple<bool, string>(true, "");//4
@@ -450,34 +476,38 @@ namespace SmbiBotApp
                                     switch (entity)
                                     {
                                         case "started":
-                                                //var conversationReference = Microsoft.Bot.Builder.ConnectorEx.Extensions.ToConversationReference(activity);
-                                                //var fbLoginUrl = FacebookHelpers.GetFacebookLoginURL(conversationReference, FacebookOauthCallback.ToString());
-                                                //reply.Text = "Please login in using this card";
-                                                //reply.Attachments = new List<Attachment>();
-                                                //List<CardAction> cardbuttons = new List<CardAction>();
-                                                //CardAction button = new CardAction()
-                                                //{
-                                                //    Title = "Login",
-                                                //    Type = "openUrl",
+                                                userid = null;
+                                                acctoken = null;
 
-                                                //    Value = fbLoginUrl,
+                                                var conversationReference = Microsoft.Bot.Builder.ConnectorEx.Extensions.ToConversationReference(activity);
+                                                var fbLoginUrl = FacebookHelpers.GetFacebookLoginURL(conversationReference, FacebookOauthCallback.ToString());
+                                                reply.Text = "Please login in using this card";
+                                                reply.Attachments = new List<Attachment>();
+                                                List<CardAction> cardbuttons = new List<CardAction>();
+                                                CardAction button = new CardAction()
+                                                {
+                                                    Title = "Login",
+                                                    Type = "openUrl",
 
-                                                //};
-                                                ////.Attachments.Add(SigninCard.Create("You need to authorize me",
-                                                ////                                       "Login to Facebook!",
-                                                ////                                      fbLoginUrl
-                                                ////                                     ).ToAttachment());
-                                                //cardbuttons.Add(button);
-                                                //SigninCard signin = new SigninCard()
-                                                //{
-                                                //    Buttons = cardbuttons,
-                                                //};
-                                                //Attachment jobattachment = signin.ToAttachment();
-                                                //reply.Attachments.Add(jobattachment);
-                                                //reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-                                                //await connector.Conversations.ReplyToActivityAsync(reply);
-                                                //while (userid == null)
-                                                //{ }
+                                                    Value = fbLoginUrl,
+
+                                                };
+                                                //.Attachments.Add(SigninCard.Create("You need to authorize me",
+                                                //                                       "Login to Facebook!",
+                                                //                                      fbLoginUrl
+                                                //                                     ).ToAttachment());
+                                                cardbuttons.Add(button);
+                                                SigninCard signin = new SigninCard()
+                                                {
+                                                    Buttons = cardbuttons,
+                                                };
+                                                Attachment jobattachment = signin.ToAttachment();
+                                                reply.Attachments.Add(jobattachment);
+                                                reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                                                await connector.Conversations.ReplyToActivityAsync(reply);
+                                                while (userid == null)
+                                                { }
+                                                reply.Attachments = null;
                                             des_pro = 0;
                                             data.Clear();
                                             avoid.Clear();
@@ -487,7 +517,8 @@ namespace SmbiBotApp
                                             reply.Text = "Bot is retrieving information" + "\n\n";
                                             await connector.Conversations.ReplyToActivityAsync(reply);
                                             FacebookServices fbc = new FacebookServices();
-                                            profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
+                                                //profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
+                                            profile = await fbc.GetUser(acctoken,userid);
 
                                             if (profile != null)
                                             {
@@ -500,10 +531,13 @@ namespace SmbiBotApp
                                                 data.Add(id);
                                                 var result = MongoUser.exist_user(profile[0]);
                                                 string location = profile[5];
-                                                string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
-                                                profile[5] = loc[0];
-                                                if (result != null)
-                                                {
+                                                    if (location != "Not Specified")
+                                                    {
+                                                        string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
+                                                        profile[5] = loc[0];
+                                                    }
+                                                    if (result != null)
+                                                    {
                                                     var res = JsonConvert.DeserializeObject<MongoData>(result.ToJson());
                                                     if (res.basic.status == 1)
                                                     {
@@ -563,9 +597,18 @@ namespace SmbiBotApp
                                                          "\n\n" + "Gender:" + profile[4] + "\n\n" + "Location:" + profile[5] + "\n\n" + "Email:" + profile[6];
                                             await connector.Conversations.ReplyToActivityAsync(reply);
                                             Thread.Sleep(1100);
-                                            replymesge = col.ElementAt(1);
-                                            infoConfirm(reply);
-                                            des_pro = 0;
+                                            //if (profile.Contains("Not Specified"))//fb
+                                            //{
+                                            //        missed = 0;
+                                            //        replymesge = fbmissing_data();
+                                            //}
+                                            //else
+                                            //{
+                                            //        replymesge = col.ElementAt(1);
+                                            //        infoConfirm(reply);
+                                            //        des_pro = 0;
+                                            //}
+                                           
                                             break;
                                         case "basic":
                                             des_pro = 1;
@@ -1029,6 +1072,49 @@ namespace SmbiBotApp
             }
         }
 
+        //private string fbmissing_data()//fb
+        //{
+        //    int k;
+        //    string text = null;
+        //    for (k = 0; k <= 6; k++)
+        //    {
+        //        if (missing[k] != null)
+        //        {
+        //            missed = 1;
+        //            missing[k] = null;
+        //            break;
+        //        }
+        //    }
+        //    switch (k)
+        //    {
+        //        case 1:
+        //            text = col.ElementAt(2);
+        //            break;
+
+        //        case 2:
+        //            text = col.ElementAt(3);
+        //            break;
+        //        case 3:
+        //            text = col.ElementAt(4);
+        //            break;
+
+        //        case 4:
+        //            text = col.ElementAt(5);
+        //            break;
+        //        case 5:
+        //            text = col.ElementAt(6);
+        //            break;
+        //        case 6:
+        //            text = col.ElementAt(7);
+        //            break;
+        //    }
+
+        //    return text;
+        
+        //}
+
+
+
         private void save_user_test(int flagi)
         {
             int j = 1;
@@ -1111,7 +1197,8 @@ namespace SmbiBotApp
                 var Client = new MongoClient();
                 var MongoDB = Client.GetDatabase("Botdatabase");
                 var Collec = MongoDB.GetCollection<BsonDocument>("users");
-
+                Random rnd = new Random();
+                int num = rnd.Next(1,99);
                 var info = new BsonDocument
                 {
                     {"_id",data.ElementAt(0)},
