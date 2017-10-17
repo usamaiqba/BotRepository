@@ -1,4 +1,4 @@
-
+﻿
  <dataset>
 
         <record>
@@ -88,6 +88,13 @@
 			<type>ios</type>
 		</record>
 		<record>
+			<Serial>13</Serial>
+			<Statements>Which of the following is not a browser ? </Statements>
+			<Options>A. Microsofts Bing @ B. Netscape Navigator @ C. Mozilla Firefox @ D. Opera</Options>
+			<Answers>A</Answers>
+			<type>ios</type>
+		</record>
+		<record>
 			<Serial>14</Serial>
 			<Statements>HTML tags are surrounded by which type of brackets. </Statements>
 			<Options>A. Curly @ B. Round @ C. Squart @ D. Angle</Options>
@@ -95,7 +102,27 @@
 			<type>ios</type>
 		</record>
 		<record>
+			<Serial>15</Serial>
+			<Statements>HTML tags are surrounded by which type of brackets. </Statements>
+			<Options>A. Curly @ B. Round @ C. Squart @ D. Angle</Options>
+			<Answers>D</Answers>
+			<type>ios</type>
+		</record>
+		<record>
 			<Serial>16</Serial>
+			<Statements>Awebpage displays a picture. What﻿﻿﻿ ﻿﻿tag ﻿﻿﻿﻿﻿was used to display that picture?</Statements>
+			<Options>A. picture @ B. image @ C.img @ D. src</Options>
+			<Answers>C</Answers>
+			<type>php</type>
+		</record>
+		<record>
+			<Serial>17</Serial>
+			<Statements>Awebpage displays a picture. What﻿﻿﻿ ﻿﻿tag ﻿﻿﻿﻿﻿was used to display that picture?</Statements>
+			<Options>A. picture @ B. image @ C.img @ D. src</Options>
+			<Answers>C</Answers>
+			<type>php</type>
+		</record><record>
+			<Serial>18</Serial>
 			<Statements>Awebpage displays a picture. What﻿﻿﻿ ﻿﻿tag ﻿﻿﻿﻿﻿was used to display that picture?</Statements>
 			<Options>A. picture @ B. image @ C.img @ D. src</Options>
 			<Answers>C</Answers>
@@ -436,7 +463,7 @@
          <record>
              <Serial>66</Serial>
              <Statements>How are decisions made in your partnership?</Statements>
-             <Options>A. Hands-off @ B. hands-on</Options>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 10 years @ D. 15 years</Options>
              <Answers>C</Answers>
              <type>investor</type>
          </record>
@@ -457,7 +484,7 @@
          <record>
              <Serial>69</Serial>
              <Statements>What is your follow-on strategy?</Statements>
-             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. Schedule routine meetings and decide</Options>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
              <Answers>A</Answers>
              <type>investor</type>
          </record>
@@ -468,7 +495,3086 @@
              <Answers>C</Answers>
              <type>investor</type>
          </record>
-  
+         <record>
+             <Serial>71</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Grap Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>72</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>73</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Grap Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>74</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>75</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Grap Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>76</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Grap Typography</type>
+         </record>
+         <record>
+             <Serial>77</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Typography</type>
+         </record>
+         <record>
+             <Serial>78</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Grap Typography</type>
+         </record>
+         <record>
+             <Serial>79</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Typography</type>
+         </record>
+         <record>
+             <Serial>80</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Grap Typography</type>
+         </record>
+         <record>
+             <Serial>81</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Grap Logo Design</type>
+         </record>
+         <record>
+             <Serial>82</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Logo Design</type>
+         </record>
+         <record>
+             <Serial>83</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Grap Logo Design</type>
+         </record>
+         <record>
+             <Serial>84</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
+             <Answers>A</Answers>
+             <type>Grap Logo Design</type>
+         </record>
+         <record>
+             <Serial>85</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Grap Logo Design</type>
+         </record>
+         <record>
+             <Serial>86</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Grap Design Tools</type>
+         </record>
+         <record>
+             <Serial>87</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap Design Tools</type>
+         </record>
+         <record>
+             <Serial>88</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Grap Design Tools</type>
+         </record>
+         <record>
+             <Serial>89</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
+             <Answers>A</Answers>
+             <type>Grap Design Tools</type>
+         </record>
+         <record>
+             <Serial>90</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Grap Design Tools</type>
+         </record>
+         <record>
+             <Serial>91</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>UXUI Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>92</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>93</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>UXUI Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>94</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
+             <Answers>A</Answers>
+             <type>UXUI Layout and Composition</type>
+         </record>
+         <record>
+             <Serial>95</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Layout and Composition</type>
+         </record>
+<record>
+             <Serial>96</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Typography</type>
+         </record>
+         <record>
+             <Serial>97</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>UXUI Typography</type>
+         </record>
+         <record>
+             <Serial>98</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Typography</type>
+         </record>
+         <record>
+             <Serial>99</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>UXUI Typography</type>
+         </record>
+         <record>
+             <Serial>100</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Typography</type>
+         </record><record>
+             <Serial>101</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Logo Design</type>
+         </record>
+<record>
+             <Serial>102</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Logo Design</type>
+         </record>
+         <record>
+             <Serial>103</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>UXUI Logo Design</type>
+         </record>
+         <record>
+             <Serial>104</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Logo Design</type>
+         </record>
+         <record>
+             <Serial>105</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>UXUI Logo Design</type>
+         </record><record>
+             <Serial>106</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Design Tools</type>
+         </record>
+         <record>
+             <Serial>107</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Design Tools</type>
+         </record>
+<record>
+             <Serial>108</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI Design Tools</type>
+         </record>
+         <record>
+             <Serial>109</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>UXUI Design Tools</type>
+         </record>
+         <record>
+             <Serial>110</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI Design Tools</type>
+         </record>
+         <record>
+             <Serial>111</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androidessentialtraining</type>
+         </record>
+         <record>
+             <Serial>112</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androidessentialtraining</type>
+         </record>
+         <record>
+             <Serial>113</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androidessentialtraining</type>
+         </record>
+<record>
+             <Serial>114</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androidessentialtraining</type>
+         </record>
+         <record>
+             <Serial>115</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>androidessentialtraining</type>
+         </record>
+         <record>
+             <Serial>116</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevcomuser</type>
+         </record>
+         <record>
+             <Serial>117</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevcomuser</type>
+         </record>
+         <record>
+             <Serial>118</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevcomuser</type>
+         </record>
+         <record>
+             <Serial>119</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevcomuser</type>
+         </record>
+<record>
+             <Serial>120</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevcomuser</type>
+         </record><record>
+             <Serial>121</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>androiddevdatastorage</type>
+         </record>
+         <record>
+             <Serial>122</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevdatastorage</type>
+         </record>
+         <record>
+             <Serial>123</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevdatastorage</type>
+         </record>
+         <record>
+             <Serial>124</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevdatastorage</type>
+         </record>
+         <record>
+             <Serial>125</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevdatastorage</type>
+         </record>
+<record>
+             <Serial>126</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevanimtran</type>
+         </record>
+         <record>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevanimtran</type>
+         </record>
+         <record>
+             <Serial>128</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevanimtran</type>
+         </record>
+         <record>
+             <Serial>129</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevanimtran</type>
+         </record>
+         <record>
+             <Serial>130</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevanimtran</type>
+         </record><record>
+             <Serial>131</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevunittesting</type>
+         </record>
+<record>
+             <Serial>132</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevunittesting</type>
+         </record>
+         <record>
+             <Serial>133</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevunittesting</type>
+         </record>
+         <record>
+             <Serial>134</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevunittesting</type>
+         </record>
+         <record>
+             <Serial>135</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevunittesting</type>
+         </record>
+         <record>
+             <Serial>136</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevdistributingapp</type>
+         </record>
+         <record>
+             <Serial>137</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevdistributingapp</type>
+         </record>
+<record>
+             <Serial>138</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>androiddevdistributingapp</type>
+         </record>
+         <record>
+             <Serial>139</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>androiddevdistributingapp</type>
+         </record>
+         <record>
+             <Serial>140</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>androiddevdistributingapp</type>
+         </record><record>
+             <Serial>141</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>cplusplusessential</type>
+         </record>
+         <record>
+             <Serial>142</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>cplusplusessential</type>
+         </record>
+         <record>
+             <Serial>143</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>cplusplusessential</type>
+         </record>
+<record>
+             <Serial>144</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>cplusplusessential</type>
+         </record>
+         <record>
+             <Serial>145</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>cplusplusessential</type>
+         </record>
+         <record>
+             <Serial>146</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>codecliniccplusplus</type>
+         </record>
+         <record>
+             <Serial>147</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>codecliniccplusplus</type>
+         </record>
+         <record>
+             <Serial>148</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>codecliniccplusplus</type>
+         </record>
+         <record>
+             <Serial>149</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codecliniccplusplus</type>
+         </record>
+<record>
+             <Serial>150</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codecliniccplusplus</type>
+         </record><record>
+             <Serial>151</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>cplusplusmovesemantics</type>
+         </record>
+         <record>
+             <Serial>152</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>cplusplusmovesemantics</type>
+         </record>
+         <record>
+             <Serial>153</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>cplusplusmovesemantics</type>
+         </record>
+         <record>
+             <Serial>154</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>cplusplusmovesemantics</type>
+         </record>
+         <record>
+             <Serial>155</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>cplusplusmovesemantics</type>
+         </record>
+<record>
+             <Serial>156</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>cplusplussmartpointers</type>
+         </record>
+         <record>
+             <Serial>157</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>cplusplussmartpointers</type>
+         </record>
+         <record>
+             <Serial>158</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>cplusplussmartpointers</type>
+         </record>
+         <record>
+             <Serial>159</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>cplusplussmartpointers</type>
+         </record>
+         <record>
+             <Serial>160</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>swift3essential</type>
+         </record><record>
+             <Serial>161</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>swift3essential</type>
+         </record>
+<record>
+             <Serial>162</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>swift3essential</type>
+         </record>
+         <record>
+             <Serial>163</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>swift3essential</type>
+         </record>
+         <record>
+             <Serial>164</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>swift3essential</type>
+         </record>
+         <record>
+             <Serial>165</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>swift3essential</type>
+         </record>
+         <record>
+             <Serial>166</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>xcodeessentials</type>
+         </record>
+         <record>
+             <Serial>167</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>xcodeessentials</type>
+         </record>
+<record>
+             <Serial>168</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>xcodeessentials</type>
+         </record>
+         <record>
+             <Serial>169</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>xcodeessentials</type>
+         </record>
+         <record>
+             <Serial>170</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>xcodeessentials</type>
+         </record><record>
+             <Serial>171</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>iosdesignui</type>
+         </record>
+         
+	
+         <record>
+             <Serial>172</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>iosdesignui</type>
+         </record>
+         <record>
+             <Serial>173</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>iosdesignui</type>
+         </record>
+<record>
+             <Serial>174</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>iosdesignui</type>
+         </record>
+         <record>
+             <Serial>175</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>iosdesignui</type>
+         </record>
+         <record>
+             <Serial>176</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>iosapparchitecture</type>
+         </record>
+         <record>
+             <Serial>177</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>iosapparchitecture</type>
+         </record>
+         
+	
+         <record>
+             <Serial>178</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>iosapparchitecture</type>
+         </record>
+         <record>
+             <Serial>179</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>iosapparchitecture</type>
+         </record>
+<record>
+             <Serial>180</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>iosapparchitecture</type>
+         </record><record>
+             <Serial>181</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>iosdistributingyourapp</type>
+         </record>
+         <record>
+             <Serial>182</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>iosdistributingyourapp</type>
+         </record>
+         <record>
+             <Serial>183</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>iosdistributingyourapp</type>
+         </record>
+         
+	
+         <record>
+             <Serial>184</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>iosdistributingyourapp</type>
+         </record>
+         <record>
+             <Serial>185</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>iosdistributingyourapp</type>
+         </record>
+<record>
+             <Serial>186</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>progfoundationoodesign</type>
+         </record>
+         <record>
+             <Serial>187</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>progfoundationoodesign</type>
+         </record>
+         <record>
+             <Serial>188</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>progfoundationoodesign</type>
+         </record>
+         <record>
+             <Serial>189</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>progfoundationoodesign</type>
+         </record>
+         
+	
+         <record>
+             <Serial>190</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>progfoundationoodesign</type>
+         </record>
+         <record>
+             <Serial>191</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>javaessentialtraining</type>
+         </record>
+<record>
+             <Serial>192</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>javaessentialtraining</type>
+         </record>
+         <record>
+             <Serial>193</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>javaessentialtraining</type>
+         </record>
+         <record>
+             <Serial>194</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>javaessentialtraining</type>
+         </record>
+         <record>
+             <Serial>195</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>javaessentialtraining</type>
+         </record>
+         <record>
+             <Serial>196</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codeclinicjava</type>
+         </record>
+<record>
+             <Serial>197</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codeclinicjava</type>
+         </record>
+         <record>
+             <Serial>198</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>codeclinicjava</type>
+         </record>
+         <record>
+             <Serial>199</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>codeclinicjava</type>
+         </record>
+         <record>
+             <Serial>200</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+         <record>
+             <Serial>201</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+<record>
+             <Serial>202</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+         <record>
+             <Serial>203</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+         <record>
+             <Serial>204</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+         <record>
+             <Serial>205</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>progfounddesignpatterns</type>
+         </record>
+         <record>
+             <Serial>206</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>advancedjavaprogramming</type>
+         </record>
+<record>
+             <Serial>207</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>advancedjavaprogramming</type>
+         </record>
+         <record>
+             <Serial>208</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>advancedjavaprogramming</type>
+         </record>
+         <record>
+             <Serial>209</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>advancedjavaprogramming</type>
+         </record>
+         <record>
+             <Serial>210</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>advancedjavaprogramming</type>
+         </record>
+         <record>
+             <Serial>211</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>javadatabaseintegrationjdbc</type>
+         </record>
+<record>
+             <Serial>212</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>javadatabaseintegrationjdbc</type>
+         </record>
+         <record>
+             <Serial>213</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>javadatabaseintegrationjdbc</type>
+         </record>
+         <record>
+             <Serial>214</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>javadatabaseintegrationjdbc</type>
+         </record>
+         <record>
+             <Serial>215</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>javadatabaseintegrationjdbc</type>
+         </record>
+         <record>
+             <Serial>216</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>programmingfundamentals</type>
+         </record>
+<record>
+             <Serial>217</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>programmingfundamentals</type>
+         </record>
+         <record>
+             <Serial>218</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>programmingfundamentals</type>
+         </record>
+         <record>
+             <Serial>219</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>programmingfundamentals</type>
+         </record>
+         <record>
+             <Serial>220</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>programmingfundamentals</type>
+         </record>
+         <record>
+             <Serial>221</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>essentialfrontendlanguages</type>
+         </record>
+<record>
+             <Serial>222</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>essentialfrontendlanguages</type>
+         </record>
+         <record>
+             <Serial>223</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>essentialfrontendlanguages</type>
+         </record>
+         <record>
+             <Serial>224</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>essentialfrontendlanguages</type>
+         </record>
+         <record>
+             <Serial>225</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>essentialfrontendlanguages</type>
+         </record>
+         <record>
+             <Serial>226</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmajorfeature</type>
+         </record>
+<record>
+             <Serial>227</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmajorfeature</type>
+         </record>
+         <record>
+             <Serial>228</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>phpmajorfeature</type>
+         </record>
+         <record>
+             <Serial>229</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>phpmajorfeature</type>
+         </record>
+         <record>
+             <Serial>230</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>phpmajorfeature</type>
+         </record>
+         <record>
+             <Serial>231</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpservingsites</type>
+         </record>
+<record>
+             <Serial>232</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpservingsites</type>
+         </record>
+         <record>
+             <Serial>233</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>phpservingsites</type>
+         </record>
+         <record>
+             <Serial>234</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>phpservingsites</type>
+         </record>
+         <record>
+             <Serial>235</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>phpservingsites</type>
+         </record>
+         <record>
+             <Serial>236</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpsecuringsites</type>
+         </record>
+<record>
+             <Serial>237</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpsecuringsites</type>
+         </record>
+         <record>
+             <Serial>238</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>phpsecuringsites</type>
+         </record>
+         <record>
+             <Serial>239</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>phpsecuringsites</type>
+         </record>
+         <record>
+             <Serial>240</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>phpsecuringsites</type>
+         </record>
+         <record>
+             <Serial>241</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmysqlessentials</type>
+         </record>
+<record>
+             <Serial>242</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmysqlessentials</type>
+         </record>
+         <record>
+             <Serial>243</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>phpmysqlessentials</type>
+         </record>
+         <record>
+             <Serial>244</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>phpmysqlessentials</type>
+         </record>
+         <record>
+             <Serial>245</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>phpmysqlessentials</type>
+         </record>
+         <record>
+             <Serial>246</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codeclinicphp</type>
+         </record>
+<record>
+             <Serial>247</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>codeclinicphp</type>
+         </record>
+         <record>
+             <Serial>248</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>codeclinicphp</type>
+         </record>
+         <record>
+             <Serial>249</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>codeclinicphp</type>
+         </record>
+         <record>
+             <Serial>250</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>codeclinicphp</type>
+         </record>
+         <record>
+             <Serial>251</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmvcforwebapplications</type>
+         </record>
+<record>
+             <Serial>252</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>phpmvcforwebapplications</type>
+         </record>
+         <record>
+             <Serial>253</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>phpmvcforwebapplications</type>
+         </record>
+         <record>
+             <Serial>254</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>phpmvcforwebapplications</type>
+         </record>
+         <record>
+             <Serial>255</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>phpmvcforwebapplications</type>
+         </record>
+         <record>
+             <Serial>256</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythonprogrammingfoundations</type>
+         </record>
+<record>
+             <Serial>257</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythonprogrammingfoundations</type>
+         </record>
+         <record>
+             <Serial>258</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>pythonprogrammingfoundations</type>
+         </record>
+         <record>
+             <Serial>259</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>pythonprogrammingfoundations</type>
+         </record>
+         <record>
+             <Serial>260</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>pythonprogrammingfoundations</type>
+         </record>
+         <record>
+             <Serial>261</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythonessentials</type>
+         </record>
+<record>
+             <Serial>262</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythonessentials</type>
+         </record>
+         <record>
+             <Serial>263</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>pythonessentials</type>
+         </record>
+         <record>
+             <Serial>264</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>pythonessentials</type>
+         </record>
+         <record>
+             <Serial>265</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>pythonessentials</type>
+         </record>
+         <record>
+             <Serial>266</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythongui</type>
+         </record>
+<record>
+             <Serial>267</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythongui</type>
+         </record>
+         <record>
+             <Serial>268</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>pythongui</type>
+         </record>
+         <record>
+             <Serial>269</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>pythongui</type>
+         </record>
+         <record>
+             <Serial>270</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>pythongui</type>
+         </record>
+         <record>
+             <Serial>271</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythoncodeclinic</type>
+         </record>
+<record>
+             <Serial>272</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythoncodeclinic</type>
+         </record>
+         <record>
+             <Serial>273</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>pythoncodeclinic</type>
+         </record>
+         <record>
+             <Serial>274</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>pythoncodeclinic</type>
+         </record>
+         <record>
+             <Serial>275</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>pythoncodeclinic</type>
+         </record>
+         <record>
+             <Serial>276</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>:pythondjango</type>
+         </record>
+<record>
+             <Serial>277</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>pythondjango</type>
+         </record>
+         <record>
+             <Serial>278</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>pythondjango</type>
+         </record>
+         <record>
+             <Serial>279</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>pythondjango</type>
+         </record>
+         <record>
+             <Serial>280</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>pythondjango</type>
+         </record>
+
+<record>
+             <Serial>281</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Web Development Foundations</type>
+         </record>
+<record>
+             <Serial>282</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>283</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>284</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>285</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>286</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Programming Fundamentals</type>
+         </record>
+<record>
+             <Serial>287</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>288</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>289</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>290</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Programming Fundamentals</type>
+         </record><record>
+             <Serial>291</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Frontend Languages</type>
+         </record>
+<record>
+             <Serial>292</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Frontend Languages</type>
+         </record>
+         <record>
+             <Serial>293</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Frontend Languages</type>
+         </record>
+         <record>
+             <Serial>294</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Essential Frontend Languages</type>
+         </record>
+         <record>
+             <Serial>295</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Essential Frontend Languages</type>
+         </record>
+         <record>
+             <Serial>296</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Database Foundations</type>
+         </record>
+<record>
+             <Serial>297</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Database Foundations</type>
+         </record>
+         <record>
+             <Serial>298</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Database Foundations</type>
+         </record>
+         <record>
+             <Serial>299</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Database Foundations</type>
+         </record>
+         <record>
+             <Serial>300</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Database Foundations</type>
+         </record><record>
+             <Serial>301</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Backend Languages</type>
+         </record>
+<record>
+             <Serial>302</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Backend Languages</type>
+         </record>
+         <record>
+             <Serial>303</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Essential Backend Languages</type>
+         </record>
+         <record>
+             <Serial>304</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Essential Backend Languages</type>
+         </record>
+         <record>
+             <Serial>305</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Essential Backend Languages</type>
+         </record>
+         <record>
+             <Serial>306</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Security Foundations</type>
+         </record>
+<record>
+             <Serial>307</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Security Foundations</type>
+         </record>
+         <record>
+             <Serial>308</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Security Foundations</type>
+         </record>
+         <record>
+             <Serial>309</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Security Foundations</type>
+         </record>
+         <record>
+             <Serial>310</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Security Foundations</type>
+         </record>
+<record>
+             <Serial>311</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Web Projects Workflows</type>
+         </record>
+<record>
+             <Serial>312</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Web Projects Workflows</type>
+         </record>
+         <record>
+             <Serial>313</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Web Projects Workflows</type>
+         </record>
+         <record>
+             <Serial>314</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Web Projects Workflows</type>
+         </record>
+         <record>
+             <Serial>315</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Web Projects Workflows</type>
+         </record>
+         <record>
+             <Serial>316</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Frameworks</type>
+         </record>
+<record>
+             <Serial>317</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Full Frameworks</type>
+         </record>
+         <record>
+             <Serial>318</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Full Frameworks</type>
+         </record>
+         <record>
+             <Serial>319</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Full Frameworks</type>
+         </record>
+         <record>
+             <Serial>320</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Full Frameworks</type>
+         </record>
+<record>
+             <Serial>321</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Web Development Foundations</type>
+         </record>
+<record>
+             <Serial>322</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>323</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>324</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>325</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro Web Development Foundations</type>
+         </record>
+         <record>
+             <Serial>326</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Programming Fundamentals</type>
+         </record>
+<record>
+             <Serial>327</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>328</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>329</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro Programming Fundamentals</type>
+         </record>
+         <record>
+             <Serial>330</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro Programming Fundamentals</type>
+         </record><record>
+             <Serial>331</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro User Experience for Web Designers</type>
+         </record>
+<record>
+             <Serial>332</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro User Experience for Web Designers</type>
+         </record>
+         <record>
+             <Serial>333</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro User Experience for Web Designers</type>
+         </record>
+         <record>
+             <Serial>334</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro User Experience for Web Designers</type>
+         </record>
+         <record>
+             <Serial>335</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro User Experience for Web Designers</type>
+         </record>
+         <record>
+             <Serial>336</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro UX Foundations Accessibility</type>
+         </record>
+<record>
+             <Serial>337</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro UX Foundations Accessibility</type>
+         </record>
+         <record>
+             <Serial>338</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro UX Foundations Accessibility</type>
+         </record>
+         <record>
+             <Serial>339</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro UX Foundations Accessibility</type>
+         </record>
+         <record>
+             <Serial>340</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro UX Foundations Accessibility</type>
+         </record>
+<record>
+             <Serial>341</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Responsive Design</type>
+         </record>
+<record>
+             <Serial>342</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Responsive Design</type>
+         </record>
+         <record>
+             <Serial>343</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro Responsive Design</type>
+         </record>
+         <record>
+             <Serial>344</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro Responsive Design</type>
+         </record>
+         <record>
+             <Serial>345</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro Responsive Design</type>
+         </record>
+<record>
+             <Serial>346</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Framework &amp; Tools</type>
+         </record>
+<record>
+             <Serial>347</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Fro Framework &amp; Tools</type>
+         </record>
+         <record>
+             <Serial>348</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Fro Framework &amp; Tools</type>
+         </record>
+         <record>
+             <Serial>349</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Fro Framework &amp; Tools</type>
+         </record>
+         <record>
+             <Serial>350</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Fro Framework &amp; Tools</type>
+         </record>
+         
+<record>
+             <Serial>351</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Foundations</type>
+         </record>
+<record>
+             <Serial>352</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>353</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>354</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Online Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>355</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Online Marketing Foundations</type>
+         </record>
+<record>
+             <Serial>356</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig SEO Foundations</type>
+         </record>
+<record>
+             <Serial>357</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig SEO Foundations</type>
+         </record>
+         <record>
+             <Serial>358</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig SEO Foundations</type>
+         </record>
+         <record>
+             <Serial>359</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig SEO Foundations</type>
+         </record>
+         <record>
+             <Serial>360</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig SEO Foundations</type>
+         </record>
+<record>
+             <Serial>361</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Google Analytics</type>
+         </record>
+<record>
+             <Serial>362</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Google Analytics</type>
+         </record>
+         <record>
+             <Serial>363</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Google Analytics</type>
+         </record>
+         <record>
+             <Serial>364</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Google Analytics</type>
+         </record>
+         <record>
+             <Serial>365</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Google Analytics</type>
+         </record>
+<record>
+             <Serial>366</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Content Marketing Fundamentals</type>
+         </record>
+<record>
+             <Serial>367</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Content Marketing Fundamentals</type>
+         </record>
+         <record>
+             <Serial>368</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Content Marketing Fundamentals</type>
+         </record>
+         <record>
+             <Serial>369</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Content Marketing Fundamentals</type>
+         </record>
+         <record>
+             <Serial>370</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Content Marketing Fundamentals</type>
+         </record>
+<record>
+             <Serial>371</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Mobile Marketing Foundations</type>
+         </record>
+<record>
+             <Serial>372</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Mobile Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>373</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Mobile Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>374</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Mobile Marketing Foundations</type>
+         </record>
+         <record>
+             <Serial>375</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Mobile Marketing Foundations</type>
+         </record>
+<record>
+             <Serial>376</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Lead Generation Foundations</type>
+         </record>
+<record>
+             <Serial>377</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Lead Generation Foundations</type>
+         </record>
+         <record>
+             <Serial>378</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Lead Generation Foundations</type>
+         </record>
+         <record>
+             <Serial>379</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Lead Generation Foundations</type>
+         </record>
+         <record>
+             <Serial>380</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Lead Generation Foundations</type>
+         </record>
+<record>
+             <Serial>381</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Growth Hacking</type>
+         </record>
+<record>
+             <Serial>382</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Growth Hacking</type>
+         </record>
+         <record>
+             <Serial>383</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Growth Hacking</type>
+         </record>
+         <record>
+             <Serial>384</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Growth Hacking</type>
+         </record>
+         <record>
+             <Serial>385</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Growth Hacking</type>
+         </record>
+<record>
+             <Serial>386</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Plan</type>
+         </record>
+<record>
+             <Serial>387</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Plan</type>
+         </record>
+         <record>
+             <Serial>388</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Dig Online Marketing Plan</type>
+         </record>
+         <record>
+             <Serial>389</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Dig Online Marketing Plan</type>
+         </record>
+         <record>
+             <Serial>390</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Dig Online Marketing Plan</type>
+         </record>
+<record>
+             <Serial>391</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Career</type>
+         </record>
+<record>
+             <Serial>392</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Career</type>
+         </record>
+         <record>
+             <Serial>393</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Career</type>
+         </record>
+         <record>
+             <Serial>394</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Sales Career</type>
+         </record>
+         <record>
+             <Serial>395</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Sales Career</type>
+         </record>
+<record>
+             <Serial>396</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Effective Listening</type>
+         </record>
+<record>
+             <Serial>397</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Effective Listening</type>
+         </record>
+         <record>
+             <Serial>398</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Effective Listening</type>
+         </record>
+         <record>
+             <Serial>399</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Effective Listening</type>
+         </record>
+         <record>
+             <Serial>400</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Effective Listening</type>
+         </record>
+<record>
+             <Serial>401</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Assertiveness</type>
+         </record>
+<record>
+             <Serial>402</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Assertiveness</type>
+         </record>
+         <record>
+             <Serial>403</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Assertiveness</type>
+         </record>
+         <record>
+             <Serial>404</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Assertiveness</type>
+         </record>
+         <record>
+             <Serial>405</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Assertiveness</type>
+         </record>
+<record>
+             <Serial>406</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Resilience</type>
+         </record>
+<record>
+             <Serial>407</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Resilience</type>
+         </record>
+         <record>
+             <Serial>408</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Resilience</type>
+         </record>
+         <record>
+             <Serial>409</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Resilience</type>
+         </record>
+         <record>
+             <Serial>410</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Resilience</type>
+         </record>
+<record>
+             <Serial>411</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Foundations</type>
+         </record>
+<record>
+             <Serial>412</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Foundations</type>
+         </record>
+         <record>
+             <Serial>413</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Foundations</type>
+         </record>
+         <record>
+             <Serial>414</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Sales Foundations</type>
+         </record>
+         <record>
+             <Serial>415</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Sales Foundations</type>
+         </record>
+<record>
+             <Serial>416</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Asking Questions</type>
+         </record>
+<record>
+             <Serial>417</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Asking Questions</type>
+         </record>
+         <record>
+             <Serial>418</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Asking Questions</type>
+         </record>
+         <record>
+             <Serial>419</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Asking Questions</type>
+         </record>
+         <record>
+             <Serial>420</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Asking Questions</type>
+         </record>
+<record>
+             <Serial>421</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Creating Customer Value</type>
+         </record>
+<record>
+             <Serial>422</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Creating Customer Value</type>
+         </record>
+         <record>
+             <Serial>423</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Creating Customer Value</type>
+         </record>
+         <record>
+             <Serial>424</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Creating Customer Value</type>
+         </record>
+         <record>
+             <Serial>425</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Creating Customer Value</type>
+         </record>
+<record>
+             <Serial>426</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Negotiation</type>
+         </record>
+<record>
+             <Serial>427</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Negotiation</type>
+         </record>
+         <record>
+             <Serial>428</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Sal Sales Negotiation</type>
+         </record>
+         <record>
+             <Serial>429</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Sal Sales Negotiation</type>
+         </record>
+         <record>
+             <Serial>430</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Sal Sales Negotiation</type>
+         </record>
+
+<record>
+             <Serial>431</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Object Oriented Design</type>
+         </record>
+<record>
+             <Serial>432</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Object Oriented Design</type>
+         </record>
+         <record>
+             <Serial>433</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Object Oriented Design</type>
+         </record>
+         <record>
+             <Serial>434</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Object Oriented Design</type>
+         </record>
+         <record>
+             <Serial>435</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Object Oriented Design</type>
+         </record>
+<record>
+             <Serial>436</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Java Essential Training</type>
+         </record>
+<record>
+             <Serial>437</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Java Essential Training</type>
+         </record>
+         <record>
+             <Serial>438</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Java Essential Training</type>
+         </record>
+         <record>
+             <Serial>439</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Java Essential Training</type>
+         </record>
+         <record>
+             <Serial>440</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Java Essential Training</type>
+         </record>
+<record>
+             <Serial>441</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Code Clinic Java</type>
+         </record>
+<record>
+             <Serial>442</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Code Clinic Java</type>
+         </record>
+         <record>
+             <Serial>443</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Code Clinic Java</type>
+         </record>
+         <record>
+             <Serial>444</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Code Clinic Java</type>
+         </record>
+         <record>
+             <Serial>445</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Code Clinic Java</type>
+         </record>
+<record>
+             <Serial>446</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Design Patterns</type>
+         </record>
+<record>
+             <Serial>447</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Design Patterns</type>
+         </record>
+         <record>
+             <Serial>448</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Design Patterns</type>
+         </record>
+         <record>
+             <Serial>449</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Design Patterns</type>
+         </record>
+         <record>
+             <Serial>450</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Design Patterns</type>
+         </record>
+<record>
+             <Serial>451</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Advanced Java Programming</type>
+         </record>
+<record>
+             <Serial>452</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Advanced Java Programming</type>
+         </record>
+         <record>
+             <Serial>453</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Advanced Java Programming</type>
+         </record>
+         <record>
+             <Serial>454</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Advanced Java Programming</type>
+         </record>
+         <record>
+             <Serial>455</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Advanced Java Programming</type>
+         </record>
+<record>
+             <Serial>456</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Java Database Integration</type>
+         </record>
+<record>
+             <Serial>457</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>App Java Database Integration</type>
+         </record>
+         <record>
+             <Serial>458</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>App Java Database Integration</type>
+         </record>
+         <record>
+             <Serial>459</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>App Java Database Integration</type>
+         </record>
+         <record>
+             <Serial>460</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>App Java Database Integration</type>
+         </record>
+	
+<record>
+             <Serial>461</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Essential</type>
+         </record>
+<record>
+             <Serial>462</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Essential</type>
+         </record>
+         <record>
+             <Serial>463</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Cpp Essential</type>
+         </record>
+         <record>
+             <Serial>464</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Cpp Essential</type>
+         </record>
+         <record>
+             <Serial>465</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Cpp Essential</type>
+         </record>
+<record>
+             <Serial>466</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Code Clinic</type>
+         </record>
+<record>
+             <Serial>467</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Code Clinic</type>
+         </record>
+         <record>
+             <Serial>468</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Cpp Code Clinic</type>
+         </record>
+         <record>
+             <Serial>469</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Cpp Code Clinic</type>
+         </record>
+         <record>
+             <Serial>470</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Cpp Code Clinic</type>
+         </record>
+<record>
+             <Serial>471</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Move Semantics</type>
+         </record>
+<record>
+             <Serial>472</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Move Semantics</type>
+         </record>
+         <record>
+             <Serial>473</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Cpp Move Semantics</type>
+         </record>
+         <record>
+             <Serial>474</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Cpp Move Semantics</type>
+         </record>
+         <record>
+             <Serial>475</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Cpp Move Semantics</type>
+         </record>
+<record>
+             <Serial>476</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Smart Pointers</type>
+         </record>
+<record>
+             <Serial>477</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Smart Pointers</type>
+         </record>
+         <record>
+             <Serial>478</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Cpp Smart Pointers</type>
+         </record>
+         <record>
+             <Serial>479</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Cpp Smart Pointers</type>
+         </record>
+         <record>
+             <Serial>480</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Cpp Smart Pointers</type>
+         </record>
+<record>
+             <Serial>481</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Building a String Library</type>
+         </record>
+<record>
+             <Serial>482</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Cpp Building a String Library</type>
+         </record>
+         <record>
+             <Serial>483</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Cpp Building a String Library</type>
+         </record>
+         <record>
+             <Serial>484</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Cpp Building a String Library</type>
+         </record>
+         <record>
+             <Serial>485</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Cpp Building a String Library</type>
+         </record>
+         
+<record>
+             <Serial>486</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Programming Foundations</type>
+         </record>
+<record>
+             <Serial>487</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Programming Foundations</type>
+         </record>
+         <record>
+             <Serial>488</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Pyt Programming Foundations</type>
+         </record>
+         <record>
+             <Serial>489</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Pyt Programming Foundations</type>
+         </record>
+         <record>
+             <Serial>490</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Pyt Programming Foundations</type>
+         </record>
+<record>
+             <Serial>491</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Essentials</type>
+         </record>
+<record>
+             <Serial>492</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Essentials</type>
+         </record>
+         <record>
+             <Serial>493</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Pyt Essentials</type>
+         </record>
+         <record>
+             <Serial>494</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Pyt Essentials</type>
+         </record>
+         <record>
+             <Serial>495</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Pyt Essentials</type>
+         </record>
+<record>
+             <Serial>496</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python GUI</type>
+         </record>
+<record>
+             <Serial>497</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python GUI</type>
+         </record>
+         <record>
+             <Serial>498</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python GUI</type>
+         </record>
+         <record>
+             <Serial>499</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Pyt Python GUI</type>
+         </record>
+         <record>
+             <Serial>500</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Pyt Python GUI</type>
+         </record>
+<record>
+             <Serial>501</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Code Clinic</type>
+         </record>
+<record>
+             <Serial>502</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Code Clinic</type>
+         </record>
+         <record>
+             <Serial>503</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Pyt Code Clinic</type>
+         </record>
+         <record>
+             <Serial>504</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Pyt Code Clinic</type>
+         </record>
+         <record>
+             <Serial>505</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Pyt Code Clinic</type>
+         </record>
+<record>
+             <Serial>506</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python Django</type>
+         </record>
+<record>
+             <Serial>507</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python Django</type>
+         </record>
+         <record>
+             <Serial>508</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Pyt Python Django</type>
+         </record>
+         <record>
+             <Serial>509</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Pyt Python Django</type>
+         </record>
+         <record>
+             <Serial>510</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Pyt Python Django</type>
+         </record>
 		
 		
 		
