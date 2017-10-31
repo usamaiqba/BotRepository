@@ -1,4 +1,4 @@
-﻿
+
  <dataset>
 
         <record>
@@ -605,35 +605,35 @@
              <Statements>How are decisions made in your partnership?</Statements>
              <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
              <Answers>C</Answers>
-             <type>Grap Design Tools</type>
+             <type>Grap Photoshop</type>
          </record>
          <record>
              <Serial>87</Serial>
              <Statements>What is your investment process, and how long does it take?</Statements>
              <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
              <Answers>A</Answers>
-             <type>Grap Design Tools</type>
+             <type>Grap Photoshop</type>
          </record>
          <record>
              <Serial>88</Serial>
              <Statements>What is your check size?</Statements>
              <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
              <Answers>B</Answers>
-             <type>Grap Design Tools</type>
+             <type>Grap Photoshop</type>
          </record>
          <record>
              <Serial>89</Serial>
              <Statements>What is your follow-on strategy?</Statements>
              <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
              <Answers>A</Answers>
-             <type>Grap Design Tools</type>
+             <type>Grap Photoshop</type>
          </record>
          <record>
              <Serial>90</Serial>
              <Statements>How do you help companies you back?</Statements>
              <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
              <Answers>C</Answers>
-             <type>Grap Design Tools</type>
+             <type>Grap Photoshop</type>
          </record>
          <record>
              <Serial>91</Serial>
@@ -738,40 +738,41 @@
              <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
              <Answers>B</Answers>
              <type>UXUI Logo Design</type>
-         </record><record>
+         </record>
+         <record>
              <Serial>106</Serial>
              <Statements>What is your follow-on strategy?</Statements>
              <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
              <Answers>A</Answers>
-             <type>UXUI Design Tools</type>
+             <type>UXUI Photoshop</type>
          </record>
          <record>
              <Serial>107</Serial>
              <Statements>How do you help companies you back?</Statements>
              <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
              <Answers>C</Answers>
-             <type>UXUI Design Tools</type>
+             <type>UXUI Photoshop</type>
          </record>
-<record>
+         <record>
              <Serial>108</Serial>
              <Statements>How do you help companies you back?</Statements>
              <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
              <Answers>C</Answers>
-             <type>UXUI Design Tools</type>
+             <type>UXUI Photoshop</type>
          </record>
          <record>
              <Serial>109</Serial>
              <Statements>How are decisions made in your partnership?</Statements>
              <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
              <Answers>C</Answers>
-             <type>UXUI Design Tools</type>
+             <type>UXUI Photoshop</type>
          </record>
          <record>
              <Serial>110</Serial>
              <Statements>What is your investment process, and how long does it take?</Statements>
              <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
              <Answers>A</Answers>
-             <type>UXUI Design Tools</type>
+             <type>UXUI Photoshop</type>
          </record>
          <record>
              <Serial>111</Serial>
@@ -3575,10 +3576,78 @@
              <Answers>B</Answers>
              <type>Pyt Python Django</type>
          </record>
+         <record>
+             <Serial>511</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI InDesign</type>
+         </record>
+         <record>
+             <Serial>512</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI InDesign</type>
+          </record>
+          <record>
+             <Serial>513</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>UXUI InDesign</type>
+         </record>
+         <record>
+             <Serial>514</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>UXUI InDesign</type>
+         </record>
+         <record>
+             <Serial>515</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>UXUI InDesign</type>
+         </record>
 		
+         <record>
+             <Serial>516</Serial>
+             <Statements>How are decisions made in your partnership?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>C</Answers>
+             <type>Grap InDesign</type>
+         </record>
+         <record>
+             <Serial>517</Serial>
+             <Statements>What is your investment process, and how long does it take?</Statements>
+             <Options>A. 2 months @ B. 4 months @ C. 6 months @ D. 1 year</Options>
+             <Answers>A</Answers>
+             <type>Grap InDesign</type>
+         </record>
+         <record>
+             <Serial>518</Serial>
+             <Statements>What is your check size?</Statements>
+             <Options>A. $25,000 to $200,000 @ B. $300,000 to $500,000 @ C. $500,000 to $700,000  @ D.  $700,000 to $1Million</Options>
+             <Answers>B</Answers>
+             <type>Grap InDesign</type>
+         </record>
+         <record>
+             <Serial>519</Serial>
+             <Statements>What is your follow-on strategy?</Statements>
+             <Options>A. To make one-time investment @ B. To make more investments regularly @ C. 6 months @ D. 1 year @ D.  $700,000 to $1Million</Options>
+             <Answers>A</Answers>
+             <type>Grap InDesign</type>
+         </record>
+         <record>
+             <Serial>520</Serial>
+             <Statements>How do you help companies you back?</Statements>
+             <Options> A. Just provide investment @ B. Provide value-added services @ C. Allow to use your market links @ D. &lt;document&gt;Help in scaling the business</Options>
+             <Answers>C</Answers>
+             <type>Grap InDesign</type>
+         </record>
 		
-		
-		
-		
+				
 		
 </dataset>

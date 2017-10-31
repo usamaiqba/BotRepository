@@ -29,7 +29,8 @@ using System.Xml;
 using MongoDB.Bson.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Data;
-
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace SmbiBotApp
 {
@@ -51,10 +52,22 @@ namespace SmbiBotApp
     //    {
     //        await context.PostAsync("Not correct. Guess again.");
     //        PromptDialog.Confirm(context,play,"Yes I did it");
-            
+
     //        // context.Wait(MessageReceivedAsync);          
     //    }
     //}
+   
+    public partial class DerivedActivity : Activity
+    {
+       
+        public DerivedActivity(Activity reply):base() 
+        {
+            this.Text = reply.Text;
+            this.Attachments = new List<Attachment>(reply.Attachments);
+            this.AttachmentLayout = reply.AttachmentLayout;         
+        }
+
+    }
 
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -63,13 +76,13 @@ namespace SmbiBotApp
         HttpClient client = new HttpClient();//1
         public static string userid = null;//2
         public static string acctoken = null;//4
-       // public static readonly Uri FacebookOauthCallback = new Uri("http://smbibotapp20170804124326.azurewebsites.net/api/OAuthCallback");//3//5
+      //  public static readonly Uri FacebookOauthCallback = new Uri("http://smbibotapp20170804124326.azurewebsites.net/api/OAuthCallback");//3//5
         public static readonly Uri FacebookOauthCallback = new Uri("http://localhost:3975/api/OAuthCallback");//3//5
         public List<string> col = new List<string>();
         public static List<string> data = new List<string>();
         public static List<string> avoid = new List<string>();
         static string[] profile = new string[7];
-        public static string[] missing = null;
+        public static string[] missing = new string[7];
         static int missed = 0;
         static int already = 0;
         static int count = 0;
@@ -91,8 +104,9 @@ namespace SmbiBotApp
         List<string> options = new List<string>();
         public static Testing testsretrieved = null;
         public static Record[] display = null;
-
-
+       // public  IDialogContext context;
+       // public ResumeAfter<string> AfterUserInputSymbol;
+       
         public enum decision
         {
             firstName = 1,
@@ -214,19 +228,9 @@ namespace SmbiBotApp
             col.Add("Demonstrate your ability to avoid pitfalls, improve design processes, and creatively solve problems that emerge when building a brand’s identity");//86
             col.Add("Demonstrate your ability to use and understanding of using industry standard tools to create and edit layouts, images, artwork");//87
             col.Add("Now that we're acquainted I would like to learn a little about your projects.");//88
-
-            // col.Add("Now start the questions");//62
-
-
-            ques.Add("HTML is what type of language");
-            ques.Add("HTML use");
-            ques.Add("The year in which HTML was first proposed _______.");
-
-            options.Add("Scripting Language,Markup Language,Programming Language,Network Protocol");
-            options.Add("User defined tags, Pre - specified tags, Fixed tags defined by the language, Tags only for linking");
-            options.Add("1990,1980,2001,990");
-
-
+            col.Add("Your basic info has been updated successfully");//89
+            col.Add("Your educational info has been updated successfully");//90
+            col.Add("Your profile has been completed, now you can perform the followings");//91
 
         }
 
@@ -256,46 +260,15 @@ namespace SmbiBotApp
         {
             try
             { 
-            var replymesge = string.Empty;
+           var replymesge = string.Empty;
             Activity reply = new Activity();
             reply = activity.CreateReply();
             if (activity.Type == ActivityTypes.Message)
             {
                 var phrase = activity.Text;
-                    // reply.Text = activity.From.Id;
-                    // await connector.Conversations.ReplyToActivityAsync(reply);
-
-                    //XmlDocument doc = new XmlDocument();
-                    //doc.Load("C:\\git\\BotRepository\\Bot Application3\\files\\usama3.xml");
-                    //string jsonText = JsonConvert.SerializeXmlNode(doc); //XML to Json
-                    // //          // string json = JsonConvert.SerializeObject(jsonText);
-
-                    // ////write string to file
-                    // ////  System.IO.File.WriteAllText("C:\\test\\path.json", jsonText);
-                    //var bson = BsonSerializer.Deserialize<BsonDocument>(jsonText); //Deserialize JSON String to BSon Document
-
-                    //var Client = new MongoClient("mongodb://rizwan:rizwan@ds127883.mlab.com:27883/talenthome");
-                    //var MongoDB = Client.GetDatabase("talenthome");
-                    //var Collec = MongoDB.GetCollection<BsonDocument>("questions");
-                    //await Collec.InsertOneAsync(bson);
-                    // ////var pro = new BsonDocument
-                    ////  {
-                    ////      {"totalquest" , new BsonArray().Add(bson) }
-                    // // };
-                    //await Collec.InsertOneAsync(bson);
-
-                    //   //  var mcollection = Program._database.GetCollection<BsonDocument>("test_collection_05");
-                    //   // await mcollection.InsertOneAsync(bsdocument); //Insert into mongoDB
-
-
-                    //   // Insert new user object to collection
-                    //   //users.Insert(user);
-                    ////   LuisService.DoSomethingAsync(jsonText);
-                    //   //LuisService.DoSomethingAsync();
-
-
-
+                  
                     var luisresp = await LuisService.ParseUserInput(phrase);
+                    //int words = luisresp.query.Split(' ').Length;
 
                     while (luisresp == null)
                     {
@@ -310,7 +283,17 @@ namespace SmbiBotApp
                     var str = luisresp.topScoringIntent;
                     try
                     {
-                        var symb = string.Empty;
+                            if (counter == 10 && flag == 1)
+                            {
+                                str.intent = "description";
+                                flag = 0;
+
+                            }
+                            else if (counter == 11)
+                            {
+                                str.intent = "title";
+                            }
+                            var symb = string.Empty;
                         next:
                             if (missed == 1)//fb
                             {
@@ -338,7 +321,7 @@ namespace SmbiBotApp
                                 case "None":
 
                                 var validation_result = new Tuple<bool, string>(true, "");//4
-                              //  validation_result = input_validation(activity.Text, count);//5
+                                validation_result = input_validation(activity.Text, count);//5
                                     if (validation_result.Item1)//6
                                     {
 
@@ -436,7 +419,7 @@ namespace SmbiBotApp
 
                             case "questions":
                                 callback = 0;
-                                replymesge = luisresp.query;
+                                //replymesge = luisresp.query;
                                     if (luisresp.entities.Length == 0)
                                     {
                                         entity = luisresp.query;
@@ -476,7 +459,13 @@ namespace SmbiBotApp
                                         }
                                         else if (entity.Substring(0, 4) == "info")
                                         {
-                                            entity = entity.Substring(0,10);
+                                            entity = entity.Substring(0,11);
+                                        }
+
+                                        else if (avoid.Contains("data") || avoid.Contains("update"))
+                                        {
+                                            avoid.Remove("data");
+                                            avoid.Remove("update");
                                         }
                                         else if (avoid.Contains("thanks"))
                                         {
@@ -494,16 +483,13 @@ namespace SmbiBotApp
                                                 avoid.Remove("mode" + i);
                                                 i++;
                                             }
-
                                         }
                                                    
                                     switch (entity)
                                     {
                                         case "started":
                                                 
-                                                userid = null;
-                                                acctoken = null;
-
+                                                Initialize_variables();        
                                                 var conversationReference = Microsoft.Bot.Builder.ConnectorEx.Extensions.ToConversationReference(activity);
                                                 var fbLoginUrl = FacebookHelpers.GetFacebookLoginURL(conversationReference, FacebookOauthCallback.ToString());
                                                 reply.Text = "Please login in using this card";
@@ -517,10 +503,6 @@ namespace SmbiBotApp
                                                     Value = fbLoginUrl,
 
                                                 };
-                                                //.Attachments.Add(SigninCard.Create("You need to authorize me",
-                                                //                                       "Login to Facebook!",
-                                                //                                      fbLoginUrl
-                                                //                                     ).ToAttachment());
                                                 cardbuttons.Add(button);
                                                 SigninCard signin = new SigninCard()
                                                 {
@@ -532,28 +514,15 @@ namespace SmbiBotApp
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
                                                 while (userid == null)
                                                 { }
+                                                activity.Attachments = null;
                                                 reply.Attachments = null;
-                                            des_pro = 0;
-                                            data.Clear();
-                                            avoid.Clear();
-                                            count = 1;
-                                            counter = 1;
-                                            pro_count = 1;
-                                            already = 0;
-                                            update_info = 0;
-                                            reply.Text = "Bot is retrieving information" + "\n\n";
+                                        
+                                            reply.Text = "Please wait ! Bot is retrieving information" + "\n\n";
                                             await connector.Conversations.ReplyToActivityAsync(reply);
-                                            FacebookServices fbc = new FacebookServices();
-                                                //profile = await fbc.GetUser("EAABdYDHKoG8BAJ0FkrKPTfCoJmHSEIyVkmLn6iXTPIxU8KRXIZCx5sQEJMSD0APTBz3vQI3CXalw0ZCPKZAyjZBbcjKeZB75arA2ZC1F7Jczfx0bKqKzDBRpZA1eFGJZAvsJvsx1zLA51JBw2vNhuJhDkonMp68zG6oZD");
-                                            profile = await fbc.GetUser(acctoken,userid);
-
+                                            profile =  await FacebookServices.GetUser(acctoken, userid);
                                             if (profile != null)
                                             {
-                                                //data.Clear();
-                                                //avoid.Clear();
-                                                //count = 1;
-                                                //counter = 1;
-                                                //pro_count = 1;    
+
                                                 id = profile[0];
                                                 data.Add(id);
                                                 var result = MongoUser.exist_user(profile[0]);
@@ -563,50 +532,59 @@ namespace SmbiBotApp
                                                         string[] loc = (location.Substring(location.IndexOf(location.Substring(32))).Split(','));
                                                         profile[5] = loc[0];
                                                     }
+                                                    up:
                                                     if (result != null)
                                                     {
-                                                    var res = JsonConvert.DeserializeObject<MongoData>(result.ToJson());
-                                                    if (res.basic.status == 1)
-                                                    {
-                                                        des_pro = 1;
-                                                        count = 6;
-                                                        counter = 6;
-                                                        already = 1;
-                                                        str.intent = "emailAddress";
-                                                        goto next;
-                                                    }
-                                                    else if (res.basic.status == 2)
-                                                    {
-                                                        des_pro = 1;
-                                                        count = 10;
-                                                        counter = 10;
-                                                        already = 1; 
-                                                        str.intent = "projects";
-                                                        goto next;
-                                                    }
-                                                    else if (res.basic.status == 3)
-                                                    {
-                                                        des_pro = 2;
-                                                        count = 12;
-                                                        counter = 12;
-                                                        str.intent = "test";
-                                                        goto next;
-                                                    }
-                                                    else if (res.basic.status == 4)
-                                                    {
-                                                        des_pro = 1;
-                                                        count = 13;
-                                                        counter = 13;
-                                                        str.intent = "viewProfile";
-                                                        goto next;
+                                                        var res = JsonConvert.DeserializeObject<MongoData>(result.ToJson());
+                                                        if (res.basic != null)
+                                                        {
+                                                            if (res.basic.status == 1)
+                                                            {
+                                                                des_pro = 1;
+                                                                count = 6;
+                                                                counter = 6;
+                                                                already = 1;
+                                                                str.intent = "emailAddress";
+                                                                goto next;
+                                                            }
+                                                            else if (res.basic.status == 2)
+                                                            {
+                                                                des_pro = 1;
+                                                                count = 10;
+                                                                counter = 10;
+                                                                already = 1;
+                                                                str.intent = "projects";
+                                                                goto next;
+                                                            }
+                                                            else if (res.basic.status == 3)
+                                                            {
+                                                                des_pro = 2;
+                                                                count = 12;
+                                                                counter = 12;
+                                                                str.intent = "test";
+                                                                goto next;
+                                                            }
+                                                            else if (res.basic.status == 4)
+                                                            {
+                                                                des_pro = 1;
+                                                                count = 13;
+                                                                counter = 13;
+                                                                str.intent = "viewProfile";
+                                                                goto next;
 
-                                                    }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            result = null;
+                                                            goto up;
+                                                        }
                                                 }
                                                 else
                                                 {
                                                     reply.Text = "Welcome" + " " + profile[1] + " !" + col.ElementAt(35);
                                                     await connector.Conversations.ReplyToActivityAsync(reply);
-                                                    Thread.Sleep(1000);
+                                                   // Thread.Sleep(1000);
                                                     replymesge = col.ElementAt(33);
                                                     JobOptions(reply);
                                                 }
@@ -621,11 +599,11 @@ namespace SmbiBotApp
                                             occupation = occup[0];
                                             reply.Text = col.ElementAt(0);
                                             await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(1000);
+                                           // Thread.Sleep(1000);
                                             reply.Text = "First Name:" + profile[1] + "\n\n" + "Last Name:" + profile[2] +
                                                          "\n\n" + "Gender:" + profile[4] + "\n\n" + "Location:" + profile[5] + "\n\n" + "Email:" + profile[6];
                                             await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(1100);
+                                           // Thread.Sleep(1100);
                                                 if (profile.Contains("Not Specified"))//fb
                                                 {
                                                     missed = 0;
@@ -652,7 +630,7 @@ namespace SmbiBotApp
 
                                             reply.Text = col.ElementAt(8);
                                             await connector.Conversations.ReplyToActivityAsync(reply);
-                                            Thread.Sleep(2000);
+                                           // Thread.Sleep(2000);
                                             replymesge = col.ElementAt(9);
 
                                             break;
@@ -673,9 +651,6 @@ namespace SmbiBotApp
 
                                         case "designer":
                                             string ski = luisresp.query.Substring(23);
-                                           // ski = string.Concat((ski).Split('/')).Replace(" ", "");
-                                           // var qury = MongoUser.get_skill_id(ski).ToList();
-                                           // var value = JObject.Parse(qury[1].Value.ToString())[ski].Value<string>();
                                             data.Add(ski);
                                             ski = null;
                                             replymesge = col.ElementAt(15);
@@ -686,8 +661,6 @@ namespace SmbiBotApp
                                             data.Add(ski);
                                             ski = null;
                                             replymesge = col.ElementAt(15);
-                                            //replymesge = col.ElementAt(49);
-                                            //development_types(reply,luisresp);
                                             break;
 
                                         case "marketer":
@@ -695,15 +668,21 @@ namespace SmbiBotApp
                                             data.Add(ski);
                                             ski = null;
                                             replymesge = col.ElementAt(15);
-                                            //replymesge = col.ElementAt(49);
-                                            //marketing_types(reply, luisresp);
                                             break;
 
                                         case "module":
-                                            //entity = luisresp.entities[0].entity.ToLower();
                                              replymesge = module_types(reply, luisresp, replymesge);
-                                           // replymesge = check_module(entity, replymesge, reply);
-                                             break;
+                                             DerivedActivity derive = new DerivedActivity(reply);
+                                             reply.Attachments.Clear();
+                                             reply.AttachmentLayout = null;
+                                                if (reply.Text != null)
+                                                {
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);//new
+                                                  //  Thread.Sleep(1000);
+                                                }
+                                                reply.Attachments = derive.Attachments;
+                                                reply.AttachmentLayout = derive.AttachmentLayout;
+                                                break;
 
 
                                        case "attend":
@@ -713,8 +692,9 @@ namespace SmbiBotApp
                                             break;
 
                                         case "test":
-                                                reply.Text = activity.Text.Substring(22).ToLower();
-                                                giving_test(reply,replymesge);
+                                                reply.Text = activity.Text.Substring(22);
+                                                replymesge = giving_test(reply,replymesge);
+                                                
                                                 break;
 
                                         case "scores":
@@ -733,37 +713,49 @@ namespace SmbiBotApp
                                             break;
 
                                         case "thanks":
-                                            replymesge = col.ElementAt(45);
+                                            reply.Text= col.ElementAt(45);
+                                            await connector.Conversations.ReplyToActivityAsync(reply);//new
+                                            replymesge = col.ElementAt(91);
                                             commands(reply);
                                             break;
 
 
                                         case "data":
-                                            display_user_info(1); 
+                                            reply.Text = display_user_info(1);
+                                            await connector.Conversations.ReplyToActivityAsync(reply);//new
+                                           // Thread.Sleep(2000);
+                                            replymesge = col.ElementAt(91);
+                                            commands(reply);
                                             break;
 
 
                                         case "update":
-                                             replymesge = col.ElementAt(37);
+                                             replymesge = col.ElementAt(47);
                                              update_profile(reply);
+                                      
                                              break;
 
                                         case "information":
                                                 update_info = 2;
-                                                if (luisresp.entities[0].entity.Substring(0,4).ToLower() == "basic")
+                                                if (luisresp.entities[0].entity.Substring(11).ToLower() == "basic")
                                                 {
                                                     des_pro = 1;
                                                     replymesge = col.ElementAt(2);
                                                     count = 1;
+                                                    counter = 1;
+                                                    str.intent = "firstName";
 
                                                 }
-                                                else if (luisresp.entities[0].entity.Substring(0, 4).ToLower() == "educa")
+                                                else if (luisresp.entities[0].entity.Substring(11).ToLower() == "educa")
                                                 {
                                                     des_pro = 1;
                                                     replymesge = col.ElementAt(9);
                                                     count = 7;
+                                                    counter = 7;
+                                                    str.intent = "university";
+
                                                 }
-                                  
+
                                                 break;
 
                                         case "mode":
@@ -780,7 +772,7 @@ namespace SmbiBotApp
                                                 {
                                                     replymesge = display[ques_count].Statements;
                                                     test(reply, display[ques_count].Options, ques_count);
-                                                    Thread.Sleep(1100);
+                                                   // Thread.Sleep(1100);
                                                 }
                                                 else
                                                 {
@@ -801,7 +793,7 @@ namespace SmbiBotApp
                                                         }
 
                                                     await connector.Conversations.ReplyToActivityAsync(reply);
-                                                    Thread.Sleep(1000);
+                                                 //   Thread.Sleep(1000);
                                                     data.RemoveAt(2);  
                                                     reply.Text = "You have completed this test.Your results are as follows";
                                                     save_user_test(flagi);
@@ -856,7 +848,7 @@ namespace SmbiBotApp
                                                 already = 0;
                                                 reply.Text = "Welcome" + " " + profile[1] + "! Your Basic profile has been saved.";
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
+                                               // Thread.Sleep(1000);
                                                 reply.Text = display_user_info(counter);
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
 
@@ -874,6 +866,11 @@ namespace SmbiBotApp
                                                         { 
                                                             check_status(2);
                                                             update_info = 0;
+                                                            reply.Text = col.ElementAt(89);
+                                                            await connector.Conversations.ReplyToActivityAsync(reply);
+                                                           // Thread.Sleep(2000);
+                                                            replymesge = col.ElementAt(91);
+                                                            commands(reply);
 
                                                         }
                                                         else
@@ -881,7 +878,7 @@ namespace SmbiBotApp
                                                             check_status(0);
                                                             reply.Text = correctSequence(str.intent, replymesge, 8);
                                                             await connector.Conversations.ReplyToActivityAsync(reply);
-                                                            Thread.Sleep(2000);
+                                                          //  Thread.Sleep(2000);
                                                             replymesge = col.ElementAt(9);
                                                         }
                                                     }
@@ -890,7 +887,7 @@ namespace SmbiBotApp
                                                 {  
                                                     reply.Text = correctSequence(str.intent, replymesge, 8);
                                                     await connector.Conversations.ReplyToActivityAsync(reply);
-                                                    Thread.Sleep(2000);
+                                                    //Thread.Sleep(2000);
                                                     replymesge = col.ElementAt(9);
                                                     break;
                                                 }
@@ -915,6 +912,7 @@ namespace SmbiBotApp
                                             if (update_info != 2)
                                             {
                                                 replymesge = correctSequence(str.intent, replymesge, 12);
+                                                flag = 0;
                                                 yesorno(reply);
                                             }
                                             else
@@ -931,6 +929,11 @@ namespace SmbiBotApp
                                                 {
                                                     des_pro = 1;
                                                     edu_pro_record(2);
+                                                    reply.Text = col.ElementAt(90);
+                                                    await connector.Conversations.ReplyToActivityAsync(reply);
+                                                   // Thread.Sleep(2000);
+                                                    replymesge = col.ElementAt(91);
+                                                    commands(reply);
                                                     update_info = 0;
                                                 }
                                             }                                          
@@ -939,7 +942,8 @@ namespace SmbiBotApp
                                     case 10:
                                         if (counter == 10 && data.Count >= 6)
                                         {
-                                            check_entity(symb, luisresp);
+
+                                                check_entity(symb, luisresp);
                                             edu_pro_record(0);
                                         }
 
@@ -948,10 +952,10 @@ namespace SmbiBotApp
                                                 already = 0;
                                                 reply.Text = "Welcome" + " " + profile[1] + "! Your Basic,Educational and Professional profile has been saved.";
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
+                                             //   Thread.Sleep(2000);
                                                 reply.Text = display_user_info(counter);
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
-                                                Thread.Sleep(2000);
+                                              //  Thread.Sleep(2000);
                                                 reply.Text = col.ElementAt(88);
                                                 await connector.Conversations.ReplyToActivityAsync(reply);
 
@@ -962,8 +966,6 @@ namespace SmbiBotApp
                                             if (number.project == null)
                                             {
                                                replymesge = "sorry wrong input";
-                                               // var nume = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-
                                             }
                                             else
                                             {
@@ -972,7 +974,7 @@ namespace SmbiBotApp
                                                 {
                                                     if (pro_count > 1)
                                                     {
-                                                        data.Add(luisresp.query.Substring(41));
+                                                       data.Add(luisresp.query);
                                                     }
 
                                                     replymesge = correctSequence("projects", replymesge, 16) + " " + pro_count.ToOrdinalWords() + " project ?";
@@ -980,31 +982,15 @@ namespace SmbiBotApp
                                                 }
                                                 else
                                                 {
-                                                    data.Add(luisresp.query.Substring(41));
+                                                    data.Add(luisresp.query);
                                                     pro_details();
                                                     reply.Text = col.ElementAt(39);
                                                     await connector.Conversations.ReplyToActivityAsync(reply);
-                                                    Thread.Sleep(1000);
+                                                 //   Thread.Sleep(1000);
                                                     reply.Text = col.ElementAt(40);
                                                     await connector.Conversations.ReplyToActivityAsync(reply);
-                                                    Thread.Sleep(1000);
-                                                    if (number.professional.occupation_type == "Design")
-                                                    {
-                                                        replymesge = "Before we can start matching you with jobs related to " + number.professional.position_type +" designer "+ col.ElementAt(49);
-                                                        design_types(reply,number.professional.position_type);
-                                                    }
-                                                    else if (number.professional.occupation_type == "Development")
-                                                    {
-                                                        replymesge = "Before we can start matching you with jobs related to " + number.professional.position_type + " developer " + col.ElementAt(49);
-                                                        development_types(reply,number.professional.position_type);
-                                                    }
-                                                    else
-                                                    {
-
-                                                    }
-
-                                                    //replymesge = col.ElementAt(41);
-                                                    //choose_tech(reply);
+                                                 //   Thread.Sleep(1000);
+                                                    replymesge = taking_tests(number, reply, replymesge);
                                                     count = count + 2;
                                                     counter = counter + 2;
                                                 }
@@ -1013,11 +999,7 @@ namespace SmbiBotApp
 
                                     case 11:
                                         var numb = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
-                                          //  TestStructure ts = new TestStructure();
-                                           // var store = (Modules)(ts.courses.Where(x => x.course_name == "Design")
-                                             //                     .Select(y =>y.tracks.Where(z =>z.track_name == "uxui")
-                                               //                   .Select(a =>a.modules.Where(b =>b.module_no == "1"))));
-                                         
+                                               
                                             if (numb.project == null)
                                             {
                                                 replymesge = "sorry wrong input";
@@ -1029,14 +1011,15 @@ namespace SmbiBotApp
 
                                                     if (pro_count == 1)
                                                     {
-                                                        data.Add(luisresp.query.Substring(27));
+                                                        data.Add(luisresp.query);
                                                     }
                                                     else
                                                     {
-                                                        data.Add(luisresp.query.Substring(27));
+                                                        data.Add(luisresp.query);
                                                     }
 
                                                     replymesge = correctSequence("title", replymesge, 17) + " " + pro_count.ToOrdinalWords() + " project";
+                                                    flag = 1;
                                                     pro_count++;
                                                     count = count - 2;
                                                     counter = counter - 2;
@@ -1052,9 +1035,15 @@ namespace SmbiBotApp
 
                                             if (des_pro == 2)
                                             {
-                                                des_pro = 0;
-                                                replymesge = col.ElementAt(41);
-                                                choose_tech(reply);
+                                                reply.Text = col.ElementAt(39);
+                                                await connector.Conversations.ReplyToActivityAsync(reply);
+                                             //   Thread.Sleep(1000);
+                                                reply.Text = col.ElementAt(40);
+                                                await connector.Conversations.ReplyToActivityAsync(reply);
+                                             //   Thread.Sleep(1000);
+                                                var num = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
+                                                replymesge = taking_tests(num, reply, replymesge);
+                                               
                                             }
                                             else
                                             {
@@ -1064,7 +1053,7 @@ namespace SmbiBotApp
                                         break;
 
                                     case 13:
-                                        replymesge = col.ElementAt(45);
+                                        replymesge = col.ElementAt(91);
                                         commands(reply);
                                         break;
 
@@ -1082,13 +1071,6 @@ namespace SmbiBotApp
                             data.Add(symb);
                         }
 
-                        phrase.ToLower();
-                        if (flag == 1 && (phrase == "yes" || phrase == "y"))
-                        {
-                            if (data.Count == 4)
-                            {
-                            }
-                        }
                     }
                     catch (FacebookApiException ex)
                     {
@@ -1137,13 +1119,48 @@ namespace SmbiBotApp
             {
             }
         }
-        catch
+        catch(Exception ex)
         {
-        }
+            //  ex.Message.ToString();
+            //  ex.Data["err"] = "Something went wrong.Please delete your all conversation and Get Started again";
+            //  PromptDialog.Text(context, AfterUserInputSymbol, ex.Data["err"].ToString(), "Try again message", 3);
+            //  await context.PostAsync(ex.Data["err"].ToString());                        
+            }
             return null;
         }
 
-       private async Task<Tuple<LuisResponse, string>> CallLuisAgain(LuisResponse luisresp, string reply, int y)
+        private void Initialize_variables()
+        {
+                userid = null;
+                acctoken = null;
+                data.Clear();
+                avoid.Clear();
+                profile = new string[7];
+                missing = new string[7];
+                missed = 0;
+                already = 0;
+                count = 1;
+                flag = 0;
+                counter = 1;
+                callback = 0;
+                des_pro = 0;
+                update_info = 0;
+                id = null;
+                occupation = null;
+                entity = null;
+                pro_count = 1;
+                //wait = true;
+                ques_count = 0;
+                score = 0;
+                flagi = 0;
+                repeat = 1;
+                testsretrieved = null;
+                display = null;
+                  
+            
+        }
+
+    private async Task<Tuple<LuisResponse, string>> CallLuisAgain(LuisResponse luisresp, string reply, int y)
         {
             luisresp = await LuisService.ParseUserInput(col.ElementAt(y) + " " + luisresp.query);
             reply = luisresp.query;
@@ -1234,7 +1251,7 @@ namespace SmbiBotApp
                 { "score"      , data.ElementAt(j++) },
             };
 
-            MongoUser.upd_test_info(record, flagi, id);
+            MongoUser.upd_test_info(record,flagi,4,id);
             data.Clear();
             data.Add(id);
         }
@@ -1266,6 +1283,10 @@ namespace SmbiBotApp
         {
 
             int cou = data.Count;//10 // 7// 6
+            if (upd == 2)
+            {
+                cou = cou + 3;
+            }
             cou = cou - 3; // 10 -3 = 7 // 7-3 = 4 // 6-3 = 3
             cou = (cou - 1) / 3;
 
@@ -1320,6 +1341,7 @@ namespace SmbiBotApp
                 {
                     var res = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
                     stat = res.basic.status;
+                    occupation = res.professional.occupation_type;
                 }             
                 var info = new BsonDocument
                 {    
@@ -1371,17 +1393,17 @@ namespace SmbiBotApp
             }
             return reply;
         }
-        
+
         private string display_user_info(int cas)
         {
             string display = null;
-           
-                var res = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
 
-                if (cas == 6 || cas == 10 || cas == 1)
-                {
-                                                         
-                    display ="Basic Profile:"+ "\n\n" + 
+            var res = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
+
+            if (cas == 6 || cas == 10 || cas == 1)
+            {
+
+                   display = "Basic Profile:" + "\n\n" + "\n\n" +
                              "First Name:" + res.basic.first_name + "\n\n" + 
                              "Last Name:" + res.basic.last_name + "\n\n" + 
                              "Gender:" + res.basic.gender + "\n\n" + 
@@ -1390,28 +1412,28 @@ namespace SmbiBotApp
               
                     if (cas == 10 || cas == 1)
                     {
-                    display = display + "\n\n" + "Educational Profile:";
+                    display = display + "\n\n" + "\n\n" + "Educational Profile:";
 
                     foreach (var ed in res.educational)
                     {
-                            display = display + "\n\n" +
+                            display = display + "\n\n" + "\n\n" +
                                      "University :" + " " + ed.uni_name + "\n\n" +
                                      "Passing Year :" + " " + ed.pass_year + "\n\n" +
                                      "Degree :" + " " + ed.degree_name;
                     }
-                    display = display + "\n\n" + 
+                    display = display + "\n\n" + "\n\n" +
                              "Professional Profile:" + "\n\n" +
                              "Occupation:" + res.professional.occupation_type + "\n\n" + 
                              "Company:" + res.professional.company_type + "\n\n" +
                              "Position:" + res.professional.position_type;
                     if (cas == 1)
                     {
-                        display = display + "\n\n" +
+                        display = display + "\n\n" + "\n\n" +
                                   "Projects:" + "\n\n" +
                                   "Total Projects :" + res.project.no_of_projects;
                         foreach (var dt in res.project.details)
                         {
-                            display = display + "\n\n" +
+                            display = display + "\n\n" + "\n\n" +
                                       "Title :" + dt.title + "\n\n" +
                                       "Description :" + dt.description;
                         }
@@ -1446,13 +1468,13 @@ namespace SmbiBotApp
             {
                 Buttons = cardButtons
             };
-
+         
             Attachment jobAttachment = jobCard.ToAttachment();
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
-        private void giving_test(Activity reply , string replymesge) 
+        private string giving_test(Activity reply , string replymesge) 
         {
             des_pro = 0;
             var usertest = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
@@ -1476,20 +1498,14 @@ namespace SmbiBotApp
                 flagi = 1;
             }
             if (flagi != 0)
-            {
-
-                //  reply.Text = col.ElementAt(43);
-                //  await connector.Conversations.ReplyToActivityAsync(reply);
-                //  Thread.Sleep(2000);
-
+            {               
                 testsretrieved = JsonConvert.DeserializeObject<Testing>(MongoUser.ret_sel_test(reply.Text).ToJson());
                 display = (testsretrieved.record.Where(x => x.type == reply.Text)).ToArray();
                 replymesge = display[0].Statements;
-                reply.Text = null;
+                reply.Text = null;          
                 test(reply, display[0].Options, 0);
-
             }
-
+            return replymesge;
         }
 
         private void test_again(Activity reply)
@@ -1550,6 +1566,25 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
+        private  string taking_tests(MongoData number,Activity reply ,string replymesge)
+        {       
+            if (number.professional.occupation_type == "Design")
+            {
+                replymesge = "Before we can start matching you with jobs related to " + number.professional.position_type + " designer " + col.ElementAt(49);
+                design_types(reply, number.professional.position_type);
+            }
+            else if (number.professional.occupation_type == "Development")
+            {
+                replymesge = "Before we can start matching you with jobs related to " + number.professional.position_type + " developer " + col.ElementAt(49);
+                development_types(reply, number.professional.position_type);
+            }
+            else
+            {
+
+            }
+            return replymesge;
+        }
+
         private void commands(Activity reply)
         {
             reply.Attachments = new List<Attachment>();
@@ -1602,15 +1637,9 @@ namespace SmbiBotApp
                 Type = "postBack",
                 Title = "Educational Info",
             };
-            CardAction Button3 = new CardAction()
-            {
-                Value = "we will edit your profeinformation",
-                Type = "postBack",
-                Title = "Professional Info",
-            };
+         
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
-            cardButtons.Add(Button3);
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons,
@@ -1745,8 +1774,6 @@ namespace SmbiBotApp
 
         private void development_types(Activity reply,string position)
         {
-            //var enty = luis.entities[0].entity.ToLower();
-            //enty = enty.Substring(11);
             switch (position)
             {
                 case "fullstack":
@@ -1764,9 +1791,7 @@ namespace SmbiBotApp
                 case "cloud":
                     cloud_developer(reply);
                     break;
-
             }
-
         }
 
         private void marketing_types(Activity reply, LuisResponse luis)
@@ -1787,7 +1812,6 @@ namespace SmbiBotApp
 
         private string module_types(Activity reply, LuisResponse luis, string mesj)
         {
-
             var enty = luis.entities[0].entity.ToLower();
             enty = enty.Substring(9);
             switch (enty)
@@ -1980,37 +2004,37 @@ namespace SmbiBotApp
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "ok you want to complete module1",
+                Value = "ok you want to complete module1offrontend",
                 Type = "postBack",
                 Title = "Web Development Foundations"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "ok you want to complete module2",
+                Value = "ok you want to complete module2offrontend",
                 Type = "postBack",
                 Title = "Programing Fundamentals",
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "ok you want to complete module3",
+                Value = "ok you want to complete module3offrontend",
                 Type = "postBack",
                 Title = "User Experience for Web Designers",
             };
             CardAction Button4 = new CardAction()
             {
-                Value = "ok you want to complete module4",
+                Value = "ok you want to complete module4offrontend",
                 Type = "postBack",
                 Title = "UX Foundations Accessibility",
             };
             CardAction Button5 = new CardAction()
             {
-                Value = "ok you want to complete module5",
+                Value = "ok you want to complete module5offrontend",
                 Type = "postBack",
                 Title = "Responsive Design",
             };
             CardAction Button6 = new CardAction()
             {
-                Value = "ok you want to complete module6",
+                Value = "ok you want to complete module6offrontend",
                 Type = "postBack",
                 Title = "Framework & Tools",
             };
@@ -2036,23 +2060,22 @@ namespace SmbiBotApp
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "ok you want to complete module1ofjava",
+                Value = "ok you want to complete module1ofapplication",
                 Type = "postBack",
                 Title = "Java"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "ok you want to complete module2ofc++",
+                Value = "ok you want to complete module2ofapplication",
                 Type = "postBack",
                 Title = "C++",
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "ok you want to complete module3ofpython",
+                Value = "ok you want to complete module3ofapplication",
                 Type = "postBack",
                 Title = "Python",
-            };
-    
+            };    
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
             cardButtons.Add(Button3);
@@ -2060,7 +2083,6 @@ namespace SmbiBotApp
             {
                 Buttons = cardButtons,
             };
-
             Attachment jobAttachment = jobCard.ToAttachment();
             reply.Attachments.Add(jobAttachment);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
@@ -2072,19 +2094,19 @@ namespace SmbiBotApp
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "ok you want to complete module1",
+                Value = "ok you want to complete module1ofmobile",
                 Type = "postBack",
                 Title = "Android"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "ok you want to complete module2",
+                Value = "ok you want to complete module2ofmobile",
                 Type = "postBack",
                 Title = "iOS",
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "ok you want to complete module3",
+                Value = "ok you want to complete module3ofmobile",
                 Type = "postBack",
                 Title = "Cross-Platform",
             };
@@ -2109,60 +2131,27 @@ namespace SmbiBotApp
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "ok you want to complete module1",
+                Value = "ok you want to complete module1ofcloud",
                 Type = "postBack",
                 Title = "Web Development Foundations"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "ok you want to complete module2",
+                Value = "ok you want to complete module2ofcloud",
                 Type = "postBack",
                 Title = "Programing Fundamentals",
             };
             CardAction Button3 = new CardAction()
             {
-                Value = "ok you want to complete module3",
+                Value = "ok you want to complete module3ofcloud",
                 Type = "postBack",
                 Title = "Essential Frontend Languages",
             };
-            CardAction Button4 = new CardAction()
-            {
-                Value = "ok you want to complete module4",
-                Type = "postBack",
-                Title = "Database Foundations",
-            };
-            CardAction Button5 = new CardAction()
-            {
-                Value = "ok you want to complete module5",
-                Type = "postBack",
-                Title = "Essential Backend Languages",
-            };
-            CardAction Button6 = new CardAction()
-            {
-                Value = "ok you want to complete module6",
-                Type = "postBack",
-                Title = "Security Foundations",
-            };
-            CardAction Button7 = new CardAction()
-            {
-                Value = "ok you want to complete module7",
-                Type = "postBack",
-                Title = "Web Projects Workflows",
-            };
-            CardAction Button8 = new CardAction()
-            {
-                Value = "ok you want to complete module8",
-                Type = "postBack",
-                Title = "Fullstack Frameworks",
-            };
+        
             cardButtons.Add(Button1);
             cardButtons.Add(Button2);
             cardButtons.Add(Button3);
-            cardButtons.Add(Button4);
-            cardButtons.Add(Button5);
-            cardButtons.Add(Button6);
-            cardButtons.Add(Button7);
-            cardButtons.Add(Button8);
+                   
             HeroCard jobCard = new HeroCard()
             {
                 Buttons = cardButtons,
@@ -2318,9 +2307,9 @@ namespace SmbiBotApp
             var user = JsonConvert.DeserializeObject<MongoData>(MongoUser.exist_user(id).ToJson());
             data.Add(user.professional.position_type);
             var test = JsonConvert.DeserializeObject<Structure>(MongoUser.test_name("123").ToJson());
-            var mod = ((test.teststructure.courses.Where(x => x.course_name == user.professional.occupation_type).SingleOrDefault())
-                      .Tracks.Where(x => x.track_name == user.professional.position_type.ToUpper()).SingleOrDefault())
-                      .Modules.Where(z => z.module_no == no).SingleOrDefault();
+            var mod = ((test.teststructure.courses.Where(x => x.course_name.ToLower() == user.professional.occupation_type.ToLower()).SingleOrDefault())
+                      .Tracks.Where(x => x.track_name.ToLower() == user.professional.position_type.ToLower()).SingleOrDefault())
+                      .Modules.Where(z => z.module_no.ToLower() == no.ToLower()).SingleOrDefault();
             return mod.module_name;
         }
 
@@ -2334,30 +2323,31 @@ namespace SmbiBotApp
             switch (ent)
             {
                 case "module1":
-                   // mesj = col.ElementAt(84);
                     reply.Text = retrieve_modulename(ent.Substring(6));
-                    giving_test(reply,mesj);
+                    mesj = giving_test(reply,mesj);//new
                     reply.Text = col.ElementAt(84);
+                
                  
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(85);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(85);
                     break;
 
                 case "module3":
-                    mesj = col.ElementAt(86);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(86);
                     break;
 
-                case "module4":
+                case "module4": // change here
                     mesj = col.ElementAt(87);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     data.Add(reply.Text);
-                    designtools_test(reply);
+                    designtools_test(reply,1);
+                    reply.Text = null;
                     break;
                                   
             }
@@ -2370,31 +2360,32 @@ namespace SmbiBotApp
 
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0, 7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
-                    mesj = col.ElementAt(84);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(84);
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(85);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(85);
                     break;
 
                 case "module3":
-                    mesj = col.ElementAt(86);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(86);
                     break;
 
                 case "module4":
-                    mesj = col.ElementAt(87);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     data.Add(reply.Text);
-                    designtools_test(reply);
+                    designtools_test(reply,2);
+                    reply.Text = null;
                     break;
 
             }
@@ -2407,50 +2398,56 @@ namespace SmbiBotApp
            
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0,7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
                     mesj = col.ElementAt(50);
                     webdevelopment_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(51);
+                  //  mesj = col.ElementAt(51);
                     reply.Text = retrieve_modulename(ent.Substring(6));
-                    giving_test(reply, mesj);
+                    mesj = giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(51);
                     break;
 
                 case "module3":
                     mesj = col.ElementAt(52);
                     frontend_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module4":
-                    mesj = col.ElementAt(53);
                     reply.Text = retrieve_modulename(ent.Substring(6));
-                    giving_test(reply, mesj);
+                    mesj = giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(53);
                     break;
 
                 case "module5":
                     mesj = col.ElementAt(54);
                     backend_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module6":
-                    mesj = col.ElementAt(55);
                     reply.Text = retrieve_modulename(ent.Substring(6));
-                    giving_test(reply, mesj);
+                    mesj = giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(55);
                     break;
 
                 case "module7":
                     mesj = col.ElementAt(56);
                     projects_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module8":
-                    mesj = col.ElementAt(57);
                     reply.Text = retrieve_modulename(ent.Substring(6));
-                    giving_test(reply, mesj);
+                    mesj = giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(57);
                     break;
 
             }
@@ -2463,40 +2460,43 @@ namespace SmbiBotApp
 
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0, 7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
                     mesj = col.ElementAt(50);
                     webdevelopment_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(51);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(51);
                     break;
 
                 case "module3":
-                    mesj = col.ElementAt(58);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(58);
                     break;
 
                 case "module4":
-                    mesj = col.ElementAt(59);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(59);
                     break;
 
                 case "module5":
-                    mesj = col.ElementAt(60);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(60);
                     break;
 
                 case "module6":
                     mesj = col.ElementAt(61);
                     frameworktools_test(reply);
+                    reply.Text = null;
                     break;
             }
             return mesj;
@@ -2507,23 +2507,25 @@ namespace SmbiBotApp
 
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0, 7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
                     mesj = col.ElementAt(50);
                     java_test(reply,luis);
-
+                    reply.Text = null;
                     break;
 
                 case "module2":
                     mesj = col.ElementAt(51);
                     csharp_test(reply,luis);
+                    reply.Text = null;
                     break;
 
                 case "module3":
                     mesj = col.ElementAt(52);
                     python_test(reply,luis);
-
+                    reply.Text = null;
                     break;
 
             }
@@ -2535,47 +2537,56 @@ namespace SmbiBotApp
 
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0, 7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
                     mesj = col.ElementAt(50);
                     webdevelopment_test(reply);
-
+                    reply.Text = null;
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(51);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(51);
 
                     break;
 
                 case "module3":
                     mesj = col.ElementAt(52);
                     frontend_test(reply);
-
+                    reply.Text = null;
                     break;
 
                 case "module4":
-                    mesj = col.ElementAt(53);
+                    reply.Text = retrieve_modulename(ent.Substring(6));
+                    giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(53);
                     break;
 
                 case "module5":
                     mesj = col.ElementAt(54);
                     backend_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module6":
-                    mesj = col.ElementAt(55);
+                    reply.Text = retrieve_modulename(ent.Substring(6));
+                    giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(55);
                     break;
 
                 case "module7":
                     mesj = col.ElementAt(56);
                     projects_test(reply);
+                    reply.Text = null;
                     break;
 
                 case "module8":
-                    mesj = col.ElementAt(57);
+                    reply.Text = retrieve_modulename(ent.Substring(6));
+                    giving_test(reply, mesj);
+                    reply.Text = col.ElementAt(57);
                     break;
 
             }
@@ -2587,6 +2598,7 @@ namespace SmbiBotApp
 
             var ent = luis.entities[0].entity.ToLower();
             ent = ent.Substring(0, 7);
+            data.Add(ent.Substring(6));
             switch (ent)
             {
                 case "module1":
@@ -2596,10 +2608,9 @@ namespace SmbiBotApp
                     break;
 
                 case "module2":
-                    mesj = col.ElementAt(51);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
-
+                    reply.Text = col.ElementAt(51);
                     break;
 
                 case "module3":
@@ -2609,10 +2620,9 @@ namespace SmbiBotApp
                     break;
 
                 case "module4":
-                    mesj = col.ElementAt(53);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
-
+                    reply.Text = col.ElementAt(53);
                     break;
 
                 case "module5":
@@ -2621,10 +2631,9 @@ namespace SmbiBotApp
                     break;
 
                 case "module6":
-                    mesj = col.ElementAt(55);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
-
+                    reply.Text = col.ElementAt(55);
                     break;
 
                 case "module7":
@@ -2633,29 +2642,37 @@ namespace SmbiBotApp
                     break;
 
                 case "module8":
-                    mesj = col.ElementAt(57);
                     reply.Text = retrieve_modulename(ent.Substring(6));
                     giving_test(reply, mesj);
-
+                    reply.Text = col.ElementAt(57);
                     break;
 
             }
             return mesj;
         }
 
-        private void designtools_test(Activity reply)
+        private void designtools_test(Activity reply,int choice)
         {
+            string type = null;
+            if (choice == 1)
+            {
+                type = "UXUI";
+            }
+            else
+            {
+                type = "Grap";
+            }
             reply.Attachments = new List<Attachment>();
             List<CardAction> cardButtons = new List<CardAction>();
             CardAction Button1 = new CardAction()
             {
-                Value = "you selected the test photoshop",
+                Value = "you selected the test " + type + " Photoshop",
                 Type = "postBack",
                 Title = "Photoshop"
             };
             CardAction Button2 = new CardAction()
             {
-                Value = "you selected the test indesign",
+                Value = "you selected the test " + type + " InDesign",
                 Type = "postBack",
                 Title = "InDesign",
             };
@@ -3286,6 +3303,7 @@ namespace SmbiBotApp
 
         private void test(Activity reply, string opt, int mod)
         {
+           
             reply.Attachments = new List<Attachment>();
             List<CardAction> cardButtons = new List<CardAction>();
             string[] option = opt.Split('@');
@@ -3327,16 +3345,249 @@ namespace SmbiBotApp
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
         }
 
-        
+        private Tuple<bool, string> input_validation(string user_input, int count)
+        {
+            var t = new Tuple<bool, string>(true, "");
+            switch (count)
+            {
+
+                case 1:
+                case 2:
+                case 4:
+                case 5:
+                case 7:
+                case 9:
+                    t = IsValidAlphabet(user_input, count);
+                    if (t.Item1)
+                    {
+                        return new Tuple<bool, string>(true, t.Item2);
+                    }
+                    else
+                    {
+                        return new Tuple<bool, string>(false, t.Item2); ;
+                    }
+                    break;
+
+                case 3:
+                case 8:
+                case 10:
+                    t = IsValidNumber(user_input, count);
+                    if (t.Item1)
+                    {
+                        return new Tuple<bool, string>(true, t.Item2);
+                    }
+                    else
+                    {
+                        return new Tuple<bool, string>(false, t.Item2);
+                    }
+                case 6:
+                    t = IsValidEmail(user_input);
+                    if (t.Item1)
+                    {
+                        return new Tuple<bool, string>(true, t.Item2);
+                    }
+                    else
+                    {
+                        return new Tuple<bool, string>(false, t.Item2);
+                    }
+
+                    break;
+
+                default:
+                    return new Tuple<bool, string>(true, "");
+                    break;
+            }
+
+            //if (count == 1 || count == 2 || count == 4 || count == 5 || count == 7 || count == 9)
+            //{
+            //    if (Regex.IsMatch(user_input, @"^[a-zA-Z]+$"))
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+
+            //else if (count == 3 || count == 8 || count == 10)
+            //{
+            //    if (Regex.IsMatch(user_input, @"^[0-9]+$"))
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //else if (count == 11 || count == 12)
+            //{
+            //    if (Regex.IsMatch(user_input,
+            //        @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+            //        @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$"))
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //else
+            //{
+            //    return true;
+            //}
+
+
+        }
+
+        bool invalid = false;
+
+        public Tuple<bool, string> IsValidEmail(string strIn)
+        {
+            invalid = false;
+            if (String.IsNullOrEmpty(strIn))
+                return new Tuple<bool, string>(false, "");
+
+            // Use IdnMapping class to convert Unicode domain names.
+            try
+            {
+                strIn = Regex.Replace(strIn, @"(@)(.+)$", this.DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return new Tuple<bool, string>(false, "");
+            }
+
+            if (invalid)
+                return new Tuple<bool, string>(false, "");
+
+            // Return true if strIn is in valid e-mail format.
+            try
+            {
+                bool valid = Regex.IsMatch(strIn,
+                      @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                      @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
+                      RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return new Tuple<bool, string>(valid, "");
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return new Tuple<bool, string>(false, "");
+            }
+        }
+        public Tuple<bool, string> IsValidAlphabet(string strIn, int count)
+        {
+
+            if (Regex.IsMatch(strIn, @"^[a-zA-Z\s]+$"))
+            {
+                switch (count)
+                {
+
+                    case 4:
+                        string str = strIn.ToLower();
+                        if (str.Contains("male") || str.Contains("female") || str.Contains("guy") || str.Contains("girl") || str.Contains("disclose"))
+                        {
+                            return new Tuple<bool, string>(true, "");
+                        }
+                        else
+                        {
+                            return new Tuple<bool, string>(false, "Gender Must be Male/Female/Donot Want to Disclose");
+                        }
+                        break;
+                    default:
+                        return new Tuple<bool, string>(true, "");
+                        break;
+                }
+            }
+            else
+            {
+                return new Tuple<bool, string>(false, "");
+            }
+        }
+        public Tuple<bool, string> IsValidNumber(string strIn, int count)
+        {
+            try
+            {
+
+                switch (count)
+                {
+                    case 3:
+                        if (Regex.IsMatch(strIn, @"^[0-9]{2}"))
+                        {
+                            int strr = Int32.Parse(strIn);
+                            if (strr > 15 && strr < 55)
+                            {
+                                return new Tuple<bool, string>(true, "");
+                            }
+                            else
+                            {
+                                return new Tuple<bool, string>(false, "Age must be a number between 15-55");
+                            }
+                        }
+                        else
+                        {
+                            return new Tuple<bool, string>(false, "Age must be a number between 15-55");
+                        }
+                        break;
+                    case 8:
+                        if (Regex.IsMatch(strIn, @"^[0-9]{4}"))
+                        {
+                            int strr = Int32.Parse(strIn);
+                            if (strr >= 1980 && strr <= DateTime.Now.Year)
+                                return new Tuple<bool, string>(true, "");
+                            else
+                                return new Tuple<bool, string>(false, "Year must be between 1980-Present_Year");
+
+                        }
+                        else
+                        {
+                            return new Tuple<bool, string>(false, "Year must be between 1980-Present_Year");
+                        }
+                        break;
+                    case 10:
+                        if ((Regex.IsMatch(strIn, @"^[0-9]")))
+                        {
+                            int strr = Int32.Parse(strIn);
+                            if (strr > 0)
+                                return new Tuple<bool, string>(true, "");
+                            else
+                                return new Tuple<bool, string>(false, "No. of Projects must be greater than zero");
+                        }
+                        else
+                        {
+                            return new Tuple<bool, string>(false, "No. of Projects must be greater than zero");
+                        }
+                        break;
+                    default:
+                        return new Tuple<bool, string>(true, "");
+                }
+            }
+
+            catch
+            { return new Tuple<bool, string>(false, ""); }
+
+
+        }
+
+        private string DomainMapper(Match match)
+        {
+            // IdnMapping class with default property values.
+            IdnMapping idn = new IdnMapping();
+
+            string domainName = match.Groups[2].Value;
+            try
+            {
+                domainName = idn.GetAscii(domainName);
+            }
+            catch (ArgumentException)
+            {
+                invalid = true;
+            }
+            return match.Groups[1].Value + domainName;
+        }
     }
 
-    //internal class MemberDialog : IDialog<object>
-    //{
-    //    public async Task StartAsync(IDialogContext context)
-    //    {
-    //        string userChoice = "Hi how are you";
-    //        await context.PostAsync(userChoice);
-    //       // context.Wait(MessageReceived);
-    //    }
-    //}
 }
